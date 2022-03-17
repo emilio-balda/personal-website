@@ -1,64 +1,79 @@
 <script setup lang="ts">
-import { useUserStore } from '~/stores/user'
-
-const user = useUserStore()
-const name = ref(user.savedName)
-
-const router = useRouter()
-const go = () => {
-  if (name.value)
-    router.push(`/hi/${encodeURIComponent(name.value)}`)
-}
-
-const { t } = useI18n()
+import TableResponsive from '~/components/TableResponsive.vue'
 </script>
 
 <template>
-  <div>
-    <div text-4xl>
-      <div i-carbon-campsite inline-block />
-    </div>
-    <p>
-      <a rel="noreferrer" href="https://github.com/antfu/vitesse" target="_blank">
-        Vitesse
-      </a>
-    </p>
-    <p>
-      <em text-sm opacity-75>{{ t('intro.desc') }}</em>
-    </p>
-
-    <div py-4 />
-
-    <input
-      id="input"
-      v-model="name"
-      :placeholder="t('intro.whats-your-name')"
-      :aria-label="t('intro.whats-your-name')"
-      type="text"
-      autocomplete="false"
-      p="x4 y2"
-      w="250px"
-      text="center"
-      bg="transparent"
-      border="~ rounded gray-200 dark:gray-700"
-      outline="none active:none"
-      @keydown.enter="go"
-    >
-    <label class="hidden" for="input">{{ t('intro.whats-your-name') }}</label>
-
-    <div>
-      <button
-        btn m-3 text-sm
-        :disabled="!name"
-        @click="go"
-      >
-        {{ t('button.go') }}
-      </button>
-    </div>
-  </div>
+  <h1 class="text-8xl italic py-10 px-10">Some awesome quote</h1>
+  <table-responsive>
+    <tr>
+      <td class="px-4">
+        <img src="../assets/me.png" alt="Avatar" class="w-96 rounded-full" />
+      </td>
+      <td class="px-4">
+        <h4 class="text-3xl text-left font-bold whitespace-nowrap">Emilio Balda</h4>
+        <p class="text-3xl text-left whitespace-nowrap">Fullstack Developer</p>
+        <p class="text-3xl text-left whitespace-nowrap">PhD in Machine Learning</p>
+        <p class="text-3xl text-left whitespace-nowrap"><a href="mailto:me@emilio-balda.com">me@emilio-balda.com</a></p>
+      </td>
+      <td class="px-16">
+        <p class="text-2xl text-justify py-10">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non magna id risus rutrum pulvinar quis in libero.
+        </p>
+        <button class="button-64" role="button"><span class="text">Get Started</span></button>
+      </td>
+    </tr>
+  </table-responsive>
 </template>
 
-<route lang="yaml">
-meta:
-  layout: home
-</route>
+<style scoped>
+/* CSS */
+.button-64 {
+  align-items: center;
+  background-image: linear-gradient(144deg, darkorchid, royalblue, mediumspringgreen);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+  box-shadow: 0px 0px 20px 0px mediumspringgreen;
+}
+
+.button-64 span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+/* .button-64:hover span {
+  background: none;
+} */
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+</style>

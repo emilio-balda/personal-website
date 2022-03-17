@@ -4,9 +4,13 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AppCard: typeof import('./components/AppCard.vue')['default']
     Counter: typeof import('./components/Counter.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
+    NavigationBar: typeof import('./components/NavigationBar.vue')['default']
+    NavigationLink: typeof import('./components/NavigationLink.vue')['default']
     README: typeof import('./components/README.md')['default']
+    TableResponsive: typeof import('./components/TableResponsive.vue')['default']
   }
 }
 
