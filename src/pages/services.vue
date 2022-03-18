@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AppCard from '~/components/AppCard.vue'
+// import AppCard from '~/components/AppCard.vue'
 </script>
 
 <template>
