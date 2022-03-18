@@ -3,23 +3,35 @@ import TableResponsive from '~/components/TableResponsive.vue'
 </script>
 
 <template>
-  <h1 class="text-8xl italic py-10 px-10">Some awesome quote</h1>
+  <h1 class="text-8xl italic py-10 px-10">
+    Some awesome quote
+  </h1>
   <table-responsive>
     <tr>
       <td class="px-4">
-        <img src="../assets/me.png" alt="Avatar" class="w-96 rounded-full" />
+        <img src="../assets/me.png" alt="Avatar" class="w-96 rounded-full">
       </td>
       <td class="px-4">
-        <h4 class="text-3xl text-left font-bold whitespace-nowrap">Emilio Balda</h4>
-        <p class="text-3xl text-left whitespace-nowrap">Fullstack Developer</p>
-        <p class="text-3xl text-left whitespace-nowrap">PhD in Machine Learning</p>
-        <p class="text-3xl text-left whitespace-nowrap"><a href="mailto:me@emilio-balda.com">me@emilio-balda.com</a></p>
+        <h4 class="text-3xl text-left font-bold whitespace-nowrap">
+          Emilio Balda
+        </h4>
+        <p class="text-3xl text-left whitespace-nowrap">
+          Fullstack Developer
+        </p>
+        <p class="text-3xl text-left whitespace-nowrap">
+          PhD in Machine Learning
+        </p>
+        <p class="text-3xl text-left whitespace-nowrap">
+          <a href="mailto:me@emilio-balda.com">me@emilio-balda.com</a>
+        </p>
       </td>
       <td class="px-16">
         <p class="text-2xl text-justify py-10">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non magna id risus rutrum pulvinar quis in libero.
         </p>
-        <button class="button-64" role="button"><span class="text">Get Started</span></button>
+        <button class="button-64" role="button">
+          <span class="text">Get Started</span>
+        </button>
       </td>
     </tr>
   </table-responsive>

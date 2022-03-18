@@ -12,7 +12,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <router-link :to="to" class="router-link place-self-center" :class="{ 'router-link-selected': currentPage === props.to }">
+  <router-link :to="to" class="router-link place-self-center dark:text-white" :class="{ 'router-link-selected': currentPage === props.to }">
     {{ props.pageName }}
   </router-link>
 </template>
