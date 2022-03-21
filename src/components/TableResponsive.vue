@@ -3,7 +3,7 @@
 
 <template>
   <table class="table-responsive">
-    <slot></slot>
+    <slot />
   </table>
 </template>
 
