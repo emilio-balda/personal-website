@@ -9,6 +9,7 @@ declare module 'vue' {
     Footer: typeof import('./components/Footer.vue')['default']
     NavigationBar: typeof import('./components/NavigationBar.vue')['default']
     NavigationLink: typeof import('./components/NavigationLink.vue')['default']
+    ProductCard: typeof import('./components/ProductCard.vue')['default']
     README: typeof import('./components/README.md')['default']
     TableResponsive: typeof import('./components/TableResponsive.vue')['default']
   }

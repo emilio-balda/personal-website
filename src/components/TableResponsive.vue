@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <table class="table-responsive">
+  <table class="table-responsive p-1">
     <slot />
   </table>
 </template>
@@ -12,7 +12,7 @@
 @media only screen and (max-width: 768px) {
   h1 {
     display: block;
-    padding: 1px;
+    /* padding: 1px; */
     font-size: 35px;
     text-align: center;
     margin-left: auto;

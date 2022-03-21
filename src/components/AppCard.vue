@@ -26,15 +26,11 @@
 }
 
 .box {
-  /* border-radius: 5px; */
+  /* border-radius: 25px; */
   box-shadow: 0px 30px 40px -20px hsl(229, 6%, 66%);
   padding: 30px;
   margin: auto;
   border-top: 6px solid;
   border-image: linear-gradient(to right, darkorchid, royalblue, mediumspringgreen) 1;
-}
-.box:hover {
-  /* border-radius: 5px; */
-  box-shadow: 0px 0px 20px 0px mediumspringgreen;
 }
 </style>
