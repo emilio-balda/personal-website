@@ -7,6 +7,7 @@ declare module 'vue' {
     AppCard: typeof import('./components/AppCard.vue')['default']
     Counter: typeof import('./components/Counter.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
+    GlowingButton: typeof import('./components/GlowingButton.vue')['default']
     NavigationBar: typeof import('./components/NavigationBar.vue')['default']
     NavigationLink: typeof import('./components/NavigationLink.vue')['default']
     ProductCard: typeof import('./components/ProductCard.vue')['default']

@@ -1,8 +1,12 @@
+<script setup lang="ts">
+import GlowingButton from '~/components/GlowingButton.vue'
+</script>
+
 <template>
   <section>
     <div class="container">
       <div class="flex flex-wrap -mx-4">
-        <div class="w-full md:w-1/2 xl:w-1/3 px-4">
+        <div class="w-full md:w-1/2 xl:w-1/3 px-4 hover:shadow-xl hover:scale-105 duration-500 transform transition cursor-pointer">
           <div class="bg-white rounded-lg overflow-hidden mb-10">
             <img
               src="https://cdn.tailgrids.com/1.0/assets/images/cards/card-01/image-01.jpg"
@@ -33,26 +37,14 @@
                 Lorem ipsum dolor sit amet pretium consectetur adipiscing
                 elit. Lorem consectetur adipiscing elit.
               </p>
-              <a
-                href="javascript:void(0)"
-                class="
-                     inline-block
-                     py-2
-                     px-7
-                     border border-[#E5E7EB]
-                     rounded-full
-                     text-base text-body-color
-                     font-medium
-                     hover:border-primary hover:bg-primary hover:text-white
-                     transition
-                     "
-              >
-                View Details
-              </a>
+              <glowing-button
+                class="inline-block py-2 px-7 font-medium"
+                label="View Details"
+              />
             </div>
           </div>
         </div>
-        <div class="w-full md:w-1/2 xl:w-1/3 px-4">
+        <div class="w-full md:w-1/2 xl:w-1/3 px-4 hover:shadow-xl hover:scale-105 duration-500 transform transition cursor-pointer">
           <div class="bg-white rounded-lg overflow-hidden mb-10">
             <img
               src="https://cdn.tailgrids.com/1.0/assets/images/cards/card-01/image-02.jpg"
@@ -83,26 +75,14 @@
                 Lorem ipsum dolor sit amet pretium consectetur adipiscing
                 elit. Lorem consectetur adipiscing elit.
               </p>
-              <a
-                href="javascript:void(0)"
-                class="
-                     inline-block
-                     py-2
-                     px-7
-                     border border-[#E5E7EB]
-                     rounded-full
-                     text-base text-body-color
-                     font-medium
-                     hover:border-primary hover:bg-primary hover:text-white
-                     transition
-                     "
-              >
-                View Details
-              </a>
+              <glowing-button
+                class="inline-block py-2 px-7 font-medium"
+                label="View Details"
+              />
             </div>
           </div>
         </div>
-        <div class="w-full md:w-1/2 xl:w-1/3 px-4">
+        <div class="w-full md:w-1/2 xl:w-1/3 px-4 hover:shadow-xl hover:scale-105 duration-500 transform transition cursor-pointer">
           <div class="bg-white rounded-lg overflow-hidden mb-10">
             <img
               src="https://cdn.tailgrids.com/1.0/assets/images/cards/card-01/image-03.jpg"
@@ -133,22 +113,10 @@
                 Lorem ipsum dolor sit amet pretium consectetur adipiscing
                 elit. Lorem consectetur adipiscing elit.
               </p>
-              <a
-                href="javascript:void(0)"
-                class="
-                     inline-block
-                     py-2
-                     px-7
-                     border border-[#E5E7EB]
-                     rounded-full
-                     text-base text-body-color
-                     font-medium
-                     hover:border-primary hover:bg-primary hover:text-white
-                     transition
-                     "
-              >
-                View Details
-              </a>
+              <glowing-button
+                class="inline-block py-2 px-7 font-medium"
+                label="View Details"
+              />
             </div>
           </div>
         </div>
