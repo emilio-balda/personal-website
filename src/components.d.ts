@@ -4,8 +4,8 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    AppCard: typeof import('./components/AppCard.vue')['default']
     Counter: typeof import('./components/Counter.vue')['default']
+    FlipCard: typeof import('./components/FlipCard.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     GlowingButton: typeof import('./components/GlowingButton.vue')['default']
     NavigationBar: typeof import('./components/NavigationBar.vue')['default']

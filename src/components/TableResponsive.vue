@@ -24,12 +24,12 @@
     margin-left: auto;
     margin-right: auto;
   }
-  table.table-responsive tr {
+  /* table.table-responsive tr {
     padding: 1px;
   }
   table.table-responsive tr td {
     padding: 1px;
-  }
+  } */
 }
 
 table.table-responsive * {

@@ -4,12 +4,13 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  class_text: String,
 })
 </script>
 
 <template>
   <button class="bn5" role="button">
-    <span class="text">{{ props.label }}</span>
+    <span class="text" :class="props.class_text">{{ props.label }}</span>
   </button>
 </template>
 
@@ -18,22 +19,13 @@ const props = defineProps({
 .bn5:active,
 .bn5 span {
   background-color: rgb(5, 6, 45);
-  padding: 16px 24px;
   border-radius: 6px;
   width: 100%;
   height: 100%;
   transition: 300ms;
 }
 
-@media (min-width: 768px) {
-  .bn5 {
-    font-size: 24px;
-    min-width: 196px;
-  }
-}
-
 .bn5 {
-  align-items: center;
   background-image: linear-gradient(145deg, darkorchid, royalblue, mediumspringgreen);
   border: 0;
   border-radius: 8px;
@@ -42,11 +34,8 @@ const props = defineProps({
   color: #ffffff;
   display: flex;
   font-family: Phantomsans, sans-serif;
-  font-size: 20px;
-  justify-content: center;
   line-height: 1em;
   max-width: 100%;
-  min-width: 140px;
   padding: 3px;
   text-decoration: none;
   user-select: none;
