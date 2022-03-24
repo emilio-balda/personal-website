@@ -1,7 +1,13 @@
 
 <script setup lang="ts">
+import { userRouter } from 'vue-router'
+import { ref } from 'vue'
 import FlipCard from '~/components/FlipCard.vue'
 import GlowingButton from '~/components/GlowingButton.vue'
+import DatarayItem from '~/content/portfolio/dataray.md'
+import AppModal from '~/components/AppModal.vue'
+const router = useRouter()
+const isOpen = ref(false)
 
 const content = [
   {
@@ -26,7 +32,6 @@ const content = [
   },
 ]
 </script>
-
 <template>
   <div class="flex items-center justify-center">
     <div class="grid grid-cols-4 gap-8">
@@ -49,7 +54,17 @@ const content = [
             <div>
               <p>{{ item.description }}</p>
               <div class="inline-block py-8 font-medium">
-                <glowing-button label="Read More" class_text="text-lg px-8 py-2" />
+                <glowing-button label="View" class_text="text-lg px-8 py-2" @click="isOpen=true" />
+                <teleport to="body">
+                  <div v-if="isOpen" class="modal">
+                    <app-modal @close-modal="isOpen=false">
+                      <DatarayItem />
+                      <div class="max-w-xl">
+                        <glowing-button label="Contact" class_text="text-lg px-8 py-2" @click="router.push('/contact')" />
+                      </div>
+                    </app-modal>
+                  </div>
+                </teleport>
               </div>
             </div>
           </div>
@@ -58,3 +73,14 @@ const content = [
     </div>
   </div>
 </template>
+
+<style scoped>
+.modal {
+  position: absolute;
+  z-index: 999;
+  top: 20%;
+  left: 30%;
+  /* width: 300px; */
+  /* margin-left: -150px; */
+}
+</style>

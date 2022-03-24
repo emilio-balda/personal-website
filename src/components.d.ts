@@ -4,6 +4,7 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AppModal: typeof import('./components/AppModal.vue')['default']
     Counter: typeof import('./components/Counter.vue')['default']
     FlipCard: typeof import('./components/FlipCard.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
