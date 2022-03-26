@@ -11,6 +11,7 @@ declare module 'vue' {
     GlowingButton: typeof import('./components/GlowingButton.vue')['default']
     NavigationBar: typeof import('./components/NavigationBar.vue')['default']
     NavigationLink: typeof import('./components/NavigationLink.vue')['default']
+    PortfolioBoundsPaper: typeof import('./components/content/PortfolioBoundsPaper.vue')['default']
     ProductCard: typeof import('./components/ProductCard.vue')['default']
     README: typeof import('./components/README.md')['default']
     TableResponsive: typeof import('./components/TableResponsive.vue')['default']

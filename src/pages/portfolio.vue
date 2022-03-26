@@ -1,36 +1,49 @@
 
 <script setup lang="ts">
-import { userRouter } from 'vue-router'
 import { ref } from 'vue'
 import FlipCard from '~/components/FlipCard.vue'
 import GlowingButton from '~/components/GlowingButton.vue'
-import DatarayItem from '~/content/portfolio/dataray.md'
+import DatarayContent from '~/components/content/PortfolioBoundsPaper.vue'
+import BoundsPaperContent from '~/components/content/PortfolioBoundsPaper.vue'
+import AdversarialPaperContent from '~/components/content/PortfolioBoundsPaper.vue'
+import ServerlessWebsiteContent from '~/components/content/PortfolioBoundsPaper.vue'
 import AppModal from '~/components/AppModal.vue'
 const router = useRouter()
-const isOpen = ref(false)
 
 const content = [
   {
     title: 'Dataray Web App',
     description: 'Together with a team of 3 developers, we built a data science SaaS product called Dataray. The backend is built in Python, using FastAPI and DJango. The frontend is built in TypeScript, using Vue 3 and Tailwindcss. It is hosted in Google Cloud using Kubernetes and Helm. Tests are written with pytest and integration tests are implemented with GitLab CI.',
     image: 'https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80',
+    content_component: DatarayContent,
   },
   {
     title: 'Serverless Website',
     description: 'This website is written 100% in TypeScript using Vue 3 and Tailwind CSS. The code is linted with ESLint. Unit tests are written with Jest, while Cypress handles integration tests. It is hosted in a serverless architecture using AWS Lambda functions.',
     image: 'https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80',
+    content_component: ServerlessWebsiteContent,
   },
   {
     title: 'Research Paper: Theoretical Result for Neural Networks',
     description: 'The goal was to publish a theoretical paper about the generalization capabilities of deep neural networks under the presence of a malicious attacker modifying the inputs of the network. I used tools from statistical learning theory to derive theoretical bounds that scaled better with the input dimension and the number of classes with respect to other existing bounds. The paper was published in AISTATS 2020.',
     image: 'https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80',
+    content_component: BoundsPaperContent,
   },
   {
     title: 'Research Paper: Adversarial Examples in Neural Networks',
     description: 'The goal was to publish a journal about new algorithms to generate "adversarial examples". I designed a mathematical framework that allowed me to derive new algorithms suited for different computer vision tasks. These algorithms outperformed their counterparts in the task of fooling neural networks. The paper was published in the renowned journal "IEEE Transactions on Signal Processing".',
     image: 'https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80',
+    content_component: AdversarialPaperContent,
   },
 ]
+
+const isOpen = ref({})
+
+onMounted(() => {
+  content.forEach((item) => {
+    isOpen.value[item.title] = false
+  })
+})
 </script>
 <template>
   <div class="flex items-center justify-center">
@@ -54,11 +67,11 @@ const content = [
             <div>
               <p>{{ item.description }}</p>
               <div class="inline-block py-8 font-medium">
-                <glowing-button label="View" class_text="text-lg px-8 py-2" @click="isOpen=true" />
+                <glowing-button label="View" class_text="text-lg px-8 py-2" @click="isOpen[item.title]=true" />
                 <teleport to="body">
-                  <div v-if="isOpen" class="modal">
-                    <app-modal @close-modal="isOpen=false">
-                      <DatarayItem />
+                  <div v-if="isOpen[item.title]">
+                    <app-modal @close-modal="isOpen[item.title]=false">
+                      <component :is="item.content_component" />
                       <div class="max-w-xl">
                         <glowing-button label="Contact" class_text="text-lg px-8 py-2" @click="router.push('/contact')" />
                       </div>
@@ -73,14 +86,3 @@ const content = [
     </div>
   </div>
 </template>
-
-<style scoped>
-.modal {
-  position: absolute;
-  z-index: 999;
-  top: 20%;
-  left: 30%;
-  /* width: 300px; */
-  /* margin-left: -150px; */
-}
-</style>
