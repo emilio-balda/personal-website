@@ -72,7 +72,7 @@ onMounted(() => {
                   <div v-if="isOpen[item.title]">
                     <app-modal @close-modal="isOpen[item.title]=false">
                       <component :is="item.content_component" />
-                      <div class="max-w-xl">
+                      <div class="max-w-xl py-4">
                         <glowing-button label="Contact" class_text="text-lg px-8 py-2" @click="router.push('/contact')" />
                       </div>
                     </app-modal>
