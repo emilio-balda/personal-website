@@ -33,7 +33,9 @@ const router = useRouter()
         <p class="text-2xl text-justify py-10">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non magna id risus rutrum pulvinar quis in libero.
         </p>
-        <glowing-button label="Contact" class_text="text-lg px-8 py-2" @click="router.push('/contact')" />
+        <div class="inline-block py-2 px-7 font-medium">
+          <glowing-button label="Contact" class_text="text-lg px-8 py-2" @click="router.push('/contact')" />
+        </div>
       </td>
     </tr>
   </table-responsive>
