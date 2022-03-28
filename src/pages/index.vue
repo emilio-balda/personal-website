@@ -7,9 +7,11 @@ const router = useRouter()
 </script>
 
 <template>
-  <h1 class="text-8xl italic py-10 px-10">
-    Some awesome quote
-  </h1>
+  <div class="py-8">
+    <h1 class="typewriter text-8xl italic py-3">
+      Access the Value in your Data
+    </h1>
+  </div>
   <table-responsive>
     <tr>
       <td class="px-4">
@@ -31,7 +33,9 @@ const router = useRouter()
       </td>
       <td class="px-16">
         <p class="text-2xl text-justify py-10">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non magna id risus rutrum pulvinar quis in libero.
+          I learned how to keep up with the latest advances in AI during my Ph.D. studies.
+
+          Now, I'm a co-founding member of aiXbrain GmbH to turn these technologies into real software products.
         </p>
         <div class="inline-block py-2 px-7 font-medium">
           <glowing-button label="Contact" class_text="text-lg px-8 py-2" @click="router.push('/contact')" />
@@ -40,3 +44,33 @@ const router = useRouter()
     </tr>
   </table-responsive>
 </template>
+
+<style scoped>
+.typewriter {
+  border-right: solid 4px mediumspringgreen;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 64px;
+  margin: 0 auto;
+}
+
+/* Animation */
+.typewriter {
+  animation: animated-text 3s steps(28,end) 1s 1 normal both,
+             animated-cursor 600ms steps(28,end) infinite;
+}
+
+/* text animation */
+
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 950px;}
+}
+
+/* cursor animations */
+
+@keyframes animated-cursor{
+  from{border-right-color: mediumspringgreen;}
+  to{border-right-color: transparent;}
+}
+</style>
