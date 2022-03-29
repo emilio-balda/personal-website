@@ -32,7 +32,7 @@ const router = useRouter()
                           hover:text-primary
                           "
               >
-                Interactive Frontend for your Backend
+                Tap into your Backend with an Interactive Frontend
               </a>
             </h3>
             <p class="text-base text-body-color leading-relaxed mb-7">
