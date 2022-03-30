@@ -7,6 +7,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "preview-https": "serve dist",
+    "serve": "vite serve",
     "test": "vitest",
     "test:e2e": "cypress open",
     "test:unit": "vitest",
