@@ -1,5 +1,6 @@
 
 <script setup lang="ts">
+import type { Ref } from 'vue'
 import { ref } from 'vue'
 import FlipCard from '~/components/FlipCard.vue'
 import GlowingButton from '~/components/GlowingButton.vue'
@@ -10,7 +11,14 @@ import ServerlessWebsiteContent from '~/components/content/PortfolioBoundsPaper.
 import AppModal from '~/components/AppModal.vue'
 const router = useRouter()
 
-const content = [
+interface ContentItem {
+  title: string
+  description: string
+  image: string
+  content_component: any
+}
+
+const content: Array<ContentItem> = [
   {
     title: 'Dataray Web App',
     description: 'Together with a team of 3 developers, we built a data science SaaS product called Dataray. The backend is built in Python, using FastAPI and DJango. The frontend is built in TypeScript, using Vue 3 and Tailwindcss. It is hosted in Google Cloud using Kubernetes and Helm. Tests are written with pytest and integration tests are implemented with GitLab CI.',
@@ -37,10 +45,10 @@ const content = [
   },
 ]
 
-const isOpen = ref({})
+const isOpen: Ref<Record<string, boolean>> = ref({})
 
 onMounted(() => {
-  content.forEach((item) => {
+  content.forEach((item: ContentItem) => {
     isOpen.value[item.title] = false
   })
 })

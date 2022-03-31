@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { userRouter } from 'vue-router'
 import TableResponsive from '~/components/TableResponsive.vue'
 import GlowingButton from '~/components/GlowingButton.vue'
 

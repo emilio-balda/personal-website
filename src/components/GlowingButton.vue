@@ -9,15 +9,15 @@ const props = defineProps({
 </script>
 
 <template>
-  <button class="bn5" role="button">
+  <button class="bnglow" role="button">
     <span class="text" :class="props.class_text">{{ props.label }}</span>
   </button>
 </template>
 
 <style scoped>
 /* CSS */
-.bn5:active,
-.bn5 span {
+.bnglow:active,
+.bnglow span {
   background-color: rgb(5, 6, 45);
   border-radius: 6px;
   width: 100%;
@@ -25,7 +25,7 @@ const props = defineProps({
   transition: 300ms;
 }
 
-.bn5 {
+.bnglow {
   background-image: linear-gradient(145deg, darkorchid, royalblue, mediumspringgreen);
   border: 0;
   border-radius: 8px;
@@ -46,11 +46,11 @@ const props = defineProps({
   position: relative;
 }
 
-.bn5:hover {
+.bnglow:hover {
   z-index: 0;
 }
 
-.bn5:hover:before {
+.bnglow:hover:before {
   content: "";
   background: linear-gradient(
     145deg,
@@ -66,13 +66,13 @@ const props = defineProps({
   filter: blur(5px);
   width: calc(100% + 4px);
   height: calc(100% + 4px);
-  animation: glowingbn5 20s linear infinite;
+  animation: glowingbnglow 20s linear infinite;
   opacity: 1;
   transition: opacity 5s ease-in-out;
   border-radius: 10px;
 }
 
-@keyframes glowingbn5 {
+@keyframes glowingbnglow {
   0% {
     background-position: 0 0;
   }
@@ -83,7 +83,7 @@ const props = defineProps({
     background-position: 0 0;
   }
 }
-.bn5:after {
+.bnglow:after {
   z-index: -1;
   content: "";
   position: absolute;
