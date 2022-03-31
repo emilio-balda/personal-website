@@ -8,7 +8,7 @@ const router = useRouter()
 <template>
   <div class="py-8">
     <h1 class="typewriter text-8xl italic py-3">
-      Access the Value in your Data
+      Transparent Data Science for...
     </h1>
   </div>
   <table-responsive>
@@ -21,7 +21,7 @@ const router = useRouter()
           Emilio Balda
         </h4>
         <p class="text-3xl text-left whitespace-nowrap">
-          Fullstack Developer
+          Backend Developer
         </p>
         <p class="text-3xl text-left whitespace-nowrap">
           PhD in Machine Learning
@@ -32,7 +32,7 @@ const router = useRouter()
       </td>
       <td class="px-16">
         <p class="text-2xl text-justify py-10">
-          I learned how to keep up with the latest advances in AI during my Ph.D. studies.
+          I learned how to keep up with the latest advances in AI during Ph.D. studies.
 
           Now, I'm a co-founding member of aiXbrain GmbH to turn these technologies into real software products.
         </p>

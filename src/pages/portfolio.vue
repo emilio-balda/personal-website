@@ -26,8 +26,8 @@ const content: Array<ContentItem> = [
     content_component: DatarayContent,
   },
   {
-    title: 'Serverless Website',
-    description: 'This website is written 100% in TypeScript using Vue 3 and Tailwind CSS. The code is linted with ESLint. Unit tests are written with Jest, while Cypress handles integration tests. It is hosted in a serverless architecture using AWS Lambda functions.',
+    title: 'This Website',
+    description: 'This website is written 100% in TypeScript using Vue 3 and Tailwind CSS. The code is linted with ESLint. Unit tests are written with Jest, while Cypress handles integration tests.',
     image: 'https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80',
     content_component: ServerlessWebsiteContent,
   },
