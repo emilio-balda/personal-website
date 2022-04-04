@@ -89,7 +89,7 @@ const props = defineProps({
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #191919;
+  background: rgb(5, 6, 45);
   left: 0;
   top: 0;
   border-radius: 10px;
