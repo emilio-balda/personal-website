@@ -4,10 +4,10 @@ import type { Ref } from 'vue'
 import { ref } from 'vue'
 import FlipCard from '~/components/FlipCard.vue'
 import GlowingButton from '~/components/GlowingButton.vue'
-import DatarayContent from '~/components/content/PortfolioBoundsPaper.vue'
+import DatarayContent from '~/components/content/PortfolioDataray.vue'
 import BoundsPaperContent from '~/components/content/PortfolioBoundsPaper.vue'
-import AdversarialPaperContent from '~/components/content/PortfolioBoundsPaper.vue'
-import ServerlessWebsiteContent from '~/components/content/PortfolioBoundsPaper.vue'
+import AdversarialPaperContent from '~/components/content/PortfolioAdversarialPaper.vue'
+import PersonalWebsiteContent from '~/components/content/PortfolioPersonalWebsite.vue'
 import AppModal from '~/components/AppModal.vue'
 const router = useRouter()
 
@@ -20,26 +20,26 @@ interface ContentItem {
 
 const content: Array<ContentItem> = [
   {
-    title: 'Dataray Web App',
-    description: 'Together with a team of 3 developers, we built a data science SaaS product called Dataray. The backend is built in Python, using FastAPI and DJango. The frontend is built in TypeScript, using Vue 3 and Tailwindcss. It is hosted in Google Cloud using Kubernetes and Helm. Tests are written with pytest and integration tests are implemented with GitLab CI.',
+    title: 'Dataray: A Machine Learning SaaS',
+    description: 'Dataray is a Software-as-a-Service (SaaS) product that brings artificial intelligence to industrial applications. It is compatible with many database technologies.',
     image: 'https://images.pexels.com/photos/2832382/pexels-photo-2832382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     content_component: DatarayContent,
   },
   {
     title: 'This Website',
-    description: 'This website is written 100% in TypeScript using Vue 3 and Tailwind CSS. The code is linted with ESLint. Unit tests are written with Jest, while Cypress handles integration tests.',
+    description: 'I built this website using Vue JS. You can take a look at the source code in GitHub. Links and tech stack in the detailed view.',
     image: 'https://images.pexels.com/photos/3374210/pexels-photo-3374210.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    content_component: ServerlessWebsiteContent,
+    content_component: PersonalWebsiteContent,
   },
   {
     title: 'Research Paper: Theoretical Result for Neural Networks',
-    description: 'The goal was to publish a theoretical paper about the generalization capabilities of deep neural networks under the presence of a malicious attacker modifying the inputs of the network. I used tools from statistical learning theory to derive theoretical bounds that scaled better with the input dimension and the number of classes with respect to other existing bounds. The paper was published in AISTATS 2020.',
+    description: 'I was the first author of a paper in the field of statistical learning theory and deep neural networks.',
     content_component: BoundsPaperContent,
     image: 'https://images.pexels.com/photos/4021521/pexels-photo-4021521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
   },
   {
     title: 'Research Paper: Adversarial Examples in Neural Networks',
-    description: 'The goal was to publish a journal about new algorithms to generate "adversarial examples". I designed a mathematical framework that allowed me to derive new algorithms suited for different computer vision tasks. These algorithms outperformed their counterparts in the task of fooling neural networks. The paper was published in the renowned journal "IEEE Transactions on Signal Processing".',
+    description: 'I was the first author of a paper in the field of computer vision and deep neural networks.',
     image: 'https://images.pexels.com/photos/3308588/pexels-photo-3308588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     content_component: AdversarialPaperContent,
   },
@@ -75,9 +75,11 @@ onMounted(() => {
         <template #back>
           <div class="flex items-center justify-center w-80 h-[35rem] pt-8 px-4 bg-white text-xl text-gray-400 drop-shadow-xl">
             <div>
-              <p>{{ item.description }}</p>
+              <p class="text-gray-600 px-2">
+                {{ item.description }}
+              </p>
               <div class="inline-block py-8 font-medium">
-                <glowing-button label="View" class_text="text-lg px-8 py-2" @click="isOpen[item.title]=true" />
+                <glowing-button label="View Details" class_text="text-lg px-4 py-2" @click="isOpen[item.title]=true" />
                 <teleport to="body">
                   <div v-if="isOpen[item.title]">
                     <app-modal @close-modal="isOpen[item.title]=false">
