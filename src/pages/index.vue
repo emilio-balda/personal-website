@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import TableResponsive from '~/components/TableResponsive.vue'
 import GlowingButton from '~/components/GlowingButton.vue'
+const contactInfo = [
+  { icon: 'i-carbon-email bg-green-500', href: 'mailto:me@emilio-balda.com', text: 'me@emilio-balda.com' },
+  { icon: 'i-carbon-logo-linkedin bg-[royalblue]', href: 'https://www.linkedin.com/in/emiliobalda/', text: 'emiliobalda' },
+  { icon: 'i-carbon-logo-github bg-black', href: 'https://github.com/emilio-balda', text: 'emilio-balda' },
+]
 
 const router = useRouter()
 </script>
@@ -20,14 +25,16 @@ const router = useRouter()
         <h4 class="text-3xl text-left font-bold whitespace-nowrap">
           Emilio Balda
         </h4>
-        <p class="text-3xl text-left whitespace-nowrap">
+        <p class="text-2xl text-left whitespace-nowrap">
           Backend Developer
         </p>
-        <p class="text-3xl text-left whitespace-nowrap">
+        <p class="text-2xl text-left whitespace-nowrap">
           PhD in Machine Learning
         </p>
-        <p class="text-3xl text-left whitespace-nowrap">
-          <a href="mailto:me@emilio-balda.com">me@emilio-balda.com</a>
+        <p class="text-2xl text-left whitespace-nowrap">
+          <a v-for="content in contactInfo" :key="content.href" class="inline-block px-1 pt-4" :href="content.href">
+            <div :class="content.icon" />
+          </a>
         </p>
       </td>
       <td class="px-16">
