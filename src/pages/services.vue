@@ -35,7 +35,7 @@ const router = useRouter()
               </a>
             </h3>
             <p class="text-base text-body-color leading-relaxed mb-7">
-              Lets add an professionally looking dashboard to interact with your existing backend services. The dashboard will be tailored to your needs, responsive, interactive and accessible through any browser.
+              Lets add a professionally looking dashboard to interact with your existing backend services. The dashboard will be tailored to your needs, responsive, interactive and accessible through any browser.
             </p>
             <div class="inline-block py-2 px-7 font-medium">
               <glowing-button label="Contact" class_text="text-lg px-8 py-2" @click="router.push('/contact')" />

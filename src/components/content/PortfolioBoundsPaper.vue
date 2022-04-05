@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import GlowgingHyperLink from '~/components/GlowgingHyperLink.vue'
 </script>
 <template>
   <div>
@@ -16,7 +17,7 @@
     <p>
       I used tools from statistical learning theory to derive theoretical bounds that scaled better with the input dimension and the number of classes with respect to other existing bounds.
       The paper was published in AISTATS 2020.
-      See the full paper <a href="https: proceedings.mlr.press/v108/balda20a" class="text-emerald-400">here</a>.
+      See the full paper <glowing-hyper-link href="https://proceedings.mlr.press/v108/balda20a" class="text-emerald-500" text="here" />.
     </p>
 
     <h1 class="font-bold text-2xl py-4">

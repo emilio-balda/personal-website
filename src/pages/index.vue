@@ -26,7 +26,7 @@ const router = useRouter()
           Emilio Balda
         </h4>
         <p class="text-2xl text-left whitespace-nowrap">
-          Backend Developer
+          Full Stack Developer
         </p>
         <p class="text-2xl text-left whitespace-nowrap">
           PhD in Machine Learning

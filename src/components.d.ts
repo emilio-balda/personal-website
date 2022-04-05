@@ -9,6 +9,7 @@ declare module 'vue' {
     FlipCard: typeof import('./components/FlipCard.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     GlowingButton: typeof import('./components/GlowingButton.vue')['default']
+    GlowingHyperLink: typeof import('./components/GlowingHyperLink.vue')['default']
     NavigationBar: typeof import('./components/NavigationBar.vue')['default']
     NavigationLink: typeof import('./components/NavigationLink.vue')['default']
     PortfolioAdversarialPaper: typeof import('./components/content/PortfolioAdversarialPaper.vue')['default']
