@@ -6,6 +6,7 @@ import NavigationLink from '~/components/NavigationLink.vue'
   <div id="nav" class="py-12 w-fit mx-auto">
     <p class="text-3xl">
       <navigation-link to="/" page-name="Home" />
+      <!-- <navigation-link to="/about" page-name="About" /> -->
       <navigation-link to="/services" page-name="Services" />
       <navigation-link to="/portfolio" page-name="Portfolio" />
       <navigation-link to="/contact" page-name="Contact" />

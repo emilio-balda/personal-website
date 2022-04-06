@@ -9,7 +9,12 @@ const contactInfo = [
 </script>
 
 <template>
-  <div class="flex items-center justify-center">
+  <div class="flex flex-col items-center justify-center">
+    <div>
+      <h1 class="text-2xl pb-4 font-bold">
+        Let's Connect!
+      </h1>
+    </div>
     <div class="w-80 bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl hover:scale-105 duration-500 transform transition cursor-pointer">
       <div class="py-2 px-2">
         <table-responsive>
