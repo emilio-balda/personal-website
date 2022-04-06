@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import GlowgingHyperLink from '~/components/GlowgingHyperLink.vue'
 
 const stack = [
   {
