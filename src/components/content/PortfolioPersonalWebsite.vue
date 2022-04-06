@@ -31,15 +31,16 @@ const stack = [
     <p>
       This website is built using the Vitesse template from Anthony Fu. I open sourced the code in <glowing-hyper-link href="https://github.com/emilio-balda/personal-website" text="this repository" />.
     </p>
-    <p>
-      Main Features:
-      <ul class="list-disc list-inside">
-        <li>Mobile Phone friendly</li>
-        <li>Light/Dark Mode</li>
-        <li>Tested with unit and end-to-end tests</li>
-        <li>Managed with Continious Integration and Deployment (CI/CD)</li>
-      </ul>
-    </p>
+    <h1 class="font-bold text-2xl py-4">
+      Features
+    </h1>
+
+    <ul class="list-disc list-inside">
+      <li>Supports Mobile Users</li>
+      <li>Light/Dark Mode</li>
+      <li>Tested with unit and end-to-end tests</li>
+      <li>Managed with Continious Integration and Deployment (CI/CD)</li>
+    </ul>
     <h1 class="font-bold text-2xl py-4">
       Tech Stack
     </h1>
