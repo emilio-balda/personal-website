@@ -102,7 +102,7 @@ onMounted(() => {
         class="flex flex-col h-[35rem] w-full items-center justify-center bg-white text-xl text-gray-400 drop-shadow-xl shadow-xl rounded-lg overflow-hidden hover:shadow-xl hover:scale-105 duration-500 transform transition cursor-pointer"
       >
         <div
-          class="flex items-center justify-center w-full h-5/12 rounded-lg bg-cover bg-center"
+          class="flex items-center justify-center w-full h-5/12 bg-cover bg-center"
           :style="`background-image: url('${item.image}')`"
         >
           <div class="flex items-center justify-center h-fit w-full px-2 bg-black-900/50">
