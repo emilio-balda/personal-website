@@ -18,6 +18,6 @@ const props = defineProps(
 
 <style scoped>
 .glowing-text:hover {
-  filter: drop-shadow(0 0 4px mediumspringgreen);
+  filter: drop-shadow(0 0 4px rgb(52 211 153));
  }
 </style>

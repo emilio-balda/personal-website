@@ -1,15 +1,20 @@
 <script setup lang="ts">
 import NavigationLink from '~/components/NavigationLink.vue'
+
+interface navBarItem {
+  route: String
+  page_name: String
+}
+
+const props = defineProps({
+  navBarItems: [],
+})
 </script>
 
 <template>
-  <div id="nav" class="py-12 w-fit mx-auto">
-    <p class="text-3xl">
-      <navigation-link to="/" page-name="Home" />
-      <!-- <navigation-link to="/about" page-name="About" /> -->
-      <navigation-link to="/services" page-name="Services" />
-      <navigation-link to="/portfolio" page-name="Portfolio" />
-      <navigation-link to="/contact" page-name="Contact" />
-    </p>
+  <div id="nav" class="flex w-full items-center justify-center">
+    <div class="text-3xl">
+      <navigation-link v-for="item in props.navBarItems" :key="item.route" :to="item.route" :page-name="item.page_name" />
+    </div>
   </div>
 </template>

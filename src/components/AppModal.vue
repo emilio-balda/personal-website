@@ -39,6 +39,6 @@ function closeModal() {
 }
 
 .gradient-bg-image {
-  background-image: linear-gradient(to right, rgba(0,0,0,0), darkorchid, royalblue, mediumspringgreen, rgba(0,0,0,0));
+  background-image: linear-gradient(to right, rgba(0,0,0,0), darkorchid, royalblue, rgb(52 211 153), rgba(0,0,0,0));
 }
 </style>

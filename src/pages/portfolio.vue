@@ -20,27 +20,27 @@ interface Tag {
 const alias_to_tag: Record<string, Tag> = {
   ml: {
     title: 'machine learning',
-    color: 'bg-green-500',
+    color: 'bg-emerald-600',
     is_selected: false,
   },
   frontend: {
     title: 'frontend',
-    color: 'bg-red',
+    color: 'bg-[darkorchid]',
     is_selected: false,
   },
   backend: {
     title: 'backend',
-    color: 'bg-blue',
+    color: 'bg-[royalblue]',
     is_selected: false,
   },
   vision: {
     title: 'computer vision',
-    color: 'bg-orange',
+    color: 'bg-orange-500',
     is_selected: false,
   },
   research: {
     title: 'research',
-    color: 'bg-gray',
+    color: 'bg-gray-500',
     is_selected: false,
   },
 }
@@ -106,7 +106,7 @@ onMounted(() => {
           :style="`background-image: url('${item.image}')`"
         >
           <div class="flex items-center justify-center h-fit w-full px-2 bg-black-900/50">
-            <h1 class="text-2xl text-white font-bold">
+            <h1 class="text-2xl text-white font-semibold">
               {{ item.title }}
             </h1>
           </div>
@@ -120,21 +120,23 @@ onMounted(() => {
             >
               {{ alias_to_tag[alias].title }}
             </div>
-            <p class="text-gray-600 px-2 pt-2">
+            <p class="text-base text-dark leading-relaxed px-2 pt-2">
               {{ item.description }}
             </p>
           </div>
           <div class="pb-4">
             <glowing-button label="Expand and See all Details" class_text="text-lg px-4 py-2" @click="isOpen[item.title]=true" />
             <teleport to="body">
-              <div v-if="isOpen[item.title]">
-                <app-modal @close-modal="isOpen[item.title]=false">
-                  <component :is="item.content_component" />
-                  <div class="max-w-xl py-4">
-                    <glowing-button label="Contact" class_text="text-lg px-8 py-2" @click="router.push('/contact')" />
-                  </div>
-                </app-modal>
-              </div>
+              <transition>
+                <div v-if="isOpen[item.title]">
+                  <app-modal @close-modal="isOpen[item.title]=false">
+                    <component :is="item.content_component" />
+                    <div class="max-w-xl py-4">
+                      <glowing-button label="Contact" class_text="text-lg px-8 py-2" @click="router.push('/contact')" />
+                    </div>
+                  </app-modal>
+                </div>
+              </transition>
             </teleport>
           </div>
         </div>
@@ -185,3 +187,16 @@ onMounted(() => {
     </div>
   </div> -->
 </template>
+
+<style scoped>
+/* we will explain what these classes do next! */
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>

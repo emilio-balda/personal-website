@@ -23,7 +23,7 @@ const props = defineProps({
 }
 
 .router-link-selected {
-  border-bottom: 8px solid mediumspringgreen;
-  border-image: linear-gradient(to right, rgba(255, 255, 255, 0), darkorchid, royalblue, mediumspringgreen, rgba(255, 255, 255, 0)) 1;
+  border-bottom: 8px solid rgb(52 211 153);
+  border-image: linear-gradient(to right, rgba(255, 255, 255, 0), darkorchid, royalblue, rgb(52 211 153), rgba(255, 255, 255, 0)) 1;
 }
 </style>

@@ -26,7 +26,7 @@ const props = defineProps({
 }
 
 .bnglow {
-  background-image: linear-gradient(145deg, darkorchid, royalblue, mediumspringgreen);
+  background-image: linear-gradient(145deg, darkorchid, royalblue, rgb(52 211 153));
   border: 0;
   border-radius: 8px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
@@ -54,9 +54,9 @@ const props = defineProps({
   content: "";
   background: linear-gradient(
     145deg,
-    darkorchid, royalblue, mediumspringgreen,
-    darkorchid, royalblue, mediumspringgreen,
-    darkorchid, royalblue, mediumspringgreen
+    darkorchid, royalblue, rgb(52 211 153),
+    darkorchid, royalblue, rgb(52 211 153),
+    darkorchid, royalblue, rgb(52 211 153)
   );
   position: absolute;
   top: -2px;

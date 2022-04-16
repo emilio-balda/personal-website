@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import TableResponsive from '~/components/TableResponsive.vue'
+// import { useContactStore } from '~/stores/contact'
+
+// const contact = useContactStore()
+
 const contactInfo = [
   { icon: 'i-carbon-email bg-green-500', href: 'mailto:me@emilio-balda.com', text: 'me@emilio-balda.com' },
   { icon: 'i-carbon-logo-linkedin bg-[royalblue]', href: 'https://www.linkedin.com/in/emiliobalda/', text: 'emiliobalda' },
@@ -20,7 +24,7 @@ const contactInfo = [
         <table-responsive>
           <tr v-for="content in contactInfo" :key="content.href" class="py-12 px-12">
             <td class="px-4">
-              <a :href="content.href"><div :class="`${content.icon}`" /></a>
+              <a :href="content.href"><div class="" :class="content.icon" /></a>
             </td>
             <td class="pl-2">
               <p class="text-xl text-left whitespace-nowrap">
