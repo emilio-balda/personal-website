@@ -22,12 +22,12 @@ for (let i = 0; i < numNavBarItems; i++) {
 </script>
 
 <template>
-  <div class="sticky top-0 z-50 flex w-full pb-2 bg-white/95 h-[5em]">
+  <div class="sticky top-0 z-40 flex w-full pb-2 bg-white/95 h-[5em]">
     <NavigationBar :nav-bar-items="navBarItems" />
   </div>
   <main class="px-4 py-4 text-center text-gray-700 dark:text-gray-200">
     <div class="flex items-start justify-between">
-      <div class="flex flex-col items-center justify-center h-[calc(75vh)] px-4">
+      <div class="sticky top-0 z-40 flex flex-col items-center justify-center h-[calc(75vh)] place-self-start shrink-0 w-16">
         <router-link :to="itemToNextRoutes[useRoute().path].left_route">
           <div class="i-carbon-chevron-left text-bold text-6xl text-emerald-400" />
         </router-link>
@@ -35,7 +35,7 @@ for (let i = 0; i < numNavBarItems; i++) {
       <div>
         <router-view />
       </div>
-      <div class="flex flex-col items-center justify-center h-[calc(75vh)] px-4">
+      <div class="sticky top-0 z-40 flex flex-col items-center justify-center h-[calc(75vh)] place-self-start shrink-0 w-16">
         <router-link :to="itemToNextRoutes[useRoute().path].right_route">
           <div class="i-carbon-chevron-right text-bold text-6xl text-emerald-400" />
         </router-link>
