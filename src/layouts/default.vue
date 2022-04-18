@@ -33,7 +33,11 @@ for (let i = 0; i < numNavBarItems; i++) {
         </router-link>
       </div>
       <div>
-        <router-view />
+        <router-view v-slot="{ Component }">
+          <transition>
+            <component :is="Component" />
+          </transition>
+        </router-view>
       </div>
       <div class="sticky top-0 z-40 flex flex-col items-center justify-center h-[calc(75vh)] place-self-start shrink-0 w-16">
         <router-link :to="itemToNextRoutes[useRoute().path].right_route">
@@ -55,5 +59,16 @@ for (let i = 0; i < numNavBarItems; i++) {
 .no-scrollbar {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+}
+
+/* transition between routes */
+.v-enter-active
+ {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>
