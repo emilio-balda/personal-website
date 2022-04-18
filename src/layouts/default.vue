@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import NavigationBar from '~/components/NavigationBar.vue'
-
-const router = useRouter()
 
 const navBarItems = [
   { route: '/', page_name: 'Home' },
@@ -11,17 +9,16 @@ const navBarItems = [
   { route: '/about', page_name: 'About' },
   { route: '/contact', page_name: 'Contact' },
 ]
-// const numNavBarItems = navBarItems.length
-// const currentNavBarPosition = ref(0) // 0 -> First element of navBarItems (i.e. Home)
 
-// const goToNextRoute = (increment: number) => {
-//   currentNavBarPosition.value += increment
-//   currentNavBarPosition.value = Math.min(currentNavBarPosition.value, numNavBarItems - 1)
-//   currentNavBarPosition.value = Math.max(currentNavBarPosition.value, 0)
+const itemToNextRoutes = {}
 
-//   router.push(navBarItems[(currentNavBarPosition.value % numNavBarItems + numNavBarItems) % numNavBarItems].route)
-// }
-
+const numNavBarItems = navBarItems.length
+for (let i = 0; i < numNavBarItems; i++) {
+  itemToNextRoutes[navBarItems[i].route] = {
+    left_route: navBarItems[((i - 1) % numNavBarItems + numNavBarItems) % numNavBarItems].route,
+    right_route: navBarItems[((i + 1) % numNavBarItems + numNavBarItems) % numNavBarItems].route,
+  }
+}
 </script>
 
 <template>
@@ -31,13 +28,17 @@ const navBarItems = [
   <main class="px-4 py-4 text-center text-gray-700 dark:text-gray-200">
     <div class="flex items-start justify-between">
       <div class="flex flex-col items-center justify-center h-[calc(75vh)] px-4">
-        <div v-show="currentNavBarPosition!=0" class="i-carbon-chevron-left text-bold text-6xl text-emerald-400" />
+        <router-link :to="itemToNextRoutes[useRoute().path].left_route">
+          <div class="i-carbon-chevron-left text-bold text-6xl text-emerald-400" />
+        </router-link>
       </div>
       <div>
         <router-view />
       </div>
       <div class="flex flex-col items-center justify-center h-[calc(75vh)] px-4">
-        <div class="i-carbon-chevron-right text-bold text-6xl text-emerald-400" />
+        <router-link :to="itemToNextRoutes[useRoute().path].right_route">
+          <div class="i-carbon-chevron-right text-bold text-6xl text-emerald-400" />
+        </router-link>
       </div>
     </div>
     <!-- <Footer class="py-8" /> -->
