@@ -16,7 +16,7 @@ const degrees = [
         {{ degree.institution }}
       </p>
       <p class="italic">
-        {{ degree.started_at }} - {{ degree.started_at }}
+        {{ degree.started_at }} - {{ degree.ended_at }}
       </p>
     </div>
   </div>

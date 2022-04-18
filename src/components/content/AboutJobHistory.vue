@@ -15,7 +15,7 @@ const jobs = [
       </p>
       <p>{{ job.company }}</p>
       <p class="italic">
-        {{ job.started_at }} - {{ job.started_at }}
+        {{ job.started_at }} - {{ job.ended_at }}
       </p>
       <p>{{ job.description }}</p>
     </div>
