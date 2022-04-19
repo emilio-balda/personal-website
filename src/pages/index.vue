@@ -16,9 +16,9 @@ const router = useRouter()
 
 <template>
   <div class="flex flex-col w-full px-20 items-center justify-center">
-    <div class="py-8">
-      <h1 class="typewriter text-8xl italic py-3">
-        Be heard. No surprises. Just quality.
+    <div class="py-8 w-[1250px]">
+      <h1 class="typewriter text-6xl italic py-3">
+        Transparent Development. Quality Software.
       </h1>
     </div>
     <div class="flex flex-row w-full items-center justify-center">
@@ -44,11 +44,11 @@ const router = useRouter()
         </div>
       </div>
       <div class="px-16">
-        <p class="text-2xl text-dark text-justify py-10">
-          [Detailed explanation of the big phrase above]
+        <p class="text-dark leading-relaxed text-2xl text-center py-10">
+          I care about communication. That's why I'm interested to know all the details that make your project unique. Before starting a project, you will have a clear picture of how the end result looks like. You will get regular updates about the progress and software adhering to the best practices in the industry.
         </p>
         <div class="inline-block py-2 px-7 font-medium">
-          <glowing-button label="Contact" class_text="text-lg px-8 py-2" @click="router.push('/contact')" />
+          <glowing-button label="Let's Start" class_text="text-lg px-8 py-2" @click="router.push('/services')" />
         </div>
       </div>
     </div>
@@ -60,7 +60,6 @@ const router = useRouter()
   border-right: solid 4px rgb(52 211 153);
   white-space: nowrap;
   overflow: hidden;
-  font-size: 64px;
   margin: 0 auto;
 }
 
@@ -74,7 +73,7 @@ const router = useRouter()
 
 @keyframes animated-text{
   from{width: 0;}
-  to{width: 1100px;}
+  to{width: 1250px;}
 }
 
 /* cursor animations */

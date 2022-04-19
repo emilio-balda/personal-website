@@ -120,19 +120,19 @@ onMounted(() => {
             >
               {{ alias_to_tag[alias].title }}
             </div>
-            <p class="text-base text-dark leading-relaxed px-2 pt-2">
+            <p class="text-base text-body-color text-dark leading-relaxed font-light px-2 pt-2">
               {{ item.description }}
             </p>
           </div>
           <div class="pb-4">
-            <glowing-button label="Expand and See all Details" class_text="text-lg px-4 py-2" @click="isOpen[item.title]=true" />
+            <glowing-button label="Know More" class_text="text-lg px-4 py-2" @click="isOpen[item.title]=true" />
             <teleport to="body">
               <transition>
                 <div v-if="isOpen[item.title]">
                   <app-modal @close-modal="isOpen[item.title]=false">
                     <component :is="item.content_component" />
                     <div class="max-w-xl py-4">
-                      <glowing-button label="Contact" class_text="text-lg px-8 py-2" @click="router.push('/contact')" />
+                      <glowing-button label="Book a Free Discovery Call" class_text="text-lg px-8 py-2" @click="router.push('/contact')" />
                     </div>
                   </app-modal>
                 </div>
@@ -143,49 +143,6 @@ onMounted(() => {
       </div>
     </div>
   </div>
-  <!-- <div class="flex flex-col items-center justify-center"></div>
-    <div class="flex flex-row w-full items-center justify-between px-10">
-      <flip-card
-        v-for="item in content"
-        :key="item.title" class="w-80 h-[35rem] drop-shadow-xl"
-      >
-        <template #front>
-          <div
-            class="flex items-center justify-center w-80 h-[30rem] rounded-lg drop-shadow-xl bg-cover bg-center"
-            :style="`background-image: url('${item.image}')`"
-          >
-            <div class="flex items-center justify-center h-[110px] w-full px-2 bg-black-900/50">
-              <h1 class="text-2xl text-white font-bold">
-                {{ item.title }}
-              </h1>
-            </div>
-          </div>
-        </template>
-        <template #back>
-          <div class="flex items-center justify-center w-80 h-[30rem] pt-8 px-4 bg-white text-xl text-gray-400 drop-shadow-xl">
-            <div>
-              <p class="text-gray-600 px-2">
-                {{ item.description }}
-              </p>
-              <div class="inline-block py-8 font-medium">
-                <glowing-button label="View Details" class_text="text-lg px-4 py-2" @click="isOpen[item.title]=true" />
-                <teleport to="body">
-                  <div v-if="isOpen[item.title]">
-                    <app-modal @close-modal="isOpen[item.title]=false">
-                      <component :is="item.content_component" />
-                      <div class="max-w-xl py-4">
-                        <glowing-button label="Contact" class_text="text-lg px-8 py-2" @click="router.push('/contact')" />
-                      </div>
-                    </app-modal>
-                  </div>
-                </teleport>
-              </div>
-            </div>
-          </div>
-        </template>
-      </flip-card>
-    </div>
-  </div> -->
 </template>
 
 <style scoped>

@@ -16,7 +16,7 @@ const content: Array<ContentItem> = [
   },
   {
     image: 'https://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80',
-    title: 'Boost your Existing App with AI',
+    title: 'Boost your Existing App with Artificial Intelligence',
     description: 'Want to include artificial intelligence into the mix? Lets get in contact to get that feature into production, all the way from setting up database connections to showing the results in a modern Javascript frontend.',
   },
   {
