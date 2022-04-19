@@ -26,14 +26,14 @@ for (let i = 0; i < numNavBarItems; i++) {
     <NavigationBar :nav-bar-items="navBarItems" />
     <div class="flex items-center justify-center pl-8">
       <div class="pr-1">
-        <div class="bg-emerald-400 rounded-md hover:scale-105">
+        <div class="bg-emerald-500 rounded-md hover:scale-105">
           <router-link :to="itemToNextRoutes[useRoute().path].left_route">
             <div class="i-carbon-chevron-left text-bold text-3xl text-white-400" />
           </router-link>
         </div>
       </div>
       <div>
-        <div class="bg-emerald-400 rounded-md hover:scale-105">
+        <div class="bg-emerald-500 rounded-md hover:scale-105">
           <router-link :to="itemToNextRoutes[useRoute().path].right_route">
             <div class="i-carbon-chevron-right text-bold text-3xl text-white-400" />
           </router-link>
