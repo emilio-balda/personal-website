@@ -10,7 +10,7 @@ const navBarItems = [
   { route: '/contact', page_name: 'Contact' },
 ]
 
-const itemToNextRoutes = {}
+const itemToNextRoutes: Record<string, { left_route: string; right_route: string }> = {}
 
 const numNavBarItems = navBarItems.length
 for (let i = 0; i < numNavBarItems; i++) {

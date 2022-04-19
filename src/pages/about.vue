@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { Component } from 'vue'
 import JobHistory from '~/components/content/AboutJobHistory.vue'
 import Education from '~/components/content/AboutEducation.vue'
 import AuthoredBooks from '~/components/content/AboutAuthoredBooks.vue'
@@ -20,13 +21,14 @@ const skills = [
   { name: 'Machine Learning', level: '90%' },
 ]
 
-const sections = ref([
+interface sectionInterface { title: string; show: boolean; component: Component }
+const sections = ref<Array<sectionInterface>>([
   { title: 'Job History', show: false, component: JobHistory },
   { title: 'Education', show: false, component: Education },
   { title: 'Authored Books', show: false, component: AuthoredBooks },
 ])
 
-const handleToggleSection = (section) => {
+const handleToggleSection = (section: sectionInterface) => {
   section.show = !section.show
 }
 

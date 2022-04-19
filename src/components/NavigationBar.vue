@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import NavigationLink from '~/components/NavigationLink.vue'
 
-// interface navBarItem {
-//   route: String
-//   page_name: String
-// }
+interface navBarItem {
+  route: string
+  page_name: string
+}
 
 const props = defineProps({
-  navBarItems: [],
+  navBarItems: Object as () => Array<navBarItem>,
 })
 </script>
 
