@@ -22,14 +22,30 @@ for (let i = 0; i < numNavBarItems; i++) {
 </script>
 
 <template>
-  <div class="sticky top-0 z-40 flex w-full pb-2 bg-white/95 h-[5em]">
+  <div class="sticky top-0 z-40 flex w-full pb-2 bg-white/95 h-[5em] items-center justify-center">
     <NavigationBar :nav-bar-items="navBarItems" />
+    <div class="flex items-center justify-center pl-8">
+      <div class="pr-1">
+        <div class="bg-emerald-400 rounded-md hover:scale-105">
+          <router-link :to="itemToNextRoutes[useRoute().path].left_route">
+            <div class="i-carbon-chevron-left text-bold text-3xl text-white-400" />
+          </router-link>
+        </div>
+      </div>
+      <div>
+        <div class="bg-emerald-400 rounded-md hover:scale-105">
+          <router-link :to="itemToNextRoutes[useRoute().path].right_route">
+            <div class="i-carbon-chevron-right text-bold text-3xl text-white-400" />
+          </router-link>
+        </div>
+      </div>
+    </div>
   </div>
   <main class="px-4 py-4 text-center text-gray-700 dark:text-gray-200">
     <div class="flex items-start justify-between">
       <div class="sticky top-0 z-40 flex flex-col items-center justify-center h-[calc(75vh)] place-self-start shrink-0 w-16">
         <router-link :to="itemToNextRoutes[useRoute().path].left_route">
-          <div class="i-carbon-chevron-left text-bold text-6xl text-emerald-400" />
+          <div class="i-carbon-chevron-left text-bold text-6xl text-emerald-400 hover:scale-110" />
         </router-link>
       </div>
       <div>
@@ -41,7 +57,7 @@ for (let i = 0; i < numNavBarItems; i++) {
       </div>
       <div class="sticky top-0 z-40 flex flex-col items-center justify-center h-[calc(75vh)] place-self-start shrink-0 w-16">
         <router-link :to="itemToNextRoutes[useRoute().path].right_route">
-          <div class="i-carbon-chevron-right text-bold text-6xl text-emerald-400" />
+          <div class="i-carbon-chevron-right text-bold text-6xl text-emerald-400 hover:scale-110" />
         </router-link>
       </div>
     </div>
