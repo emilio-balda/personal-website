@@ -28,8 +28,14 @@ const sections = ref<Array<sectionInterface>>([
   { title: 'Authored Books', show: false, component: AuthoredBooks },
 ])
 
+const getSectionId = (section: sectionInterface) => { return section.title.replace(' ', '-').toLowerCase() }
+
 const handleToggleSection = (section: sectionInterface) => {
   section.show = !section.show
+}
+
+function onAfterEnter(el: HTMLElement) {
+  document.querySelector(`#${el.id}`)?.scrollIntoView({ behavior: 'smooth' })
 }
 
 </script>
@@ -78,8 +84,8 @@ const handleToggleSection = (section: sectionInterface) => {
         </div>
         <div class="flex flex-col w-full items-start justify-start pt-8 h-128 overflow-y-auto">
           <div v-for="section in sections" :key="section.title" class="px-2 pb-4 w-full h-fit">
-            <transition>
-              <div v-show="section.show">
+            <transition @after-enter="onAfterEnter">
+              <div v-if="section.show" :id="getSectionId(section)">
                 <h3 class="font-bold text-xl pb-3">
                   {{ section.title }}
                 </h3>
