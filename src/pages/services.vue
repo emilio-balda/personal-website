@@ -30,8 +30,8 @@ const content: Array<ContentItem> = [
 <template>
   <div class="flex items-center justify-center">
     <div class="flex flex-row w-5/6">
-      <div v-for="item in content" :key="item.title" class="flex flex-col justify-between  items-center w-full h-[42em] md:w-1/2 xl:w-1/3 px-4 hover:shadow-xl hover:scale-105 duration-500 transform transition cursor-pointer rounded-lg overflow-hidden">
-        <div class="bg-white rounded-lg overflow-hidden mb-10">
+      <div v-for="item in content" :key="item.title" class="flex flex-col justify-between  items-center w-full h-[42em] hover:shadow-xl hover:scale-105 duration-500 transform transition cursor-pointer rounded-lg overflow-hidden mx-4">
+        <div class="rounded-lg overflow-hidden mb-10">
           <img
             :src="item.image"
             alt="image"

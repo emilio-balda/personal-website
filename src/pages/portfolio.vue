@@ -99,7 +99,7 @@ onMounted(() => {
       class="px-2 w-full"
     >
       <div
-        class="flex flex-col h-[35rem] w-full items-center justify-center bg-white text-xl text-gray-400 drop-shadow-xl shadow-xl rounded-lg overflow-hidden hover:shadow-xl hover:scale-105 duration-500 transform transition cursor-pointer"
+        class="flex flex-col h-[35rem] w-full items-center justify-center bg-white text-xl text-gray-400 drop-shadow-xl rounded-lg overflow-hidden hover:shadow-2xl hover:z-50 duration-500 transform transition cursor-pointer"
       >
         <div
           class="flex items-center justify-center w-full h-5/12 bg-cover bg-center"
@@ -120,7 +120,7 @@ onMounted(() => {
             >
               {{ alias_to_tag[alias].title }}
             </div>
-            <p class="text-base text-body-color text-dark leading-relaxed font-light px-2 pt-2">
+            <p class="text-base text-dark leading-relaxed font-light mx-2 pt-2">
               {{ item.description }}
             </p>
           </div>
