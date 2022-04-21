@@ -12,15 +12,12 @@ const props = defineProps({
 </script>
 
 <template>
-  <router-link :to="to" class="router-link place-self-center dark:text-white" :class="{ 'router-link-selected': currentPage === props.to }">
+  <router-link :to="to" class="router-link place-self-center dark:text-white px-2 text-base md:text-xl lg:text-2xl lg:px-4" :class="{ 'router-link-selected': currentPage === props.to }">
     {{ props.pageName }}
   </router-link>
 </template>
 
 <style scoped>
-.router-link {
-  padding: 5px 20px 5px 20px;
-}
 
 .router-link-selected {
   border-bottom: 8px solid rgb(52 211 153);

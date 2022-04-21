@@ -28,9 +28,9 @@ const content: Array<ContentItem> = [
 </script>
 
 <template>
-  <div class="flex items-center justify-center">
-    <div class="flex flex-row w-5/6">
-      <div v-for="item in content" :key="item.title" class="flex flex-col justify-between  items-center w-full h-[42em] hover:shadow-xl hover:scale-105 duration-500 transform transition cursor-pointer rounded-lg overflow-hidden mx-4">
+  <div class="flex flex-wrap items-center justify-center">
+    <div class="flex flex-wrap items-center justify-center lg:w-5/6">
+      <div v-for="item in content" :key="item.title" class="flex flex-col justify-between  items-center w-80 mt-4 mb-2 h-[42em] hover:shadow-xl hover:scale-105 duration-500 transform transition cursor-pointer rounded-lg overflow-hidden mx-4">
         <div class="rounded-lg overflow-hidden mb-10">
           <img
             :src="item.image"

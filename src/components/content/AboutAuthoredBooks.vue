@@ -7,9 +7,9 @@ const books = [
 </script>
 
 <template>
-  <div class="flex items-center justify-center">
-    <div v-for="book in books" :key="book.title" class="flex flex-col item-center justify-center">
-      <div class="px-2">
+  <div class="flex flex-wrap items-center justify-center">
+    <div v-for="book in books" :key="book.title" class="flex flex-col item-center justify-center mb-8 mx-4">
+      <div class="mb-1">
         <a :href="book.url">
           <img
             :src="book.image"

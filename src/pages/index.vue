@@ -16,39 +16,39 @@ const router = useRouter()
 
 <template>
   <div class="flex flex-col w-full px-20 items-center justify-center">
-    <div class="py-8 w-[1250px]">
-      <h1 class="typewriter text-6xl italic py-3">
+    <div class="hidden md:block py-8 w-fit">
+      <h1 class="typewriter whitespace-normal text-xl md:text-2xl lg:text-3xl xl:text-5xl italic py-3 pr-3">
         Transparent Development. Quality Software.
       </h1>
     </div>
-    <div class="flex flex-row w-full items-center justify-center">
+    <div class="flex flex-wrap md:flex-nowrap w-full items-center justify-center">
       <div class="flex flex-col items-center drop-shadow shadow-xl p-4 rounded-2xl hover:scale-105 duration-500">
         <div class="pb-4">
           <img src="../assets/me.png" alt="Avatar" class="w-[12em] rounded-full border-2 border-slate-100">
         </div>
         <div class="py-4 px-2">
-          <h4 class="text-3xl font-semibold text-dark whitespace-nowrap">
+          <h4 class="text-xl md:text-2xl lg:text-3xl font-semibold text-dark whitespace-nowrap">
             Emilio Balda
           </h4>
-          <p class="text-2xl text-dark whitespace-nowrap">
+          <p class="text-lg md:text-xl lg:text-2xl text-dark whitespace-nowrap">
             Full Stack Developer
           </p>
-          <p class="text-2xl text-dark whitespace-nowrap">
+          <p class="text-lg md:text-xl lg:text-2xl text-dark whitespace-nowrap">
             PhD in Machine Learning
           </p>
-          <p class="text-2xl text-dark whitespace-nowrap">
+          <p class="text-lg md:text-xl lg:text-2xl text-dark whitespace-nowrap">
             <a v-for="content in contactInfo" :key="content.href" class="inline-block px-1 pt-4" :href="content.href">
               <div :class="content.icon" />
             </a>
           </p>
         </div>
       </div>
-      <div class="px-16">
-        <p class="text-dark leading-relaxed text-2xl text-center py-10">
+      <div class="px-1 md:px-16 py-4 md:py-10">
+        <p class="text-lg md:text-xl lg:text-2xl text-dark leading-relaxed text-center">
           I care about communication. That's why I'm interested to know all the details that make your project unique. Before starting a project, you will have a clear picture of how the end result looks like. You will get regular updates about the progress and software adhering to the best practices in the industry.
         </p>
-        <div class="inline-block py-2 px-7 font-medium">
-          <glowing-button label="Let's Start" class_text="text-lg px-8 py-2" @click="router.push('/services')" />
+        <div class="inline-block my-3 md:my-8 md:mx-7 font-medium">
+          <glowing-button label="Let's Start" class_text="text-lg px-4 py-2" @click="router.push('/services')" />
         </div>
       </div>
     </div>
@@ -72,8 +72,8 @@ const router = useRouter()
 /* text animation */
 
 @keyframes animated-text{
-  from{width: 0;}
-  to{width: 1250px;}
+  from{width: 0%;}
+  to{width: 100%;}
 }
 
 /* cursor animations */

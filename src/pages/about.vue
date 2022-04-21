@@ -41,9 +41,9 @@ function onAfterEnter(el: HTMLElement) {
 </script>
 
 <template>
-  <div class="flex items-center justify-center">
-    <div class="flex items-start justify-around px-8 w-3/4">
-      <div class="flex flex-col drop-shadow shadow-2xl p-8 rounded-xl items-center justify-between w-fit">
+  <div class="flex flex-wrap items-center justify-center">
+    <div class="flex flex-wrap items-start justify-around px-4 lg:px-8 lg:w-5/6">
+      <div class="flex flex-col drop-shadow shadow-2xl p-8 rounded-xl items-center justify-between w-fit mb-8">
         <div class="pb-4">
           <img src="../assets/me.png" alt="Avatar" class="w-32 rounded-full border-2 border-slate-100">
         </div>
@@ -61,21 +61,21 @@ function onAfterEnter(el: HTMLElement) {
           </a>
         </div>
       </div>
-      <div class="flex flex-col w-2/3">
+      <div class="flex flex-col w-full lg:ml-4 xl:ml-8 lg:w-5/6 xl:w-2/3 ">
         <div>
           <h3 class="text-3xl text-center font-semibold text-dark">
             About Me
           </h3>
         </div>
-        <div>
-          <p class="text-2xl text-justify py-10 text-dark">
+        <div class="mt-4 mb-8">
+          <p class="text-2xl text-justify text-dark">
             I learned how to keep up with the latest advances in AI during Ph.D. studies. Now, I'm a co-founding member of aiXbrain GmbH to turn these technologies into real software products.
           </p>
         </div>
-        <div class="flex flex-row w-full items-center justify-center pb-3">
-          <div v-for="section in sections" :key="section.title" class="px-2">
+        <div class="flex flex-row w-full items-center items-stretch justify-center pb-3">
+          <div v-for="section in sections" :key="section.title" class="mx-2">
             <button
-              class="hover:scale-105 rounded-md px-2 py-1 text-white"
+              class="hover:scale-105 rounded-md px-2 py-1 text-white h-full"
               :class="!section.show ? 'bg-gray-600' : 'bg-emerald-600'" @click.prevent="handleToggleSection(section)"
             >
               {{ section.title }}
@@ -83,7 +83,7 @@ function onAfterEnter(el: HTMLElement) {
           </div>
         </div>
         <div class="flex flex-col w-full items-start justify-start pt-8 h-128 overflow-y-auto">
-          <div v-for="section in sections" :key="section.title" class="px-2 pb-4 w-full h-fit">
+          <div v-for="section in sections" :key="section.title" class="pb-4 w-full h-fit">
             <transition @after-enter="onAfterEnter">
               <div v-if="section.show" :id="getSectionId(section)">
                 <h3 class="font-bold text-xl pb-3">

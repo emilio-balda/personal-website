@@ -93,10 +93,10 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div class="flex flex-row items-center justify-around">
+  <div class="flex flex-wrap items-center justify-around">
     <div
       v-for="item in content" :key="item.title"
-      class="px-2 w-full"
+      class="px-2 w-80 mt-4"
     >
       <div
         class="flex flex-col h-[35rem] w-full items-center justify-center bg-white text-xl text-gray-400 drop-shadow-xl rounded-lg overflow-hidden hover:shadow-2xl hover:z-50 duration-500 transform transition cursor-pointer"
