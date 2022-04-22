@@ -61,7 +61,7 @@ function onAfterEnter(el: HTMLElement) {
           </a>
         </div>
       </div>
-      <div class="flex flex-col w-full bg-white lg:ml-4 xl:ml-8 lg:w-5/6 xl:w-2/3 ">
+      <div class="flex flex-col w-full bg-white mx-4 lg:ml-4 xl:ml-8 lg:w-5/6 xl:w-2/3 ">
         <div>
           <h3 class="text-3xl text-center font-semibold text-dark">
             About Me

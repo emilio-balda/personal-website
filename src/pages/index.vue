@@ -15,7 +15,7 @@ const router = useRouter()
 </script>
 
 <template>
-  <div class="flex flex-col w-full px-20 items-center justify-center">
+  <div class="flex flex-col w-full px-8 md:px-16 lg:px-20 items-center justify-center">
     <div class="hidden md:block py-8 w-fit">
       <h1 class="typewriter whitespace-normal text-xl md:text-2xl lg:text-3xl xl:text-5xl italic py-3 pr-3">
         Transparent Development. Quality Software.
@@ -43,7 +43,7 @@ const router = useRouter()
           </p>
         </div>
       </div>
-      <div class="px-1 md:px-16 py-4 md:py-10">
+      <div class="md:px-16 py-4 md:py-10">
         <p class="text-lg md:text-xl lg:text-2xl text-dark leading-relaxed text-center">
           I care about communication. That's why I'm interested to know all the details that make your project unique. Before starting a project, you will have a clear picture of how the end result looks like. You will get regular updates about the progress and software adhering to the best practices in the industry.
         </p>
