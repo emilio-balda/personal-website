@@ -43,7 +43,7 @@ function onAfterEnter(el: HTMLElement) {
 <template>
   <div class="flex flex-wrap items-center justify-center">
     <div class="flex flex-wrap items-start justify-around px-4 lg:px-8 lg:w-5/6">
-      <div class="flex flex-col drop-shadow shadow-2xl p-8 rounded-xl items-center justify-between w-fit mb-8">
+      <div class="flex flex-col drop-shadow shadow-2xl p-8 rounded-xl items-center justify-between w-fit mb-8 bg-white">
         <div class="pb-4">
           <img src="../assets/me.png" alt="Avatar" class="w-32 rounded-full border-2 border-slate-100">
         </div>
@@ -61,7 +61,7 @@ function onAfterEnter(el: HTMLElement) {
           </a>
         </div>
       </div>
-      <div class="flex flex-col w-full lg:ml-4 xl:ml-8 lg:w-5/6 xl:w-2/3 ">
+      <div class="flex flex-col w-full bg-white lg:ml-4 xl:ml-8 lg:w-5/6 xl:w-2/3 ">
         <div>
           <h3 class="text-3xl text-center font-semibold text-dark">
             About Me
@@ -82,7 +82,7 @@ function onAfterEnter(el: HTMLElement) {
             </button>
           </div>
         </div>
-        <div class="flex flex-col w-full items-start justify-start pt-8 h-128 overflow-y-auto">
+        <div class="flex flex-col w-full items-start justify-start pt-8 max-h-128 overflow-y-auto">
           <div v-for="section in sections" :key="section.title" class="pb-4 w-full h-fit">
             <transition @after-enter="onAfterEnter">
               <div v-if="section.show" :id="getSectionId(section)">
