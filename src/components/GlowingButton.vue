@@ -10,7 +10,7 @@ const props = defineProps({
 
 <template>
   <button class="bnglow" role="button">
-    <span class="text" :class="props.class_text">{{ props.label }}</span>
+    <span class="text bg-primary-dark" :class="props.class_text">{{ props.label }}</span>
   </button>
 </template>
 
@@ -18,7 +18,7 @@ const props = defineProps({
 /* CSS */
 .bnglow:active,
 .bnglow span {
-  background-color: rgb(5, 6, 45);
+  /* background-color: rgb(5, 6, 45); */
   border-radius: 6px;
   width: 100%;
   height: 100%;

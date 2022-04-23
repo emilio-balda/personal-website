@@ -10,7 +10,7 @@ function closeModal() {
   <div class="modal">
     <div class="flex flex-col w-screen h-[calc(120vh)] bg-gray-400/90 items-center pt-4" @click.self="closeModal">
       <div class="w-6xl h-screen">
-        <div class="flex flex-col w-full h-[calc(95vh)] bg-white shadow-xl items-center rounded-lg overflow-hidden">
+        <div class="flex flex-col w-full h-[calc(95vh)] bg-white dark:bg-slate-700 shadow-xl items-center rounded-lg overflow-hidden">
           <div class="shrink-0 self-end px-4 py-4">
             <div
               i-carbon-misuse-outline
@@ -19,11 +19,11 @@ function closeModal() {
             />
           </div>
           <div class="gradient-bg-image flex-grow w-full pb-1" />
-          <div class="flex flex-col w-full h-full bg-white shadow-xl items-center px-8 py-8 overflow-y-auto">
+          <div class="flex flex-col w-full h-full bg-white dark:bg-slate-700 shadow-xl items-center px-8 py-8 overflow-y-auto">
             <slot />
           </div>
           <div class="gradient-bg-image flex-grow w-full pb-1" />
-          <div class="shrink-0 bg-white w-full self-end px-10 py-6" />
+          <div class="shrink-0 bg-white dark:bg-slate-700 w-full self-end px-10 py-6" />
         </div>
       </div>
     </div>

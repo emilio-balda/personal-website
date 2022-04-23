@@ -30,7 +30,7 @@ const content: Array<ContentItem> = [
 <template>
   <div class="flex flex-wrap items-center justify-center">
     <div class="flex flex-wrap items-center justify-center lg:w-5/6">
-      <div v-for="item in content" :key="item.title" class="flex flex-col justify-between  items-center w-[19em] md:w-80 mt-4 mb-2 h-[42em] hover:shadow-xl hover:scale-105 duration-500 transform transition cursor-pointer rounded-lg overflow-hidden mx-4 bg-white drop-shadow shadow-xl">
+      <div v-for="item in content" :key="item.title" class="flex flex-col justify-between  items-center w-[19em] md:w-80 mt-4 mb-2 h-[42em] hover:shadow-xl hover:scale-105 duration-500 transform transition cursor-pointer rounded-lg overflow-hidden mx-4 drop-shadow shadow-xl bg-card">
         <div class="rounded-lg overflow-hidden mb-10">
           <img
             :src="item.image"
@@ -43,7 +43,7 @@ const content: Array<ContentItem> = [
                 href="javascript:void(0)"
                 class="
                         font-semibold
-                        text-dark text-xl
+                        text-xl
                         sm:text-[22px]
                         md:text-xl
                         lg:text-[22px]
@@ -57,7 +57,7 @@ const content: Array<ContentItem> = [
                 {{ item.title }}
               </a>
             </h3>
-            <p class="text-base text-body-color leading-relaxed mb-7">
+            <p class="text-base leading-relaxed mb-7">
               {{ item.description }}
             </p>
           </div>

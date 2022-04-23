@@ -10,7 +10,7 @@ import AuthoredBooks from '~/components/content/AboutAuthoredBooks.vue'
 const contactInfo = [
   { icon: 'i-carbon-email bg-green-500', href: 'mailto:me@emilio-balda.com', text: 'me@emilio-balda.com' },
   { icon: 'i-carbon-logo-linkedin bg-[royalblue]', href: 'https://www.linkedin.com/in/emiliobalda/', text: 'emiliobalda' },
-  { icon: 'i-carbon-logo-github bg-black', href: 'https://github.com/emilio-balda', text: 'emilio-balda' },
+  { icon: 'i-carbon-logo-github bg-black dark:bg-white', href: 'https://github.com/emilio-balda', text: 'emilio-balda' },
 ]
 
 const skills = [
@@ -43,7 +43,7 @@ function onAfterEnter(el: HTMLElement) {
 <template>
   <div class="flex flex-wrap items-center justify-center">
     <div class="flex flex-wrap items-start justify-around px-4 lg:px-8 lg:w-5/6">
-      <div class="flex flex-col drop-shadow shadow-2xl p-8 rounded-xl items-center justify-between w-fit mb-8 bg-white">
+      <div class="flex flex-col drop-shadow shadow-2xl p-8 rounded-xl items-center justify-between w-fit mb-8 bg-card">
         <div class="pb-4">
           <img src="../assets/me.png" alt="Avatar" class="w-32 rounded-full border-2 border-slate-100">
         </div>
@@ -55,20 +55,20 @@ function onAfterEnter(el: HTMLElement) {
             <div class="h-2 rounded-xl w-full bg-emerald-500" :style="{width:skill.level}" />
           </div>
         </div>
-        <div class="pt-2 text-xl text-dark">
+        <div class="pt-2 text-xl ">
           <a v-for="content in contactInfo" :key="content.href" class="inline-block px-1 pt-4" :href="content.href">
             <div :class="content.icon" />
           </a>
         </div>
       </div>
-      <div class="flex flex-col w-full bg-white mx-4 lg:ml-4 xl:ml-8 lg:w-5/6 xl:w-2/3 ">
+      <div class="flex flex-col w-full mx-4 lg:ml-4 xl:ml-8 lg:w-5/6 xl:w-2/3 ">
         <div>
-          <h3 class="text-3xl text-center font-semibold text-dark">
+          <h3 class="text-3xl text-center font-semibold ">
             About Me
           </h3>
         </div>
         <div class="mt-4 mb-8">
-          <p class="text-2xl text-justify text-dark">
+          <p class="text-2xl text-justify ">
             I learned how to keep up with the latest advances in AI during Ph.D. studies. Now, I'm a co-founding member of aiXbrain GmbH to turn these technologies into real software products.
           </p>
         </div>

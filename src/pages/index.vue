@@ -8,7 +8,7 @@ import GlowingButton from '~/components/GlowingButton.vue'
 const contactInfo = [
   { icon: 'i-carbon-email bg-green-500', href: 'mailto:me@emilio-balda.com', text: 'me@emilio-balda.com' },
   { icon: 'i-carbon-logo-linkedin bg-[royalblue]', href: 'https://www.linkedin.com/in/emiliobalda/', text: 'emiliobalda' },
-  { icon: 'i-carbon-logo-github bg-black', href: 'https://github.com/emilio-balda', text: 'emilio-balda' },
+  { icon: 'i-carbon-logo-github bg-black dark:bg-white', href: 'https://github.com/emilio-balda', text: 'emilio-balda' },
 ]
 
 const router = useRouter()
@@ -22,21 +22,21 @@ const router = useRouter()
       </h1>
     </div>
     <div class="flex flex-wrap md:flex-nowrap w-full items-center justify-center">
-      <div class="flex flex-col items-center drop-shadow shadow-xl p-4 rounded-2xl hover:scale-105 duration-500">
-        <div class="pb-4">
+      <div class="flex flex-col items-center drop-shadow shadow-xl p-4 rounded-2xl hover:scale-105 duration-500 bg-card">
+        <div class="py-4">
           <img src="../assets/me.png" alt="Avatar" class="w-[12em] rounded-full border-2 border-slate-100">
         </div>
         <div class="py-4 px-2">
-          <h4 class="text-xl md:text-2xl lg:text-3xl font-semibold text-dark whitespace-nowrap">
+          <h4 class="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap">
             Emilio Balda
           </h4>
-          <p class="text-lg md:text-xl lg:text-2xl text-dark whitespace-nowrap">
+          <p class="text-lg md:text-xl lg:text-2xl whitespace-nowrap">
             Full Stack Developer
           </p>
-          <p class="text-lg md:text-xl lg:text-2xl text-dark whitespace-nowrap">
+          <p class="text-lg md:text-xl lg:text-2xl whitespace-nowrap">
             PhD in Machine Learning
           </p>
-          <p class="text-lg md:text-xl lg:text-2xl text-dark whitespace-nowrap">
+          <p class="text-lg md:text-xl lg:text-2xl whitespace-nowrap">
             <a v-for="content in contactInfo" :key="content.href" class="inline-block px-1 pt-4" :href="content.href">
               <div :class="content.icon" />
             </a>
@@ -44,7 +44,7 @@ const router = useRouter()
         </div>
       </div>
       <div class="md:px-16 py-4 md:py-10">
-        <p class="text-lg md:text-xl lg:text-2xl text-dark leading-relaxed text-center">
+        <p class="text-lg md:text-xl lg:text-2xl  leading-relaxed text-center">
           I care about communication. That's why I'm interested to know all the details that make your project unique. Before starting a project, you will have a clear picture of how the end result looks like. You will get regular updates about the progress and software adhering to the best practices in the industry.
         </p>
         <div class="inline-block my-3 md:my-8 md:mx-7 font-medium">
