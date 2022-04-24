@@ -68,7 +68,7 @@ function onAfterEnter(el: HTMLElement) {
           </h3>
         </div>
         <div class="mt-4 mb-8">
-          <p class="text-2xl text-justify ">
+          <p class="text-base md:text-lg lg:text-xl text-justify ">
             I learned how to keep up with the latest advances in AI during Ph.D. studies. Now, I'm a co-founding member of aiXbrain GmbH to turn these technologies into real software products.
           </p>
         </div>
