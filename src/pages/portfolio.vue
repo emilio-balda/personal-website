@@ -9,6 +9,7 @@ import BoundsPaperContent from '~/components/content/PortfolioBoundsPaper.vue'
 import AdversarialPaperContent from '~/components/content/PortfolioAdversarialPaper.vue'
 import PersonalWebsiteContent from '~/components/content/PortfolioPersonalWebsite.vue'
 import AppModal from '~/components/AppModal.vue'
+import { scrollTo } from '~/composables/dom'
 const router = useRouter()
 
 interface Tag {
@@ -91,6 +92,11 @@ onMounted(() => {
     isOpen.value[item.title] = false
   })
 })
+
+const handleBookCall = (item_title: string) => {
+  scrollTo('contact')
+  isOpen.value[item_title] = false
+}
 </script>
 <template>
   <div class="flex flex-wrap items-center justify-around">
@@ -132,7 +138,7 @@ onMounted(() => {
                   <app-modal @close-modal="isOpen[item.title]=false">
                     <component :is="item.content_component" />
                     <div class="max-w-xl py-4">
-                      <glowing-button label="Book a Free Discovery Call" class_text="text-lg px-8 py-2" @click="router.push('/contact')" />
+                      <glowing-button label="Book a Free Discovery Call" class_text="text-lg px-8 py-2" @click="handleBookCall(item.title)" />
                     </div>
                   </app-modal>
                 </div>

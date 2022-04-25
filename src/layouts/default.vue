@@ -7,6 +7,7 @@ import Portfolio from '~/pages/portfolio.vue'
 import About from '~/pages/about.vue'
 import Contact from '~/pages/contact.vue'
 import { toggleDark } from '~/composables'
+import { scrollTo } from '~/composables/dom'
 
 const sections = [{ page_name: 'Home', component: Home }, { page_name: 'Services', component: Services }]
 
@@ -28,9 +29,9 @@ for (let i = 0; i < numNavBarItems; i++) {
   }
 }
 
-function scrollTo(sectionId: string) {
-  document.querySelector(`#${sectionId}`)?.scrollIntoView({ behavior: 'smooth' })
-}
+// function scrollTo(sectionId: string) {
+//   document.querySelector(`#${sectionId}`)?.scrollIntoView({ behavior: 'smooth' })
+// }
 
 </script>
 

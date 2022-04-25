@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import GlowingButton from '~/components/GlowingButton.vue'
+import { scrollTo } from '~/composables/dom'
 
 const router = useRouter()
 
@@ -63,7 +64,7 @@ const content: Array<ContentItem> = [
           </div>
         </div>
         <div class="pb-8 px-7 font-medium">
-          <glowing-button label="Book a Free Discovery Call" class_text="text-lg px-8 py-2" @click="router.push('/contact')" />
+          <glowing-button label="Book a Free Discovery Call" class_text="text-lg px-8 py-2" @click="scrollTo('contact')" />
         </div>
       </div>
     </div>

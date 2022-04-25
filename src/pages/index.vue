@@ -4,6 +4,7 @@ import GlowingButton from '~/components/GlowingButton.vue'
 // import { useContactStore } from '~/stores/contact'
 
 // const contact = useContactStore()
+import { scrollTo } from '~/composables/dom'
 
 const contactInfo = [
   { icon: 'i-carbon-email bg-green-500', href: 'mailto:me@emilio-balda.com', text: 'me@emilio-balda.com' },
@@ -48,7 +49,7 @@ const router = useRouter()
           I care about communication. That's why I'm interested to know all the details that make your project unique. Before starting a project, you will have a clear picture of how the end result looks like. You will get regular updates about the progress and software adhering to the best practices in the industry.
         </p>
         <div class="inline-block my-3 md:my-8 md:mx-7 font-medium">
-          <glowing-button label="Let's Start" class_text="text-lg px-4 py-2" @click="router.push('/services')" />
+          <glowing-button label="Let's Start" class_text="text-lg px-4 py-2" @click="scrollTo('services')" />
         </div>
       </div>
     </div>
