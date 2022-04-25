@@ -29,15 +29,17 @@ for (let i = 0; i < numNavBarItems; i++) {
   }
 }
 
-// function scrollTo(sectionId: string) {
-//   document.querySelector(`#${sectionId}`)?.scrollIntoView({ behavior: 'smooth' })
-// }
+const showNavMenu = ref<boolean>(false)
+const handleClickNavMenu = (section_id) => {
+  showNavMenu.value = false
+  scrollTo(section_id)
+}
 
 </script>
 
 <template>
   <div>
-    <div class="sticky top-0 z-40">
+    <div class="sticky top-0 z-40 flex flex-col">
       <div class="flex flex-row w-full bg-slate-900/95 py-2 items-center justify-between text-white text-lg md:text-xl lg:text-2xl drop-shadow shadow-xl">
         <div class="ml-4">
           <button class="icon-btn mx-2 inline-flex" @click="toggleDark()">
@@ -63,7 +65,19 @@ for (let i = 0; i < numNavBarItems; i++) {
               {{ section.page_name }}
             </button>
           </div>
-          <div class="i-carbon-menu md:hidden font-bold" />
+          <div class="mr-4 md:hidden">
+            <button class="icon-btn" @click.prevent="showNavMenu= !showNavMenu">
+              <div class="i-carbon-menu font-bold" />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div v-if="showNavMenu" class="flex flex-col w-full bg-slate-900/95 items-center justify-between text-white text-lg md:text-xl lg:text-2xl drop-shadow shadow-xl py-2">
+        <div v-for="section in navBarItems" :key="section.id">
+          <button class="icon-btn" @click.prevent="handleClickNavMenu(section.id)">
+            {{ section.page_name }}
+          </button>
         </div>
       </div>
     </div>
@@ -89,25 +103,4 @@ for (let i = 0; i < numNavBarItems; i++) {
 </template>
 
 <style scoped>
-/* Hide scrollbar for Chrome, Safari and Opera */
-.no-scrollbar::-webkit-scrollbar {
-    display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-}
-
-/* transition between routes */
-.v-enter-active
- {
-  transition: opacity 0.5s ease;
-}
-
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
-}
 </style>
