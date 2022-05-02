@@ -9,7 +9,7 @@ function closeModal() {
 <template>
   <div class="left-0 top-0 z-999">
     <div class="flex flex-col w-screen h-full bg-gray-400/90 items-center pt-4" @click.self="closeModal">
-      <div class="w-6xl h-screen">
+      <div class="w-4/5 h-screen">
         <div class="flex flex-col w-full h-[calc(90vh)] bg-white dark:bg-slate-700 shadow-xl items-center rounded-lg overflow-hidden">
           <div class="shrink-0 self-end px-4 py-4">
             <div
