@@ -39,8 +39,8 @@ const handleClickNavMenu = (section_id) => {
 
 <template>
   <div>
-    <div class="sticky top-0 z-40 flex flex-col">
-      <div class="flex flex-row w-full bg-slate-900/95 py-2 items-center justify-between text-white text-lg md:text-xl lg:text-2xl drop-shadow shadow-xl">
+    <div class="sticky origin-top-right absolute right-0 top-0 z-40 flex flex-col">
+      <div class="flex flex-row w-full bg-slate-900/95 pt-2 pb-1 items-center justify-between text-white text-lg md:text-xl lg:text-2xl drop-shadow shadow-xl">
         <div class="ml-4">
           <button class="icon-btn mx-2 inline-flex" @click="toggleDark()">
             <div
@@ -73,7 +73,7 @@ const handleClickNavMenu = (section_id) => {
         </div>
       </div>
 
-      <div v-if="showNavMenu" class="flex flex-col w-full bg-slate-900/95 items-center justify-between text-white text-lg md:text-xl lg:text-2xl drop-shadow shadow-xl py-2">
+      <div v-if="showNavMenu" class="absolute right-0 top-11 flex flex-col w-full bg-slate-900/95 items-center justify-between text-white text-lg md:text-xl lg:text-2xl drop-shadow shadow-xl py-2">
         <div v-for="section in navBarItems" :key="section.id">
           <button class="icon-btn" @click.prevent="handleClickNavMenu(section.id)">
             {{ section.page_name }}
