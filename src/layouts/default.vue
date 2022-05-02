@@ -52,7 +52,7 @@ const handleClickNavMenu = (section_id: string) => {
             />
           </button>
         </div>
-        <div>
+        <div class="icon-btn" @click="scrollTo('home')">
           Emilio Balda
         </div>
         <div class="mr-8">
