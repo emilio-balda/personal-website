@@ -2,8 +2,6 @@
 import GlowingButton from '~/components/GlowingButton.vue'
 import { scrollTo } from '~/composables/dom'
 
-const router = useRouter()
-
 interface ContentItem {
   title: string
   description: string

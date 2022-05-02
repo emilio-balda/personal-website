@@ -12,7 +12,6 @@ const contactInfo = [
   { icon: 'i-carbon-logo-github bg-black dark:bg-white', href: 'https://github.com/emilio-balda', text: 'emilio-balda' },
 ]
 
-const router = useRouter()
 </script>
 
 <template>

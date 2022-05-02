@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useRoute } from 'vue-router'
-import NavigationBar from '~/components/NavigationBar.vue'
 import Home from '~/pages/index.vue'
 import Services from '~/pages/services.vue'
 import Portfolio from '~/pages/portfolio.vue'
@@ -8,8 +6,6 @@ import About from '~/pages/about.vue'
 import Contact from '~/pages/contact.vue'
 import { toggleDark } from '~/composables'
 import { scrollTo } from '~/composables/dom'
-
-const sections = [{ page_name: 'Home', component: Home }, { page_name: 'Services', component: Services }]
 
 const navBarItems = [
   { route: '/#home', id: 'home', page_name: 'Home', component: Home, background: 'bg-body', title_color: '', title: null },
@@ -30,7 +26,7 @@ for (let i = 0; i < numNavBarItems; i++) {
 }
 
 const showNavMenu = ref<boolean>(false)
-const handleClickNavMenu = (section_id) => {
+const handleClickNavMenu = (section_id: string) => {
   showNavMenu.value = false
   scrollTo(section_id)
 }

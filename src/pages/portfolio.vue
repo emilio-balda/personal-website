@@ -10,7 +10,6 @@ import AdversarialPaperContent from '~/components/content/PortfolioAdversarialPa
 import PersonalWebsiteContent from '~/components/content/PortfolioPersonalWebsite.vue'
 import AppModal from '~/components/AppModal.vue'
 import { scrollTo } from '~/composables/dom'
-const router = useRouter()
 
 interface Tag {
   title: string
