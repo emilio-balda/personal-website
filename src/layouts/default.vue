@@ -82,7 +82,7 @@ const handleClickNavMenu = (section_id: string) => {
         <div class="flex flex-col items-start justify-center">
           <div v-for="section in navBarItems" :ref="section.id" :key="section.id" class="w-full">
             <section :id="section.id" class="py-8 min-h-screen" :class="section.background">
-              <div class="flex flex-col items-center justify-center w-full">
+              <div class="flex flex-col items-center justify-center w-full mt-8">
                 <div v-if="section.title !== null" class="text-3xl font-bold mb-4" :class="section.title_color">
                   {{ section.title }}
                 </div>
@@ -97,6 +97,3 @@ const handleClickNavMenu = (section_id: string) => {
     </div>
   </div>
 </template>
-
-<style scoped>
-</style>

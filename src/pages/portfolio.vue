@@ -46,6 +46,7 @@ const alias_to_tag: Record<string, Tag> = {
 }
 
 interface ContentItem {
+  id: string
   title: string
   description: string
   image: string
@@ -55,6 +56,7 @@ interface ContentItem {
 
 const content: Array<ContentItem> = [
   {
+    id: 'portfolio-dataray',
     title: 'Dataray: A Machine Learning SaaS',
     description: 'Dataray is a Software-as-a-Service (SaaS) product that brings artificial intelligence to industrial applications. It is compatible with many database technologies.',
     image: 'https://images.pexels.com/photos/2832382/pexels-photo-2832382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -62,6 +64,7 @@ const content: Array<ContentItem> = [
     tag_aliases: ['frontend', 'backend', 'ml'],
   },
   {
+    id: 'portfolio-website',
     title: 'This Website',
     description: 'I built this website using Vue JS. You can take a look at the source code in GitHub. Links and tech stack in the detailed view.',
     image: 'https://images.pexels.com/photos/3374210/pexels-photo-3374210.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -69,6 +72,7 @@ const content: Array<ContentItem> = [
     tag_aliases: ['frontend'],
   },
   {
+    id: 'portfolio-research-theory',
     title: 'Research Paper: Theoretical Result for Neural Networks',
     description: 'I was the first author of a paper in the field of statistical learning theory and deep neural networks.',
     content_component: BoundsPaperContent,
@@ -76,6 +80,7 @@ const content: Array<ContentItem> = [
     tag_aliases: ['research', 'ml'],
   },
   {
+    id: 'portfolio-research-adversarial',
     title: 'Research Paper: Adversarial Examples in Neural Networks',
     description: 'I was the first author of a paper in the field of computer vision and deep neural networks.',
     image: 'https://images.pexels.com/photos/3308588/pexels-photo-3308588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -88,17 +93,32 @@ const isOpen: Ref<Record<string, boolean>> = ref({})
 
 onMounted(() => {
   content.forEach((item: ContentItem) => {
-    isOpen.value[item.title] = false
+    isOpen.value[item.id] = false
   })
 })
 
-const handleBookCall = (item_title: string) => {
-  scrollTo('contact')
-  isOpen.value[item_title] = false
+const handleCloseModal = (item_id: string) => {
+  isOpen.value[item_id] = false
+  enableScrolling()
 }
+const handleBookCall = (item_id: string) => {
+  handleCloseModal(item_id)
+  scrollTo('contact')
+}
+
+const handleKnowMore = (item_id: string) => {
+  isOpen.value[item_id] = true
+  scrollTo(item_id)
+  window.onscroll = function() { document.querySelector(`#${item_id}`)?.scrollIntoView() }
+}
+
+function enableScrolling() {
+  window.onscroll = function() {}
+}
+
 </script>
 <template>
-  <div class="flex flex-wrap items-center justify-around">
+  <div class="relative flex flex-wrap items-center justify-around">
     <div
       v-for="item in content" :key="item.title"
       class="px-2 w-80 mt-4"
@@ -130,22 +150,26 @@ const handleBookCall = (item_title: string) => {
             </p>
           </div>
           <div class="pb-4">
-            <glowing-button label="Know More" class_text="text-lg px-4 py-2" @click="isOpen[item.title]=true" />
-            <teleport to="body">
-              <transition>
-                <div v-if="isOpen[item.title]">
-                  <app-modal @close-modal="isOpen[item.title]=false">
-                    <component :is="item.content_component" />
-                    <div class="max-w-xl py-4">
-                      <glowing-button label="Book a Free Discovery Call" class_text="text-lg px-8 py-2" @click="handleBookCall(item.title)" />
-                    </div>
-                  </app-modal>
-                </div>
-              </transition>
-            </teleport>
+            <glowing-button label="Know More" class_text="text-lg px-4 py-2" @click="handleKnowMore(item.id)" />
           </div>
         </div>
       </div>
+    </div>
+    <div
+      v-for="item in content" :id="item.id"
+      :key="item.id"
+      class="absolute top-0 z-50"
+    >
+      <transition>
+        <div v-if="isOpen[item.id]">
+          <app-modal @close-modal="handleCloseModal(item.id)">
+            <component :is="item.content_component" />
+            <div class="max-w-xl py-4">
+              <glowing-button label="Book a Free Discovery Call" class_text="text-lg px-8 py-2" @click="handleBookCall(item.id)" />
+            </div>
+          </app-modal>
+        </div>
+      </transition>
     </div>
   </div>
 </template>
