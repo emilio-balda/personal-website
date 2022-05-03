@@ -34,30 +34,32 @@ const stack = [
       Features
     </h1>
 
-    <ul class="list-disc list-inside">
+    <ul class="text-left list-disc list-outside pl-8">
       <li>Supports Mobile Users</li>
       <li>Light/Dark Mode</li>
       <li>Tested with unit and end-to-end tests</li>
-      <li>Managed with Continious Integration and Deployment (CI/CD)</li>
+      <li>Managed with Continuous Integration and Deployment (CI/CD)</li>
     </ul>
     <h1 class="font-bold text-2xl py-4">
       Tech Stack
     </h1>
-    <div class="flex flex-col px-4 items-left">
-      <div v-for="stackRow in stack" :key="stackRow.title" class="flex flex-row border-b-2 w-128 items-center py-2">
-        <div class="justify-self-start pr-4">
-          <p class="font-bold italic text-xl">
-            {{ stackRow.title }}
-          </p>
-        </div>
-        <div v-for="stackItem in stackRow.items" :key="stackItem.title" class="flex flex-col px-4 items-center justify-self-center">
-          <div class="pt-4">
-            <img :src="stackItem.image" class="h-8">
-          </div>
-          <div>
-            <p class="italic py-2">
-              {{ stackItem.title }}
+    <div class="flex flex-col items-center justify-center">
+      <div class="flex flex-col px-4 items-left">
+        <div v-for="stackRow in stack" :key="stackRow.title" class="flex flex-wrap flex-row border-b-2 max-w-128 items-center py-2">
+          <div class="justify-self-start pr-4">
+            <p class="font-bold italic text-xl">
+              {{ stackRow.title }}
             </p>
+          </div>
+          <div v-for="stackItem in stackRow.items" :key="stackItem.title" class="flex flex-col px-4 items-center justify-self-center">
+            <div class="pt-4">
+              <img :src="stackItem.image" class="h-8">
+            </div>
+            <div>
+              <p class="italic py-2">
+                {{ stackItem.title }}
+              </p>
+            </div>
           </div>
         </div>
       </div>

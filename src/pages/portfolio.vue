@@ -91,6 +91,10 @@ const content: Array<ContentItem> = [
 
 const isOpen: Ref<Record<string, boolean>> = ref({})
 
+function getParentId(item_id: string) {
+  return `parent-${item_id}`
+}
+
 onMounted(() => {
   content.forEach((item: ContentItem) => {
     isOpen.value[item.id] = false
@@ -100,6 +104,7 @@ onMounted(() => {
 const handleCloseModal = (item_id: string) => {
   isOpen.value[item_id] = false
   enableScrolling()
+  document.querySelector(`#${getParentId(item_id)}`)?.scrollIntoView()
 }
 const handleBookCall = (item_id: string) => {
   handleCloseModal(item_id)
@@ -120,7 +125,8 @@ function enableScrolling() {
 <template>
   <div class="relative flex flex-wrap items-center justify-around">
     <div
-      v-for="item in content" :key="item.title"
+      v-for="item in content" :id="getParentId(item.id)"
+      :key="item.title"
       class="px-2 w-80 mt-4"
     >
       <div

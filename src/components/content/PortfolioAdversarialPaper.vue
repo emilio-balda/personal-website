@@ -25,7 +25,7 @@
 
     <p>
       <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/TensorFlow_logo.svg/330px-TensorFlow_logo.svg.png" class="w-32"> -->
-      <ul class="list-disc list-inside">
+      <ul class="text-left list-disc list-outside pl-8">
         <li>
           <p class="font-bold italic inline">
             TensorFlow

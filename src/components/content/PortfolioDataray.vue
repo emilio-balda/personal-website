@@ -21,7 +21,7 @@ const stack = [
   {
     title: 'Infrastructure',
     items: [
-      { image: 'https://seeklogo.com/images/G/google-cloud-logo-ADE788217F-seeklogo.com.png', title: 'Google Cloud' },
+      { image: 'https://seeklogo.com/images/G/google-cloud-logo-ADE788217F-seeklogo.com.png', title: 'GCloud' },
       { image: 'https://seeklogo.com/images/T/terraform-logo-99AE26A4C1-seeklogo.com.png', title: 'Terraform' },
     ],
   },
@@ -64,7 +64,7 @@ const stack = [
       Features
     </h1>
 
-    <ul class="list-disc list-inside">
+    <ul class="text-left list-disc list-outside pl-8">
       <li>Self-service database connection to Dataray supports MSSQL, PosgreSQL and MongoDB</li>
       <li>Plug and play anomaly detection</li>
       <li>Time series forecasting</li>
@@ -73,21 +73,23 @@ const stack = [
     <h1 class="font-bold text-2xl py-4">
       Tech Stack
     </h1>
-    <div class="flex flex-col px-4 items-left">
-      <div v-for="stackRow in stack" :key="stackRow.title" class="flex flex-row border-b-2 w-128 items-center py-2">
-        <div class="justify-self-start pr-4">
-          <p class="font-bold italic text-xl">
-            {{ stackRow.title }}
-          </p>
-        </div>
-        <div v-for="stackItem in stackRow.items" :key="stackItem.title" class="flex flex-col px-4 items-center justify-self-center">
-          <div class="pt-4">
-            <img :src="stackItem.image" class="h-8">
-          </div>
-          <div>
-            <p class="italic py-2">
-              {{ stackItem.title }}
+    <div class="flex flex-col items-center justify-center">
+      <div class="flex flex-col px-4 items-left">
+        <div v-for="stackRow in stack" :key="stackRow.title" class="flex flex-wrap flex-row border-b-2 max-w-128 items-center py-2">
+          <div class="justify-self-start pr-4">
+            <p class="font-bold italic text-xl">
+              {{ stackRow.title }}
             </p>
+          </div>
+          <div v-for="stackItem in stackRow.items" :key="stackItem.title" class="flex flex-col px-4 items-center justify-self-center">
+            <div class="pt-4">
+              <img :src="stackItem.image" class="h-8">
+            </div>
+            <div>
+              <p class="italic py-2">
+                {{ stackItem.title }}
+              </p>
+            </div>
           </div>
         </div>
       </div>
