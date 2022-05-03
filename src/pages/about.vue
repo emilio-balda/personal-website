@@ -31,12 +31,20 @@ const sections = ref<Array<sectionInterface>>([
 const getSectionId = (section: sectionInterface) => { return section.title.replace(' ', '-').toLowerCase() }
 
 const handleToggleSection = (section: sectionInterface) => {
-  section.show = !section.show
+  sections.value.forEach((loopSection: sectionInterface) => {
+    if (getSectionId(loopSection) === getSectionId(section))
+
+      loopSection.show = !loopSection.show
+
+    else
+      loopSection.show = false
+  })
 }
 
-function onAfterEnter(el: HTMLElement) {
-  document.querySelector(`#${el.id}`)?.scrollIntoView({ behavior: 'smooth' })
-}
+// function onAfterEnter(el: HTMLElement) {
+//   document.querySelector(`#${el.id}`)?.scrollIntoView({ behavior: 'smooth' })
+// }
+function onAfterEnter() {}
 
 </script>
 
@@ -82,7 +90,7 @@ function onAfterEnter(el: HTMLElement) {
             </button>
           </div>
         </div>
-        <div class="flex flex-col w-full items-start justify-start pt-8 max-h-128 overflow-y-auto">
+        <div class="flex flex-col w-full items-start justify-start pt-2 max-h-128 overflow-y-auto">
           <div v-for="section in sections" :key="section.title" class="pb-4 w-full h-fit">
             <transition @after-enter="onAfterEnter">
               <div v-if="section.show" :id="getSectionId(section)">
