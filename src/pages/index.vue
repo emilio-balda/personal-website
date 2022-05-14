@@ -16,8 +16,8 @@ const contactInfo = [
 
 <template>
   <div class="flex flex-col w-full px-8 md:px-16 lg:px-20 items-center justify-center">
-    <div class="hidden md:block mb-8 w-fit">
-      <h1 class="typewriter gradient-text whitespace-normal text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold pr-2">
+    <div class="md:block mb-8 w-fit">
+      <h1 class="gradient-text typewriter whitespace-normal text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold pr-2">
         Transparent Development. Quality Software.
       </h1>
     </div>
@@ -57,16 +57,20 @@ const contactInfo = [
 
 <style scoped>
 .typewriter {
-  border-right: solid 4px rgb(52 211 153);
-  white-space: nowrap;
   overflow: hidden;
   margin: 0 auto;
 }
 
-/* Animation */
-.typewriter {
-  animation: animated-text 4s steps(17,end) 1s 1 normal both;
-             /* animated-cursor 600ms steps(28,end) infinite; */
+@media only screen and (min-width: 768px) {
+  /* Animation */
+  .typewriter {
+    animation: animated-text 4s steps(17,end) 1s 1 normal both;
+               /* animated-cursor 600ms steps(28,end) infinite; */
+  }
+  .typewriter {
+    white-space: nowrap;
+    border-right: solid 4px rgb(52 211 153);
+  }
 }
 
 /* text animation */

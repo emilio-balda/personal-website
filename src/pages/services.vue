@@ -28,19 +28,17 @@ const content: Array<ContentItem> = [
 
 <template>
   <div class="flex flex-wrap items-center justify-center">
-    <div class="flex flex-wrap items-center justify-center lg:w-5/6">
-      <div v-for="item in content" :key="item.title" class="flex flex-col justify-between  items-center w-[19em] md:w-80 mt-4 mb-2 h-[42em] hover:shadow-xl hover:scale-105 duration-500 transform transition cursor-pointer rounded-lg overflow-hidden mx-4 drop-shadow shadow-xl bg-card">
+    <div class="flex flex-wrap items-stretch justify-center lg:w-5/6">
+      <div v-for="item in content" :key="item.title" class="flex flex-col justify-between  items-center w-[19em] md:w-80 mt-4 mb-2 hover:shadow-xl hover:scale-105 duration-500 transform transition cursor-pointer rounded-lg overflow-hidden mx-4 drop-shadow shadow-xl bg-card">
         <div class="rounded-lg overflow-hidden mb-10">
           <img
             :src="item.image"
             alt="image"
             class="w-full h-72"
           >
-          <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
-            <h3>
-              <a
-                href="javascript:void(0)"
-                class="
+          <div class="pt-4 px-8 sm:px-9 md:px-7 xl:px-9 text-center">
+            <h3
+              class="
                         font-semibold
                         text-xl
                         sm:text-[22px]
@@ -52,16 +50,15 @@ const content: Array<ContentItem> = [
                         block
                         hover:text-primary
                       "
-              >
-                {{ item.title }}
-              </a>
+            >
+              {{ item.title }}
             </h3>
-            <p class="text-base leading-relaxed mb-7">
+            <p class="text-base leading-relaxed">
               {{ item.description }}
             </p>
           </div>
         </div>
-        <div class="pb-8 px-7 font-medium">
+        <div class="pb-8 font-medium">
           <glowing-button label="Book a Free Discovery Call" class_text="text-lg px-8 py-2" @click="scrollTo('contact')" />
         </div>
       </div>
