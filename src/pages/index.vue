@@ -16,8 +16,8 @@ const contactInfo = [
 
 <template>
   <div class="flex flex-col w-full px-8 md:px-16 lg:px-20 items-center justify-center">
-    <div class="hidden md:block py-8 w-fit">
-      <h1 class="typewriter whitespace-normal text-xl md:text-2xl lg:text-3xl xl:text-5xl italic py-3 pr-3">
+    <div class="hidden md:block mb-8 w-fit">
+      <h1 class="typewriter gradient-text whitespace-normal text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold pr-2">
         Transparent Development. Quality Software.
       </h1>
     </div>
@@ -65,21 +65,44 @@ const contactInfo = [
 
 /* Animation */
 .typewriter {
-  animation: animated-text 3s steps(28,end) 1s 1 normal both,
-             animated-cursor 600ms steps(28,end) infinite;
+  animation: animated-text 4s steps(17,end) 1s 1 normal both;
+             /* animated-cursor 600ms steps(28,end) infinite; */
 }
 
 /* text animation */
 
 @keyframes animated-text{
-  from{width: 0%;}
-  to{width: 100%;}
+  0%{width: 0%;border-right-color: darkorchid;}
+  50%{width: 50%;border-right-color: royalblue;}
+  100%{width: 100%;border-right-color: rgb(52 211 153);}
 }
 
 /* cursor animations */
 
 @keyframes animated-cursor{
-  from{border-right-color: rgb(52 211 153);}
+  from{border-right-color: currentcolor;}
   to{border-right-color: transparent;}
 }
+
+/* Tutorial on https://fossheim.io/writing/posts/css-text-gradient. */
+
+.gradient-text {
+  /* Fallback: Set a background color. */
+  background-color: black;
+
+  /* Create the gradient. */
+  background-image: linear-gradient(45deg, darkorchid, royalblue, rgb(52 211 153));
+
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
 </style>
