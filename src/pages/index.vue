@@ -64,8 +64,8 @@ const contactInfo = [
 @media only screen and (min-width: 768px) {
   /* Animation */
   .typewriter {
-    animation: animated-text 4s steps(17,end) 1s 1 normal both;
-               /* animated-cursor 600ms steps(28,end) infinite; */
+    animation: animated-text 4s steps(17,end) 1s 1 normal both,
+              animated-cursor 1s steps(28,end) 5s infinite;
   }
   .typewriter {
     white-space: nowrap;
@@ -84,7 +84,7 @@ const contactInfo = [
 /* cursor animations */
 
 @keyframes animated-cursor{
-  from{border-right-color: currentcolor;}
+  from{border-right-color: rgb(52 211 153);}
   to{border-right-color: transparent;}
 }
 
