@@ -3,6 +3,7 @@ import type { Component } from 'vue'
 import JobHistory from '~/components/content/AboutJobHistory.vue'
 import Education from '~/components/content/AboutEducation.vue'
 import AuthoredBooks from '~/components/content/AboutAuthoredBooks.vue'
+import TechStack from '~/components/content/AboutTechStack.vue'
 // import { useContactStore } from '~/stores/contact'
 
 // const contact = useContactStore()
@@ -26,6 +27,7 @@ const sections = ref<Array<sectionInterface>>([
   { title: 'Job History', show: false, component: JobHistory },
   { title: 'Education', show: false, component: Education },
   { title: 'Authored Books', show: false, component: AuthoredBooks },
+  { title: 'Tech Stack', show: false, component: TechStack },
 ])
 
 const getSectionId = (section: sectionInterface) => { return section.title.replace(' ', '-').toLowerCase() }
