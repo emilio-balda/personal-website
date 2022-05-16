@@ -27,7 +27,7 @@ const sections = ref<Array<sectionInterface>>([
   { title: 'Job History', show: false, component: JobHistory },
   { title: 'Education', show: false, component: Education },
   { title: 'Authored Books', show: false, component: AuthoredBooks },
-  { title: 'Tech Stack', show: false, component: TechStack },
+  { title: 'Tech Stack', show: true, component: TechStack },
 ])
 
 const getSectionId = (section: sectionInterface) => { return section.title.replace(' ', '-').toLowerCase() }
