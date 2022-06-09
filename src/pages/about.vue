@@ -82,8 +82,8 @@ function onAfterEnter() {}
             I learned how to keep up with the latest advances in AI during Ph.D. studies. Now, I'm a co-founding member of aiXbrain GmbH to turn these technologies into real software products.
           </p>
         </div>
-        <div class="flex flex-row w-full items-center items-stretch justify-center pb-3">
-          <div v-for="section in sections" :key="section.title" class="mx-2">
+        <div class="flex flex-wrap w-full items-center items-stretch justify-center pb-1">
+          <div v-for="section in sections" :key="section.title" class="mx-2 my-2">
             <button
               class="hover:scale-105 rounded-md px-2 py-1 text-white h-full"
               :class="!section.show ? 'bg-gray-600' : 'bg-emerald-600'" @click.prevent="handleToggleSection(section)"
