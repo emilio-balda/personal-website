@@ -34,7 +34,7 @@ const handleClickNavMenu = (section_id: string) => {
 </script>
 
 <template>
-  <div class="w-screen overflow-hidden">
+  <div class="max-w-screen overflow-hidden">
     <div class="sticky origin-top-right absolute right-0 top-0 z-40 flex flex-col">
       <div class="flex flex-row w-full bg-slate-900/95 pt-2 pb-1 items-center justify-between text-white text-lg md:text-xl lg:text-2xl drop-shadow shadow-xl">
         <div class="ml-4">
