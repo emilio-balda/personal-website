@@ -30,14 +30,14 @@ for (let i = 0; i < numNavBarItems; i++) {
         </div>
         <div v-if="useRoute().path in itemToNextRoutes" class="flex items-center justify-center mt-2 lg:mt-0 pl-2 md:pl-4 lg:pl-8">
           <div class="pr-1">
-            <div class="bg-emerald-500 rounded-md hover:scale-105">
+            <div class="bg-primary-500 rounded-md hover:scale-105">
               <router-link :to="itemToNextRoutes[useRoute().path].left_route">
                 <div class="i-carbon-chevron-left text-bold text-xl md:text-2xl lg:text-3xl text-white-400" />
               </router-link>
             </div>
           </div>
           <div>
-            <div class="bg-emerald-500 rounded-md hover:scale-105">
+            <div class="bg-primary-500 rounded-md hover:scale-105">
               <router-link :to="itemToNextRoutes[useRoute().path].right_route">
                 <div class="i-carbon-chevron-right text-bold text-white-400 text-xl md:text-2xl lg:text-3xl" />
               </router-link>
@@ -52,7 +52,7 @@ for (let i = 0; i < numNavBarItems; i++) {
           <div v-if="useRoute().path in itemToNextRoutes" class="hidden lg:block">
             <div class="sticky top-0 z-40 flex flex-col items-center justify-center h-[calc(75vh)] place-self-start shrink-0 w-16">
               <router-link :to="itemToNextRoutes[useRoute().path].left_route">
-                <div class="i-carbon-chevron-left text-bold text-6xl text-emerald-400 hover:scale-110" />
+                <div class="i-carbon-chevron-left text-bold text-6xl text-primary-400 hover:scale-110" />
               </router-link>
             </div>
           </div>
@@ -66,7 +66,7 @@ for (let i = 0; i < numNavBarItems; i++) {
           <div v-if="useRoute().path in itemToNextRoutes" class="hidden lg:block">
             <div class="sticky top-0 z-40 flex flex-col items-center justify-center h-[calc(75vh)] place-self-start shrink-0 w-16">
               <router-link :to="itemToNextRoutes[useRoute().path].right_route">
-                <div class="i-carbon-chevron-right text-bold text-6xl text-emerald-400 hover:scale-110" />
+                <div class="i-carbon-chevron-right text-bold text-6xl text-primary-400 hover:scale-110" />
               </router-link>
             </div>
           </div>

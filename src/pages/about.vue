@@ -9,8 +9,8 @@ import TechStack from '~/components/content/AboutTechStack.vue'
 // const contact = useContactStore()
 
 const contactInfo = [
-  { icon: 'i-carbon-email bg-green-500', href: 'mailto:me@emilio-balda.com', text: 'me@emilio-balda.com' },
-  { icon: 'i-carbon-logo-linkedin bg-[royalblue]', href: 'https://www.linkedin.com/in/emiliobalda/', text: 'emiliobalda' },
+  { icon: 'i-carbon-email bg-primary-500', href: 'mailto:me@emilio-balda.com', text: 'me@emilio-balda.com' },
+  { icon: 'i-carbon-logo-linkedin bg-[var(--secondary-500)]', href: 'https://www.linkedin.com/in/emiliobalda/', text: 'emiliobalda' },
   { icon: 'i-carbon-logo-github bg-black dark:bg-white', href: 'https://github.com/emilio-balda', text: 'emilio-balda' },
 ]
 
@@ -53,7 +53,7 @@ function onAfterEnter() {}
 <template>
   <div class="flex flex-wrap items-center justify-center">
     <div class="flex flex-wrap items-start justify-around px-4 lg:px-8 lg:w-5/6">
-      <div class="flex flex-col drop-shadow shadow-2xl p-8 rounded-xl items-center justify-between w-fit mb-8 bg-card">
+      <div class="flex flex-col drop-shadow shadow-2xl p-8 rounded-xl items-center justify-between w-fit mb-8 neumorphic-shadow">
         <div class="pb-4">
           <img src="../assets/me.png" alt="Avatar" class="w-32 rounded-full border-2 border-slate-100">
         </div>
@@ -62,10 +62,10 @@ function onAfterEnter() {}
             <div>
               {{ skill.name }}
             </div>
-            <div class="h-2 rounded-xl w-full bg-emerald-500" :style="{width:skill.level}" />
+            <div class="h-2 rounded-xl w-full bg-primary-500" :style="{width:skill.level}" />
           </div>
         </div>
-        <div class="pt-2 text-xl ">
+        <div class="pt-2 text-4xl ">
           <a v-for="content in contactInfo" :key="content.href" class="inline-block px-1 pt-4" :href="content.href">
             <div :class="content.icon" />
           </a>
@@ -86,7 +86,7 @@ function onAfterEnter() {}
           <div v-for="section in sections" :key="section.title" class="mx-2 my-2">
             <button
               class="hover:scale-105 rounded-md px-2 py-1 text-white h-full"
-              :class="!section.show ? 'bg-gray-600' : 'bg-emerald-600'" @click.prevent="handleToggleSection(section)"
+              :class="!section.show ? 'bg-gray-600' : 'bg-primary-500'" @click.prevent="handleToggleSection(section)"
             >
               {{ section.title }}
             </button>

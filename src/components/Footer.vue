@@ -20,14 +20,14 @@ const { t } = useI18n()
     <button class="icon-btn mx-2 !outline-none inline-flex" :title="t('button.toggle_dark')" @click="toggleDark()">
       <div
         i="carbon-sun"
-        class="text-xl bg-green-500 dark:bg-gray-300"
+        class="text-xl bg-primary-500 dark:bg-gray-300"
       />
       <p class="text-gray-500">
         /
       </p>
       <div
         i="carbon-moon"
-        class="text-xl bg-gray-300 dark:bg-green-500"
+        class="text-xl bg-gray-300 dark:bg-primary-500"
       />
     </button>
 

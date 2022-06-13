@@ -16,7 +16,7 @@
 
     <p>
       I designed a mathematical framework that allowed me to derive new algorithms suited for different computer vision tasks. These algorithms outperformed their counterparts in the task of fooling neural networks. The paper was published in the renowned journal "IEEE Transactions on Signal Processing".
-      Official link to the paper <glowing-hyper-link href="https://ieeexplore.ieee.org/abstract/document/8846746" class="text-emerald-500" text="here" />. You can get the full paper for free with <glowing-hyper-link href="https://www.ti.rwth-aachen.de/publications/output.php?id=263&table=article&type=pdf" class="text-emerald-500" text="this link" />.
+      Official link to the paper <glowing-hyper-link href="https://ieeexplore.ieee.org/abstract/document/8846746" class="text-primary-500" text="here" />. You can get the full paper for free with <glowing-hyper-link href="https://www.ti.rwth-aachen.de/publications/output.php?id=263&table=article&type=pdf" class="text-primary-500" text="this link" />.
     </p>
 
     <h1 class="font-bold text-2xl py-4">

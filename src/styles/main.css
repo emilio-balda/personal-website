@@ -27,11 +27,24 @@ html.dark {
   height: 2px;
 }
 
-.bg-primary-dark {
-  background-color: rgb(5, 6, 45);
+.neumorphic-shadow {
+  box-shadow:  23px 23px 47px rgba(0, 0, 0,0.25),
+             -23px -23px 47px rgba(255, 255, 255,0.03);
 }
 
-.neumorphic-shadow {
-  box-shadow:  23px 23px 47px #101921,
-             -23px -23px 47px #1a2937;
+:root {
+  --primary-300: #76dfc7;
+  --primary-500: #5CCBB2;
+  --primary-700: #47706d;
+  --secondary-300: #91deeb;
+  --secondary-500: #8AD3DF;
+  --secondary-700: #69B8C6;
+  --accent-300: #f0abf9;
+  --accent-500: #e791d9;
+  --accent-700: #CE71BF;
+  --background-200: #5A7DB1;
+  --background-300: #435C81;
+  --background-500: #293f51;
+  --background-700: #16242f;
+  --background-900: #15212c;
 }

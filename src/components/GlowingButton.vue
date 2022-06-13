@@ -10,7 +10,7 @@ const props = defineProps({
 
 <template>
   <button class="bnglow" role="button">
-    <span class="text bg-primary-dark" :class="props.class_text">{{ props.label }}</span>
+    <span class="text bg-background-900 neumorphic-shadow" :class="props.class_text">{{ props.label }}</span>
   </button>
 </template>
 
@@ -26,14 +26,13 @@ const props = defineProps({
 }
 
 .bnglow {
-  background-image: linear-gradient(145deg, darkorchid, royalblue, rgb(52 211 153));
+  background-image: linear-gradient(145deg, var(--accent-500), var(--secondary-500), var(--primary-500));
   border: 0;
   border-radius: 8px;
-  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  /* box-shadow: var(--background-700) 0 15px 30px -5px; */
   box-sizing: border-box;
   color: #ffffff;
   display: flex;
-  font-family: Phantomsans, sans-serif;
   line-height: 1em;
   max-width: 100%;
   padding: 3px;
@@ -54,9 +53,9 @@ const props = defineProps({
   content: "";
   background: linear-gradient(
     145deg,
-    darkorchid, royalblue, rgb(52 211 153),
-    darkorchid, royalblue, rgb(52 211 153),
-    darkorchid, royalblue, rgb(52 211 153)
+    var(--accent-500), var(--secondary-500), var(--primary-500),
+    var(--accent-500), var(--secondary-500), var(--primary-500),
+    var(--accent-500), var(--secondary-500), var(--primary-500)
   );
   position: absolute;
   top: -2px;
@@ -89,7 +88,7 @@ const props = defineProps({
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgb(5, 6, 45);
+  background: var(--background-900);
   left: 0;
   top: 0;
   border-radius: 10px;

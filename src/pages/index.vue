@@ -7,8 +7,8 @@ import GlowingButton from '~/components/GlowingButton.vue'
 import { scrollTo } from '~/composables/dom'
 
 const contactInfo = [
-  { icon: 'i-carbon-email bg-green-500', href: 'mailto:me@emilio-balda.com', text: 'me@emilio-balda.com' },
-  { icon: 'i-carbon-logo-linkedin bg-[royalblue]', href: 'https://www.linkedin.com/in/emiliobalda/', text: 'emiliobalda' },
+  { icon: 'i-carbon-email bg-primary-500', href: 'mailto:me@emilio-balda.com', text: 'me@emilio-balda.com' },
+  { icon: 'i-carbon-logo-linkedin bg-[var(--secondary-500)]', href: 'https://www.linkedin.com/in/emiliobalda/', text: 'emiliobalda' },
   { icon: 'i-carbon-logo-github bg-black dark:bg-white', href: 'https://github.com/emilio-balda', text: 'emilio-balda' },
 ]
 
@@ -22,7 +22,7 @@ const contactInfo = [
       </h1>
     </div>
     <div class="flex flex-wrap md:flex-nowrap w-full items-center justify-center">
-      <div class="flex flex-col items-center p-4 rounded-2xl hover:scale-105 duration-500 neumorphic-shadow">
+      <div class="flex flex-col items-center p-4 rounded-2xl hover:scale-105 duration-500 neumorphic-shadow bg-background-900">
         <div class="py-4">
           <img src="../assets/me.png" alt="Avatar" class="w-[12em] rounded-full border-2 border-slate-100">
         </div>
@@ -36,7 +36,7 @@ const contactInfo = [
           <p class="text-lg md:text-xl lg:text-2xl whitespace-nowrap">
             PhD in Machine Learning
           </p>
-          <p class="text-lg md:text-xl lg:text-2xl whitespace-nowrap">
+          <p class="text-4xl whitespace-nowrap">
             <a v-for="content in contactInfo" :key="content.href" class="inline-block px-1 pt-4" :href="content.href">
               <div :class="content.icon" />
             </a>
@@ -69,22 +69,22 @@ const contactInfo = [
   }
   .typewriter {
     white-space: nowrap;
-    border-right: solid 4px rgb(52 211 153);
+    border-right: solid 4px var(--primary-500);
   }
 }
 
 /* text animation */
 
 @keyframes animated-text{
-  0%{width: 0%;border-right-color: darkorchid;}
-  50%{width: 50%;border-right-color: royalblue;}
-  100%{width: 100%;border-right-color: rgb(52 211 153);}
+  0%{width: 0%;border-right-color: var(--accent-300);}
+  50%{width: 50%;border-right-color: var(--secondary-500);}
+  100%{width: 100%;border-right-color: var(--primary-500);}
 }
 
 /* cursor animations */
 
 @keyframes animated-cursor{
-  from{border-right-color: rgb(52 211 153);}
+  from{border-right-color: var(--primary-500);}
   to{border-right-color: transparent;}
 }
 
@@ -95,7 +95,7 @@ const contactInfo = [
   background-color: black;
 
   /* Create the gradient. */
-  background-image: linear-gradient(45deg, darkorchid, royalblue, rgb(52 211 153));
+  background-image: linear-gradient(45deg, var(--accent-700), var(--secondary-700), var(--primary-500));
 
   /* Set the background size and repeat properties. */
   background-size: 100%;

@@ -34,30 +34,35 @@ const handleClickNavMenu = (section_id: string) => {
 </script>
 
 <template>
-  <div class="max-w-screen overflow-hidden">
+  <div class="max-w-screen">
     <div class="sticky origin-top-right absolute right-0 top-0 z-40 flex flex-col">
-      <div class="flex flex-row w-full bg-background-700/95 pt-2 pb-1 items-center justify-between text-white text-lg md:text-xl lg:text-2xl drop-shadow shadow-xl">
-        <div class="ml-4">
+      <div class="flex flex-row w-full bg-background-900/98 px-4 py-4 items-center justify-between text-white text-lg md:text-xl lg:text-2xl">
+        <div class="flex flex-row justify-center items-center cursor-pointer" @click="scrollTo('home')">
+          <div>
+            <img src="../assets/me.png" alt="Avatar" class="w-[2em] rounded-full">
+          </div>
+          <div class="ml-4 icon-btn text-xl lg:text-2xl font-bold">
+            Emilio Balda
+          </div>
+        </div>
+        <div>
           <button class="icon-btn mx-2 inline-flex" @click="toggleDark()">
             <div
               i="carbon-sun"
-              class="text-xl bg-green-500 dark:bg-gray-300"
+              class="text-xl lg:text-2xl bg-primary-500 dark:bg-gray-300"
             />
             <p class="text-gray-500">
               /
             </p>
             <div
               i="carbon-moon"
-              class="text-xl bg-gray-300 dark:bg-green-500"
+              class="text-xl lg:text-2xl bg-gray-300 dark:bg-primary-500"
             />
           </button>
         </div>
-        <div class="icon-btn" @click="scrollTo('home')">
-          Emilio Balda
-        </div>
         <div class="mr-8">
           <div class="hidden md:flex">
-            <button v-for="section in navBarItems" :key="section.id" class="icon-btn mx-2 text-lg" @click="scrollTo(section.id)">
+            <button v-for="section in navBarItems" :key="section.id" class="icon-btn mx-3 text-xl lg:text-2xl font-bold" @click="scrollTo(section.id)">
               {{ section.page_name }}
             </button>
           </div>

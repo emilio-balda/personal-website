@@ -20,17 +20,17 @@ interface Tag {
 const alias_to_tag: Record<string, Tag> = {
   ml: {
     title: 'machine learning',
-    color: 'bg-emerald-600',
+    color: 'bg-green-500',
     is_selected: false,
   },
   frontend: {
     title: 'frontend',
-    color: 'bg-[darkorchid]',
+    color: 'bg-accent-700',
     is_selected: false,
   },
   backend: {
     title: 'backend',
-    color: 'bg-[royalblue]',
+    color: 'bg-blue-500',
     is_selected: false,
   },
   vision: {
@@ -130,7 +130,7 @@ function enableScrolling() {
       class="px-2 w-80 mt-4"
     >
       <div
-        class="flex flex-col h-[35rem] w-full items-center justify-center text-xl drop-shadow-xl rounded-lg overflow-hidden shadow-2xl duration-500 transform transition bg-card"
+        class="flex flex-col h-[35rem] w-full items-center justify-center text-xl drop-shadow-xl rounded-lg overflow-hidden shadow-2xl duration-500 transform transition neumorphic-shadow"
       >
         <div
           class="flex items-center justify-center w-full h-5/12 bg-cover bg-center"

@@ -6,7 +6,7 @@ const props = defineProps(
     class: {
       type: String,
       required: false,
-      default: 'text-emerald-500',
+      default: 'text-primary-500',
     },
   },
 )
@@ -18,6 +18,6 @@ const props = defineProps(
 
 <style scoped>
 .glowing-text:hover {
-  filter: drop-shadow(0 0 4px rgb(52 211 153));
+  filter: drop-shadow(0 0 4px var(--primary-500));
  }
 </style>
