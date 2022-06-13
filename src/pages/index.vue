@@ -22,7 +22,7 @@ const contactInfo = [
       </h1>
     </div>
     <div class="flex flex-wrap md:flex-nowrap w-full items-center justify-center">
-      <div class="flex flex-col items-center drop-shadow shadow-xl p-4 rounded-2xl hover:scale-105 duration-500 bg-card">
+      <div class="flex flex-col items-center p-4 rounded-2xl hover:scale-105 duration-500 neumorphic-shadow">
         <div class="py-4">
           <img src="../assets/me.png" alt="Avatar" class="w-[12em] rounded-full border-2 border-slate-100">
         </div>

@@ -9,7 +9,7 @@ body,
 }
 
 html.dark {
-  background: #121212;
+  background: #16242f;
 }
 
 #nprogress {
@@ -29,4 +29,9 @@ html.dark {
 
 .bg-primary-dark {
   background-color: rgb(5, 6, 45);
+}
+
+.neumorphic-shadow {
+  box-shadow:  23px 23px 47px #101921,
+             -23px -23px 47px #1a2937;
 }
