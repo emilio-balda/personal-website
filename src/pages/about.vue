@@ -53,7 +53,7 @@ function onAfterEnter() {}
 <template>
   <div class="flex flex-wrap items-center justify-center">
     <div class="flex flex-wrap items-start justify-around px-4 lg:px-8 lg:w-5/6">
-      <div class="flex flex-col drop-shadow shadow-2xl p-8 rounded-xl items-center justify-between w-fit mb-8 neumorphic-shadow">
+      <div class="flex flex-col p-8 rounded-xl items-center justify-between w-fit mb-8 neumorphic-shadow bg-background-900">
         <div class="pb-4">
           <img src="../assets/me.png" alt="Avatar" class="w-32 rounded-full border-2 border-slate-100">
         </div>
@@ -67,7 +67,7 @@ function onAfterEnter() {}
         </div>
         <div class="pt-2 text-4xl ">
           <a v-for="content in contactInfo" :key="content.href" class="inline-block px-1 pt-4" :href="content.href">
-            <div :class="content.icon" />
+            <div :class="content.icon" class="transition-all duration-300 hover:-translate-y-2" />
           </a>
         </div>
       </div>

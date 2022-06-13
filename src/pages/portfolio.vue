@@ -123,14 +123,14 @@ function enableScrolling() {
 
 </script>
 <template>
-  <div class="relative flex flex-wrap items-center justify-center">
+  <div class="relative flex flex-wrap items-stretch justify-center">
     <div
       v-for="item in content" :id="getParentId(item.id)"
       :key="item.title"
       class="px-2 w-80 mt-4"
     >
       <div
-        class="flex flex-col h-[35rem] w-full items-center justify-center text-xl drop-shadow-xl rounded-lg overflow-hidden shadow-2xl duration-500 transform transition neumorphic-shadow"
+        class="flex flex-col h-[35rem] w-full items-center justify-center text-xl rounded-lg overflow-hidden bg-background-900 neumorphic-shadow transition-all duration-300 hover:-translate-y-2"
       >
         <div
           class="flex items-center justify-center w-full h-5/12 bg-cover bg-center"

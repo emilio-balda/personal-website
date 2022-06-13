@@ -22,7 +22,7 @@ const contactInfo = [
       </h1>
     </div>
     <div class="flex flex-wrap md:flex-nowrap w-full items-center justify-center">
-      <div class="flex flex-col items-center p-4 rounded-2xl hover:scale-105 duration-500 neumorphic-shadow bg-background-900">
+      <div class="flex flex-col items-center p-4 rounded-2xl duration-500 neumorphic-shadow bg-background-900">
         <div class="py-4">
           <img src="../assets/me.png" alt="Avatar" class="w-[12em] rounded-full border-2 border-slate-100">
         </div>
@@ -38,7 +38,7 @@ const contactInfo = [
           </p>
           <p class="text-4xl whitespace-nowrap">
             <a v-for="content in contactInfo" :key="content.href" class="inline-block px-1 pt-4" :href="content.href">
-              <div :class="content.icon" />
+              <div :class="content.icon" class="transition-all duration-300 hover:-translate-y-2" />
             </a>
           </p>
         </div>

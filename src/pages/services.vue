@@ -29,7 +29,7 @@ const content: Array<ContentItem> = [
 <template>
   <div class="flex flex-wrap items-center justify-center">
     <div class="flex flex-wrap items-stretch justify-center lg:w-5/6">
-      <div v-for="item in content" :key="item.title" class="flex flex-col justify-between  items-center w-[19em] md:w-90 mt-4 mb-2 duration-500 transform transition rounded-lg overflow-hidden mx-4 neumorphic-shadow bg-background-700">
+      <div v-for="item in content" :key="item.title" class="flex flex-col justify-between  items-center w-[19em] md:w-90 mt-4 mb-2 rounded-lg overflow-hidden mx-4 neumorphic-shadow bg-background-900 transition-all duration-300 hover:-translate-y-2">
         <div class="rounded-lg overflow-hidden mb-10">
           <img
             :src="item.image"

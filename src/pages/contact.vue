@@ -13,10 +13,10 @@ const contactInfo = [
         Let's Connect!
       </h1>
     </div>
-    <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl hover:scale-105 duration-500 transform transition cursor-pointer neumorphic-shadow">
-      <div class="flex flex-row items-start justify-center pb-4 pt-8 px-4">
+    <div class="rounded-xl overflow-hidden cursor-pointer neumorphic-shadow bg-background-900">
+      <div class="flex flex-row items-start justify-center py-8 px-8">
         <div v-for="content in contactInfo" :key="content.href" class="flex items-center justify-center">
-          <div class="text-6xl mx-4">
+          <div class="text-6xl mx-4 transition-all duration-300 hover:-translate-y-2">
             <a :href="content.href"><div class="" :class="content.icon" /></a>
           </div>
         </div>
