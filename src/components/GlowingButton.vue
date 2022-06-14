@@ -9,8 +9,8 @@ const props = defineProps({
 </script>
 
 <template>
-  <button class="bnglow" role="button">
-    <span class="text bg-background-900 neumorphic-shadow" :class="props.class_text">{{ props.label }}</span>
+  <button class="bnglow neumorphic-shadow" role="button">
+    <span class="text bg-background-900" :class="props.class_text">{{ props.label }}</span>
   </button>
 </template>
 
@@ -18,7 +18,6 @@ const props = defineProps({
 /* CSS */
 .bnglow:active,
 .bnglow span {
-  /* background-color: rgb(5, 6, 45); */
   border-radius: 6px;
   width: 100%;
   height: 100%;
@@ -26,10 +25,9 @@ const props = defineProps({
 }
 
 .bnglow {
-  background-image: linear-gradient(145deg, var(--accent-500), var(--secondary-500), var(--primary-500));
+  background-image: linear-gradient(145deg, var(--accent-300), var(--secondary-300), var(--primary-700));
   border: 0;
   border-radius: 8px;
-  /* box-shadow: var(--background-700) 0 15px 30px -5px; */
   box-sizing: border-box;
   color: #ffffff;
   display: flex;
@@ -53,9 +51,9 @@ const props = defineProps({
   content: "";
   background: linear-gradient(
     145deg,
-    var(--accent-500), var(--secondary-500), var(--primary-500),
-    var(--accent-500), var(--secondary-500), var(--primary-500),
-    var(--accent-500), var(--secondary-500), var(--primary-500)
+    var(--accent-300), var(--secondary-300), var(--primary-700),
+    var(--accent-300), var(--secondary-300), var(--primary-700),
+    var(--accent-300), var(--secondary-300), var(--primary-700)
   );
   position: absolute;
   top: -2px;

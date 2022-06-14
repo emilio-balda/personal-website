@@ -130,7 +130,7 @@ function enableScrolling() {
       class="px-2 w-80 mt-4"
     >
       <div
-        class="flex flex-col h-[35rem] w-full items-center justify-center text-xl rounded-lg overflow-hidden bg-background-900 neumorphic-shadow transition-all duration-300 hover:-translate-y-2"
+        class="flex flex-col h-[35rem] w-full items-center justify-center text-xl rounded-lg overflow-hidden dark:bg-background-900 neumorphic-shadow transition-all duration-300 hover:-translate-y-2"
       >
         <div
           class="flex items-center justify-center w-full h-5/12 bg-cover bg-center"

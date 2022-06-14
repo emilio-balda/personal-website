@@ -13,8 +13,8 @@ function closeModal() {
         <div class="flex flex-col w-full h-[calc(90vh)] bg-white dark:bg-slate-700 shadow-xl items-center rounded-lg overflow-hidden">
           <div class="shrink-0 self-end px-4 py-4">
             <div
-              i-carbon-misuse-outline
-              class="text-xl text-red-700 opacity-75 border-b border-gray-400 focus:shadow-none focus:opacity-100 hover:opacity-100"
+              i-carbon-circle-solid
+              class="text-lg text-red-600 focus:text-red-500 hover:text-red-500"
               @click.prevent="closeModal"
             />
           </div>

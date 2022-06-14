@@ -59,6 +59,7 @@ export default defineConfig({
         700: '#16242f',
         900: '#15212c',
       },
+      linkedin: '#3074b2',
     },
   },
 })

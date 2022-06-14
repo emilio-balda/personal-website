@@ -8,7 +8,7 @@ import { scrollTo } from '~/composables/dom'
 
 const contactInfo = [
   { icon: 'i-carbon-email bg-primary-500', href: 'mailto:me@emilio-balda.com', text: 'me@emilio-balda.com' },
-  { icon: 'i-carbon-logo-linkedin bg-[var(--secondary-500)]', href: 'https://www.linkedin.com/in/emiliobalda/', text: 'emiliobalda' },
+  { icon: 'i-carbon-logo-linkedin bg-linkedin', href: 'https://www.linkedin.com/in/emiliobalda/', text: 'emiliobalda' },
   { icon: 'i-carbon-logo-github bg-black dark:bg-white', href: 'https://github.com/emilio-balda', text: 'emilio-balda' },
 ]
 
@@ -22,7 +22,7 @@ const contactInfo = [
       </h1>
     </div>
     <div class="flex flex-wrap md:flex-nowrap w-full items-center justify-center">
-      <div class="flex flex-col items-center p-4 rounded-2xl duration-500 neumorphic-shadow bg-background-900">
+      <div class="flex flex-col items-center p-4 rounded-2xl duration-500 neumorphic-shadow dark:bg-background-900">
         <div class="py-4">
           <img src="../assets/me.png" alt="Avatar" class="w-[12em] rounded-full border-2 border-slate-100">
         </div>
@@ -95,7 +95,7 @@ const contactInfo = [
   background-color: black;
 
   /* Create the gradient. */
-  background-image: linear-gradient(45deg, var(--accent-700), var(--secondary-700), var(--primary-500));
+  background-image: linear-gradient(45deg, var(--accent-300), var(--secondary-300), var(--primary-500));
 
   /* Set the background size and repeat properties. */
   background-size: 100%;

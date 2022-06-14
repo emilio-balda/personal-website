@@ -36,12 +36,12 @@ const handleClickNavMenu = (section_id: string) => {
 <template>
   <div class="max-w-screen">
     <div class="sticky origin-top-right absolute right-0 top-0 z-40 flex flex-col">
-      <div class="flex flex-row w-full bg-background-900/98 px-4 py-4 items-center justify-between text-white text-lg md:text-xl lg:text-2xl">
+      <div class="flex flex-row w-full bg-background-900 md:bg-background-900/98 px-4 py-4 items-center justify-between text-white">
         <div class="flex flex-row justify-center items-center cursor-pointer" @click="scrollTo('home')">
           <div>
-            <img src="../assets/me.png" alt="Avatar" class="w-[2em] rounded-full">
+            <img src="../assets/me.png" alt="Avatar" class="w-[3.5em] rounded-full">
           </div>
-          <div class="ml-4 icon-btn text-xl lg:text-2xl font-bold">
+          <div class="ml-4 icon-btn text-lg md:text-xl font-bold">
             Emilio Balda
           </div>
         </div>
@@ -49,34 +49,34 @@ const handleClickNavMenu = (section_id: string) => {
           <button class="icon-btn mx-2 inline-flex" @click="toggleDark()">
             <div
               i="carbon-sun"
-              class="text-xl lg:text-2xl bg-primary-500 dark:bg-gray-300"
+              class="text-lg md:text-xl bg-primary-500 dark:bg-gray-300"
             />
             <p class="text-gray-500">
               /
             </p>
             <div
               i="carbon-moon"
-              class="text-xl lg:text-2xl bg-gray-300 dark:bg-primary-500"
+              class="text-lg md:text-xl bg-gray-300 dark:bg-primary-500"
             />
           </button>
         </div>
         <div class="mr-8">
           <div class="hidden md:flex">
-            <button v-for="section in navBarItems" :key="section.id" class="icon-btn mx-3 text-xl lg:text-2xl font-bold" @click="scrollTo(section.id)">
+            <button v-for="section in navBarItems" :key="section.id" class="icon-btn mx-3 text-lg md:text-xl font-bold" @click="scrollTo(section.id)">
               {{ section.page_name }}
             </button>
           </div>
           <div class="mr-4 md:hidden">
             <button class="icon-btn" @click.prevent="showNavMenu= !showNavMenu">
-              <div class="i-carbon-menu font-bold" />
+              <div class="i-carbon-menu font-bold text-lg md:text-xl" />
             </button>
           </div>
         </div>
       </div>
 
-      <div v-if="showNavMenu" class="absolute right-0 top-17 flex flex-col w-full bg-background-900/98 items-center justify-between text-white text-lg md:text-xl lg:text-2xl py-2">
+      <div v-if="showNavMenu" class="absolute right-0 top-21 flex flex-col w-full bg-background-900 md:bg-background-900/98 items-center justify-between text-white text-lg py-2">
         <div v-for="section in navBarItems" :key="section.id" class="py-3">
-          <button class="icon-btn text-2xl" @click.prevent="handleClickNavMenu(section.id)">
+          <button class="icon-btn text-xl" @click.prevent="handleClickNavMenu(section.id)">
             {{ section.page_name }}
           </button>
         </div>
