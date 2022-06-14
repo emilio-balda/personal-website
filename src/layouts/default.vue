@@ -71,7 +71,7 @@ const handleClickNavMenu = (section_id: string) => {
     </div>
     <div class="md:hidden fixed left-0 right-0 bottom-0 z-50 flex flex-row w-full bg-background-900/98 items-center justify-between text-white px-2">
       <div v-for="section in navBarItems" :key="section.id" class="py-3 mx-2 flex flex-col items-center justify-center">
-        <div :class="section.icon" class="text-lg" />
+        <div :class="section.icon" class="text-lg" @click.prevent="handleClickNavMenu(section.id)" />
         <div>
           <button class="opacity-75 text-md" @click.prevent="handleClickNavMenu(section.id)">
             {{ section.page_name }}
