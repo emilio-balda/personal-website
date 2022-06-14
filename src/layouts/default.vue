@@ -35,7 +35,7 @@ const handleClickNavMenu = (section_id: string) => {
 
 <template>
   <div class="max-w-screen">
-    <div class="sticky origin-top-right absolute right-0 top-0 z-40 flex flex-col">
+    <div class="md:sticky md:origin-top-right md:absolute md:right-0 md:top-0 z-40 flex flex-col">
       <div class="flex flex-row w-full bg-background-900 md:bg-background-900/98 px-4 py-2 items-center justify-between text-white">
         <div class="flex flex-row justify-center items-center cursor-pointer" @click="scrollTo('home')">
           <div>
@@ -69,11 +69,11 @@ const handleClickNavMenu = (section_id: string) => {
         </div>
       </div>
     </div>
-    <div class="md:hidden fixed left-0 right-0 bottom-0 z-50 flex flex-wrap w-full bg-background-900/98 items-center justify-center text-white text-lg p-2">
-      <div v-for="section in navBarItems" :key="section.id" class="py-3 px-2 flex flex-col items-center justify-center">
-        <div :class="section.icon" />
+    <div class="md:hidden fixed left-0 right-0 bottom-0 z-50 flex flex-row w-full bg-background-900/98 items-center justify-center text-white">
+      <div v-for="section in navBarItems" :key="section.id" class="py-3 mx-2 flex flex-col items-center justify-center">
+        <div :class="section.icon" class="text-lg" />
         <div>
-          <button class="icon-btn text-md" @click.prevent="handleClickNavMenu(section.id)">
+          <button class="opacity-75 text-md" @click.prevent="handleClickNavMenu(section.id)">
             {{ section.page_name }}
           </button>
         </div>
