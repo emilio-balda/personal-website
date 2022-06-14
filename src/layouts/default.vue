@@ -8,11 +8,11 @@ import { toggleDark } from '~/composables'
 import { scrollTo } from '~/composables/dom'
 
 const navBarItems = [
-  { route: '/#home', id: 'home', page_name: 'Home', component: Home, background: 'bg-body', title_color: '', title: null },
-  { route: '/#services', id: 'services', page_name: 'Services', component: Services, background: 'bg-body', title_color: '', title: 'Services' },
-  { route: '/#portfolio', id: 'portfolio', page_name: 'Portfolio', component: Portfolio, background: 'bg-body', title_color: '', title: 'Portfolio' },
-  { route: '/#about', id: 'about', page_name: 'About', component: About, background: 'bg-body', title_color: 'text-black', title: null },
-  { route: '/#contact', id: 'contact', page_name: 'Contact', component: Contact, background: 'bg-body', title_color: '', title: null },
+  { route: '/#home', id: 'home', page_name: 'Home', component: Home, background: 'bg-body', title_color: '', title: null, icon: 'i-carbon-home' },
+  { route: '/#services', id: 'services', page_name: 'Services', component: Services, background: 'bg-body', title_color: '', title: 'Services', icon: 'i-carbon-collaborate' },
+  { route: '/#portfolio', id: 'portfolio', page_name: 'Portfolio', component: Portfolio, background: 'bg-body', title_color: '', title: 'Portfolio', icon: 'i-carbon-portfolio' },
+  { route: '/#about', id: 'about', page_name: 'About', component: About, background: 'bg-body', title_color: 'text-black', title: null, icon: 'i-carbon-education' },
+  { route: '/#contact', id: 'contact', page_name: 'Contact', component: Contact, background: 'bg-body', title_color: '', title: null, icon: 'i-carbon-email' },
 ]
 
 const itemToNextRoutes: Record<string, { left_route: string; right_route: string }> = {}
@@ -36,7 +36,7 @@ const handleClickNavMenu = (section_id: string) => {
 <template>
   <div class="max-w-screen">
     <div class="sticky origin-top-right absolute right-0 top-0 z-40 flex flex-col">
-      <div class="flex flex-row w-full bg-background-900 md:bg-background-900/98 px-4 py-4 items-center justify-between text-white">
+      <div class="flex flex-row w-full bg-background-900 md:bg-background-900/98 px-4 py-2 items-center justify-between text-white">
         <div class="flex flex-row justify-center items-center cursor-pointer" @click="scrollTo('home')">
           <div>
             <img src="../assets/me.png" alt="Avatar" class="w-[3.5em] rounded-full">
@@ -66,17 +66,14 @@ const handleClickNavMenu = (section_id: string) => {
               {{ section.page_name }}
             </button>
           </div>
-          <div class="mr-4 md:hidden">
-            <button class="icon-btn" @click.prevent="showNavMenu= !showNavMenu">
-              <div class="i-carbon-menu font-bold text-lg md:text-xl" />
-            </button>
-          </div>
         </div>
       </div>
-
-      <div v-if="showNavMenu" class="absolute right-0 top-21 flex flex-col w-full bg-background-900 md:bg-background-900/98 items-center justify-between text-white text-lg py-2">
-        <div v-for="section in navBarItems" :key="section.id" class="py-3">
-          <button class="icon-btn text-xl" @click.prevent="handleClickNavMenu(section.id)">
+    </div>
+    <div class="md:hidden fixed left-0 right-0 bottom-0 z-50 flex flex-wrap w-full bg-background-900/98 items-center justify-center text-white text-lg p-2">
+      <div v-for="section in navBarItems" :key="section.id" class="py-3 px-2 flex flex-col items-center justify-center">
+        <div :class="section.icon" />
+        <div>
+          <button class="icon-btn text-md" @click.prevent="handleClickNavMenu(section.id)">
             {{ section.page_name }}
           </button>
         </div>
