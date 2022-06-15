@@ -60,12 +60,10 @@ const handleClickNavMenu = (section_id: string) => {
             />
           </button>
         </div>
-        <div class="mr-8">
-          <div class="hidden md:flex">
-            <button v-for="section in navBarItems" :key="section.id" class="icon-btn mx-3 text-lg md:text-xl font-bold" @click="scrollTo(section.id)">
-              {{ section.page_name }}
-            </button>
-          </div>
+        <div class="hidden md:flex mr-8">
+          <button v-for="section in navBarItems" :key="section.id" class="icon-btn mx-3 text-lg md:text-xl font-bold" @click="scrollTo(section.id)">
+            {{ section.page_name }}
+          </button>
         </div>
       </div>
     </div>
