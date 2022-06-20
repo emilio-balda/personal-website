@@ -13,6 +13,10 @@ p {
   font-family: "Libre Franklin", sans-serif;
 }
 
+html {
+  background: #F5FFFD;
+}
+
 html.dark {
   background: #16242f;
 }
