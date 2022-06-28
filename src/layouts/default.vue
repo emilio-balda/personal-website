@@ -36,7 +36,7 @@ const handleClickNavMenu = (section_id: string) => {
 <template>
   <div class="max-w-screen overflow-hidden md:overflow-clip">
     <div class="md:sticky md:origin-top-right md:absolute md:right-0 md:top-0 z-40 flex flex-col">
-      <div class="flex flex-row w-full bg-background-900 md:bg-background-900/98 px-4 py-2 items-center justify-between text-white">
+      <div class="flex flex-row w-full bg-background-100 md:bg-background-100/98 dark:bg-background-900 md:dark:bg-background-900/98 px-4 py-2 items-center justify-between shadow">
         <div class="flex flex-row justify-center items-center cursor-pointer" @click="scrollTo('home')">
           <div>
             <img src="../assets/me.png" alt="Avatar" class="w-[3.5em] rounded-full">
