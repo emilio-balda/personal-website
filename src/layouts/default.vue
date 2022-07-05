@@ -45,20 +45,26 @@ const handleClickNavMenu = (section_id: string) => {
             Emilio Balda
           </div>
         </div>
-        <div>
-          <button class="icon-btn mx-2 inline-flex" @click="toggleDark()">
-            <div
-              i="carbon-sun"
-              class="text-lg md:text-xl bg-primary-500 dark:bg-gray-300"
-            />
-            <p class="text-gray-500">
-              /
-            </p>
-            <div
-              i="carbon-moon"
-              class="text-lg md:text-xl bg-gray-300 dark:bg-primary-500"
-            />
-          </button>
+        <div class="icon-btn mx-2 flex justify-center align-center" @click="toggleDark()">
+          <div
+            i="carbon-light-filled"
+            class="dark:hidden block text-lg md:text-xl bg-primary-500 dark:bg-gray-300"
+          />
+          <div
+            i="carbon-light"
+            class="hidden dark:block text-lg md:text-xl bg-primary-500 dark:bg-gray-300"
+          />
+          <div class="text-gray-500 text-lg">
+            /
+          </div>
+          <div
+            i="carbon-asleep"
+            class="dark:hidden block text-lg md:text-xl bg-gray-300 dark:bg-primary-500"
+          />
+          <div
+            i="carbon-asleep-filled"
+            class="hidden dark:block text-lg md:text-xl bg-gray-300 dark:bg-primary-500"
+          />
         </div>
         <div class="hidden md:flex mr-8">
           <button v-for="section in navBarItems" :key="section.id" class="icon-btn mx-3 text-lg md:text-xl font-bold" @click="scrollTo(section.id)">

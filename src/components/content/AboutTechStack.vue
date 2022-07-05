@@ -30,13 +30,15 @@ const stack = [
     title: 'Infrastructure',
     items: [
       { image: 'https://seeklogo.com/images/G/google-cloud-logo-ADE788217F-seeklogo.com.png', title: 'GCloud' },
-      { image: 'https://seeklogo.com/images/T/terraform-logo-99AE26A4C1-seeklogo.com.png', title: 'Terraform' },
+      // { image: 'https://seeklogo.com/images/T/terraform-logo-99AE26A4C1-seeklogo.com.png', title: 'Terraform' },
+      { image: 'https://seeklogo.com/images/K/kubernetes-logo-3A67038EAB-seeklogo.com.png', title: 'Kubernetes' },
+      { image: 'https://seeklogo.com/images/H/helm-logo-9208DB3EE5-seeklogo.com.png', title: 'Helm' },
     ],
   },
   {
     title: 'DevOps',
     items: [
-      { image: 'https://seeklogo.com/images/H/helm-logo-9208DB3EE5-seeklogo.com.png', title: 'Helm' },
+      { image: 'https://seeklogo.com/images/G/git-logo-F4A93DAA20-seeklogo.com.png', title: 'Git' },
       { image: 'https://seeklogo.com/images/G/gitlab-logo-757620E430-seeklogo.com.png', title: 'GitLab CI' },
       { image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/ESLint_logo.svg/192px-ESLint_logo.svg.png', title: 'ESLint' },
       { image: 'https://seeklogo.com/images/J/jest-logo-F9901EBBF7-seeklogo.com.png', title: 'Jest' },

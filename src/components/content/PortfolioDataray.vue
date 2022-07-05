@@ -47,8 +47,8 @@ const stack = [
     </h1>
     <p>
       Together with a team of 3 developers, we built a data science SaaS product called Dataray. This product is designed to monitor and operate factories with multiple industrial machines.
-      It currently serves 10+ customers around germany.
     </p>
+    <!-- It currently serves 10+ customers around germany. -->
     <h1 class="font-bold text-2xl py-4">
       Features
     </h1>

@@ -35,7 +35,7 @@ const stack = [
     </h1>
 
     <ul class="text-left list-disc list-outside pl-8">
-      <li>Supports Mobile Users</li>
+      <li>Responsive design for mobile, tablet and desktop</li>
       <li>Light/Dark Mode</li>
       <li>Tested with unit and end-to-end tests</li>
       <li>Managed with Continuous Integration and Deployment (CI/CD)</li>
