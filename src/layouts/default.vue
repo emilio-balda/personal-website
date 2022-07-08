@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import Home from '~/pages/index.vue'
 import Services from '~/pages/services.vue'
 import Portfolio from '~/pages/portfolio.vue'
@@ -30,6 +31,8 @@ const handleClickNavMenu = (section_id: string) => {
   showNavMenu.value = false
   scrollTo(section_id)
 }
+
+onMounted(() => scrollTo('home'))
 
 </script>
 
@@ -83,12 +86,12 @@ const handleClickNavMenu = (section_id: string) => {
         </div>
       </div>
     </div>
-    <div class="mt-4">
+    <div>
       <main class="text-center text-gray-700 dark:text-gray-200">
         <div class="flex flex-col items-start justify-center">
           <div v-for="section in navBarItems" :ref="section.id" :key="section.id" class="w-full">
-            <section :id="section.id" class="py-8 min-h-screen" :class="section.background">
-              <div class="flex flex-col items-center justify-center w-full mt-8">
+            <section :id="section.id" class="min-h-screen" :class="section.background">
+              <div class="flex flex-col items-center justify-center w-full pt-8 md:pt-24">
                 <div v-if="section.title !== null" class="text-3xl font-bold mb-4" :class="section.title_color">
                   {{ section.title }}
                 </div>

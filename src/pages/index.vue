@@ -16,7 +16,7 @@ const contactInfo = [
 
 <template>
   <div class="flex flex-col w-full px-8 md:px-16 lg:px-20 items-center justify-center">
-    <div class="md:block mb-8 w-fit">
+    <div class="md:block pb-8 md:pb-12 w-fit">
       <h1 class="gradient-text typewriter whitespace-normal text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold pr-2">
         Transparent Development. Quality Software.
       </h1>
