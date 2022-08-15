@@ -15,7 +15,7 @@ const stack = [
     items: [
       { image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/ESLint_logo.svg/192px-ESLint_logo.svg.png', title: 'ESLint' },
       { image: 'https://seeklogo.com/images/J/jest-logo-F9901EBBF7-seeklogo.com.png', title: 'Jest' },
-      { image: 'https://www.cypress.io/static/33498b5f95008093f5f94467c61d20ab/ac1e1/cypress-logo.webp', title: 'Cypress' },
+      { image: 'https://github.com/cypress-io/cypress/raw/develop/assets/cypress-logo-light.png', title: 'Cypress' },
       { image: 'https://seeklogo.com/images/G/github-actions-logo-031704BDC6-seeklogo.com.png', title: 'GitHub Actions' },
     ],
   },
