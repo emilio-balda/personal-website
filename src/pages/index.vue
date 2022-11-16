@@ -7,7 +7,7 @@ import GlowingButton from '~/components/GlowingButton.vue'
 import { scrollTo } from '~/composables/dom'
 
 const contactInfo = [
-  { icon: 'i-carbon-email bg-primary-500', href: 'mailto:me@emilio-balda.com', text: 'me@emilio-balda.com' },
+  { icon: 'i-carbon-email bg-primary-700 dark:bg-primary-500', href: 'mailto:me@emilio-balda.com', text: 'me@emilio-balda.com' },
   { icon: 'i-carbon-logo-linkedin bg-linkedin', href: 'https://www.linkedin.com/in/emiliobalda/', text: 'emiliobalda' },
   { icon: 'i-carbon-logo-github bg-black dark:bg-white', href: 'https://github.com/emilio-balda', text: 'emilio-balda' },
 ]
@@ -76,15 +76,14 @@ const contactInfo = [
 /* text animation */
 
 @keyframes animated-text{
-  0%{width: 0%;border-right-color: var(--secondary-300);}
-  50%{width: 50%;border-right-color: var(--secondary-500);}
-  100%{width: 100%;border-right-color: var(--primary-500);}
+  0%{width: 100%;border-right-color: var(--primary-500);}
+  1000%{width: 0%;border-right-color: var(--secondary);}
 }
 
 /* cursor animations */
 
 @keyframes animated-cursor{
-  from{border-right-color: var(--primary-500);}
+  from{border-right-color: var(--secondary);}
   to{border-right-color: transparent;}
 }
 
@@ -95,7 +94,7 @@ const contactInfo = [
   background-color: black;
 
   /* Create the gradient. */
-  background-image: linear-gradient(45deg,var(--secondary-300), var(--secondary-500), var(--primary-500));
+  background-image: linear-gradient(45deg, var(--primary-500), var(--secondary));
 
   /* Set the background size and repeat properties. */
   background-size: 100%;

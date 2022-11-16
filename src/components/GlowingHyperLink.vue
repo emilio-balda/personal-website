@@ -6,7 +6,7 @@ const props = defineProps(
     class: {
       type: String,
       required: false,
-      default: 'text-primary-500',
+      default: 'text-primary-700 dark:text-primary-500',
     },
   },
 )

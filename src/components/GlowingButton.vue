@@ -25,7 +25,7 @@ const props = defineProps({
 }
 
 .bnglow {
-  background-image: linear-gradient(145deg, var(--accent-500), var(--secondary-300), var(--primary-500));
+  background-image: linear-gradient(145deg, var(--primary-500), var(--secondary));
   border: 0;
   border-radius: 8px;
   box-sizing: border-box;
@@ -51,9 +51,9 @@ const props = defineProps({
   content: "";
   background: linear-gradient(
     145deg,
-    var(--accent-500), var(--secondary-300), var(--primary-500),
-    var(--accent-500), var(--secondary-300), var(--primary-500),
-    var(--accent-500), var(--secondary-300), var(--primary-500)
+    var(--primary-500), var(--secondary),
+    var(--primary-500), var(--secondary),
+    var(--primary-500), var(--secondary)
   );
   position: absolute;
   top: -2px;

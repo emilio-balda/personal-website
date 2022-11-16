@@ -25,7 +25,7 @@ const alias_to_tag: Record<string, Tag> = {
   },
   frontend: {
     title: 'frontend',
-    color: 'bg-accent-700',
+    color: 'bg-pink-700',
     is_selected: false,
   },
   backend: {

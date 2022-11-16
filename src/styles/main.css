@@ -18,7 +18,7 @@ html {
 }
 
 html.dark {
-  background: #16242f;
+  background: #15212c;
 }
 
 #nprogress {
@@ -26,7 +26,7 @@ html.dark {
 }
 
 #nprogress .bar {
-  background: rgb(13,148,136);
+  background: #0d9488;
   opacity: 0.75;
   position: fixed;
   z-index: 1031;
@@ -38,22 +38,13 @@ html.dark {
 
 .neumorphic-shadow {
   box-shadow:  12px 12px 24px rgba(0, 0, 0,0.25),
-             -12px -12px 24px rgba(255, 255, 255,0.03);
+              -12px -12px 24px rgba(255, 255, 255,0.03);
 }
 
 :root {
-  --primary-300: #76dfc7;
-  --primary-500: #5CCBB2;
-  --primary-700: #47706d;
-  --secondary-300: #91deeb;
-  --secondary-500: #8AD3DF;
-  --secondary-700: #69B8C6;
-  --accent-300: #f0abf9;
-  --accent-500: #e791d9;
-  --accent-700: #CE71BF;
-  --background-200: #5A7DB1;
-  --background-300: #435C81;
-  --background-500: #293f51;
-  --background-700: #16242f;
+  --primary-300: #00FF90;
+  --primary-500: #58FEB6;
+  --primary-700: #24BEA2;
+  --secondary: #4D8DFC;
   --background-900: #15212c;
 }

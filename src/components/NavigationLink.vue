@@ -21,6 +21,6 @@ const props = defineProps({
 
 .router-link-selected {
   border-bottom: 8px solid var(--primary-500);
-  border-image: linear-gradient(to right, rgba(255, 255, 255, 0), var(--accent-500), var(--secondary-500), var(--primary-500), rgba(255, 255, 255, 0)) 1;
+  border-image: linear-gradient(to right, rgba(255, 255, 255, 0), var(--secondary), var(--primary-500), rgba(255, 255, 255, 0)) 1;
 }
 </style>
