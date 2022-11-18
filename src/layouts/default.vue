@@ -39,7 +39,7 @@ onMounted(() => scrollTo('home'))
 <template>
   <div class="max-w-screen overflow-hidden md:overflow-clip">
     <div class="md:sticky md:origin-top-right md:absolute md:right-0 md:top-0 z-40 flex flex-col">
-      <div class="flex flex-row w-full bg-background-100 dark:bg-background-900 px-4 py-2 items-center justify-between">
+      <div class="flex flex-row w-full bg-background-100 dark:bg-background-900 px-4 py-2 items-center justify-between border-b-1 border-slate-300 dark:border-slate-800">
         <div class="flex flex-row justify-center items-center cursor-pointer" @click="scrollTo('home')">
           <div>
             <img src="../assets/me.png" alt="Avatar" class="w-[3.5em] rounded-full">
@@ -76,7 +76,7 @@ onMounted(() => scrollTo('home'))
         </div>
       </div>
     </div>
-    <div class="md:hidden fixed left-0 right-0 bottom-0 z-50 flex flex-row w-full bg-background-900/98 items-center justify-between text-white px-2">
+    <div class="md:hidden fixed left-0 right-0 bottom-0 z-50 flex flex-row w-full bg-background-900 items-center justify-between text-white px-2 border-t-1 border-slate-300 dark:border-slate-800">
       <div v-for="section in navBarItems" :key="section.id" class="py-3 mx-2 flex flex-col items-center justify-center">
         <div :class="section.icon" class="text-lg" @click.prevent="handleClickNavMenu(section.id)" />
         <div>
