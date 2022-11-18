@@ -64,7 +64,7 @@ const contactInfo = [
 @media only screen and (min-width: 768px) {
   /* Animation */
   .typewriter {
-    animation: animated-text 4s steps(17,end) 1s 1 normal both,
+    animation: animated-text 4s steps(42,end) 1s 1 normal both,
               animated-cursor 1s steps(28,end) 5s infinite;
   }
   .typewriter {
@@ -76,8 +76,8 @@ const contactInfo = [
 /* text animation */
 
 @keyframes animated-text{
-  0%{width: 100%;border-right-color: var(--primary-500);}
-  1000%{width: 0%;border-right-color: var(--secondary);}
+  0%{width: 0%;border-right-color: var(--primary-500);}
+  100%{width: 100%;border-right-color: var(--secondary);}
 }
 
 /* cursor animations */
