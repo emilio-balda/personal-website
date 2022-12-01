@@ -47,7 +47,7 @@ for (let i = 0; i < numNavBarItems; i++) {
       </div>
     </div>
     <div>
-      <main class="text-center text-gray-700 dark:text-gray-200">
+      <main class="text-center text-paragraph dark:text-gray-200">
         <div class="flex items-start justify-between">
           <div v-if="useRoute().path in itemToNextRoutes" class="hidden lg:block">
             <div class="sticky top-0 z-40 flex flex-col items-center justify-center h-[calc(75vh)] place-self-start shrink-0 w-16">

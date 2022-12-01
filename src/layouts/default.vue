@@ -39,65 +39,65 @@ onMounted(() => scrollTo('home'))
 <template>
   <div class="max-w-screen overflow-hidden md:overflow-clip">
     <div class="md:sticky md:origin-top-right md:absolute md:right-0 md:top-0 z-40 flex flex-col">
-      <div class="flex flex-row w-full bg-background-100 dark:bg-background-900 px-4 py-2 items-center justify-between border-b-1 border-slate-300 dark:border-slate-800">
-        <div class="flex flex-row justify-center items-center cursor-pointer" @click="scrollTo('home')">
-          <div>
-            <img src="../assets/me.png" alt="Avatar" class="w-[3.5em] rounded-full">
+      <div class="bg-background-100 dark:bg-background-900 px-4 py-2 border-b-1 border-slate-300 dark:border-slate-800 flex flex-row w-full items-center justify-center">
+        <div class="flex flex-row w-full items-center justify-between max-w-7xl">
+          <div class="flex flex-row justify-center items-center cursor-pointer py-2" @click="scrollTo('home')">
+            <div>
+              <img src="../assets/me.png" alt="Avatar" class="w-[2.5em] rounded-full">
+            </div>
+            <h4 class="ml-4 icon-btn text-md md:text-lg font-semibold">
+              Emilio Balda
+            </h4>
           </div>
-          <div class="ml-4 icon-btn text-lg md:text-xl font-bold">
-            Emilio Balda
+          <div class="icon-btn mx-2 flex justify-center align-center" @click="toggleDark()">
+            <div
+              i="carbon-light-filled"
+              class="dark:hidden block text-md md:text-lg bg-primary-700 dark:bg-primary-500 dark:bg-gray-300"
+            />
+            <div
+              i="carbon-light"
+              class="hidden dark:block text-md md:text-lg bg-primary-500 dark:bg-gray-300"
+            />
+            <div class="text-gray-500 text-lg">
+              /
+            </div>
+            <div
+              i="carbon-asleep"
+              class="dark:hidden block text-lg md:text-xl bg-gray-300 dark:bg-primary-500"
+            />
+            <div
+              i="carbon-asleep-filled"
+              class="hidden dark:block text-lg md:text-xl bg-gray-300 dark:bg-primary-500"
+            />
           </div>
-        </div>
-        <div class="icon-btn mx-2 flex justify-center align-center" @click="toggleDark()">
-          <div
-            i="carbon-light-filled"
-            class="dark:hidden block text-lg md:text-xl bg-primary-700 dark:bg-primary-500 dark:bg-gray-300"
-          />
-          <div
-            i="carbon-light"
-            class="hidden dark:block text-lg md:text-xl bg-primary-500 dark:bg-gray-300"
-          />
-          <div class="text-gray-500 text-lg">
-            /
+          <div class="hidden md:flex mr-8">
+            <button v-for="section in navBarItems" :key="section.id" class="icon-btn mx-3 text-md md:text-lg" @click="scrollTo(section.id)">
+              {{ section.page_name }}
+            </button>
           </div>
-          <div
-            i="carbon-asleep"
-            class="dark:hidden block text-lg md:text-xl bg-gray-300 dark:bg-primary-500"
-          />
-          <div
-            i="carbon-asleep-filled"
-            class="hidden dark:block text-lg md:text-xl bg-gray-300 dark:bg-primary-500"
-          />
-        </div>
-        <div class="hidden md:flex mr-8">
-          <button v-for="section in navBarItems" :key="section.id" class="icon-btn mx-3 text-lg md:text-xl font-bold" @click="scrollTo(section.id)">
-            {{ section.page_name }}
-          </button>
         </div>
       </div>
     </div>
     <div class="md:hidden fixed left-0 right-0 bottom-0 z-50 flex flex-row w-full bg-background-900 items-center justify-between text-white px-2 border-t-1 border-slate-300 dark:border-slate-800">
       <div v-for="section in navBarItems" :key="section.id" class="py-3 mx-2 flex flex-col items-center justify-center">
-        <div :class="section.icon" class="text-lg" @click.prevent="handleClickNavMenu(section.id)" />
+        <div :class="section.icon" class="text-md" @click.prevent="handleClickNavMenu(section.id)" />
         <div>
-          <button class="opacity-75 text-md" @click.prevent="handleClickNavMenu(section.id)">
+          <button class="opacity-75 text-sm" @click.prevent="handleClickNavMenu(section.id)">
             {{ section.page_name }}
           </button>
         </div>
       </div>
     </div>
     <div>
-      <main class="text-center text-gray-700 dark:text-gray-200">
-        <div class="flex flex-col items-start justify-center">
-          <div v-for="section in navBarItems" :ref="section.id" :key="section.id" class="w-full">
+      <main class="text-center text-paragraph dark:text-gray-200">
+        <div class="flex flex-col items-center justify-center">
+          <div v-for="section in navBarItems" :ref="section.id" :key="section.id" class="w-full max-w-7xl">
             <section :id="section.id" class="min-h-screen" :class="section.background">
               <div class="flex flex-col items-center justify-center w-full pt-8 md:pt-24">
-                <div v-if="section.title !== null" class="text-3xl font-bold mb-4" :class="section.title_color">
+                <h4 v-if="section.title !== null" class="text-3xl font-semibold mb-4" :class="section.title_color">
                   {{ section.title }}
-                </div>
-                <div class="w-full">
-                  <component :is="section.component" />
-                </div>
+                </h4>
+                <component :is="section.component" />
               </div>
             </section>
           </div>

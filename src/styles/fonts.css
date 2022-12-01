@@ -41,10 +41,3 @@
   src: url('./fonts/THICCCBOI-ThicccAF.woff2') format('woff2');
   font-weight: 950;
 }
-
-
-@font-face {
-  font-family: "Thicccboi";
-  src: url('./fonts/THICCCBOI-Black.woff2') format('woff2');
-  font-weight: 900;
-}
