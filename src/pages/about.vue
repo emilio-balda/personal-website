@@ -92,7 +92,7 @@ function onAfterEnter() {}
             </button>
           </div>
         </div>
-        <div class="flex flex-col w-full items-start justify-start pt-2 max-h-128 overflow-y-auto">
+        <perfect-scrollbar class="flex flex-col w-full items-start justify-start pt-2 max-h-128">
           <div v-for="section in sections" :key="section.title" class="pb-4 w-full h-fit">
             <transition @after-enter="onAfterEnter">
               <div v-if="section.show" :id="getSectionId(section)">
@@ -103,7 +103,7 @@ function onAfterEnter() {}
               </div>
             </transition>
           </div>
-        </div>
+        </perfect-scrollbar>
       </div>
     </div>
   </div>
