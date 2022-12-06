@@ -21,7 +21,7 @@ const contactInfo = [
         Your Full Stack Developer for Startups
       </h1>
     </div>
-    <div class="flex flex-wrap md:flex-nowrap w-full items-center justify-center">
+    <div class="flex flex-wrap md:flex-nowrap w-full items-center justify-center px-12">
       <div class="flex flex-col items-center p-4 rounded-2xl duration-500 neumorphic-shadow dark:bg-background-900">
         <div class="py-4">
           <img src="../assets/me.png" alt="Avatar" class="w-[12em] rounded-full border-2 border-slate-100">
@@ -43,11 +43,11 @@ const contactInfo = [
           </p>
         </div>
       </div>
-      <div class="md:px-16 py-4 md:py-10">
+      <div class="p-12">
         <p class="text-lg md:text-xl lg:text-2xl  leading-relaxed text-center">
           I care about communication. That's why I'm interested to know all the details that make your project unique. Before starting a project, you will have a clear picture of how the end result looks like. You will get regular updates about the progress and software adhering to the best practices in the industry.
         </p>
-        <div class="inline-block my-3 md:my-8 md:mx-7 font-medium">
+        <div class="inline-block my-4 md:my-8 md:mx-8 font-medium">
           <glowing-button label="Let's Start" class_text="text-lg px-4 py-2" @click="scrollTo('portfolio')" />
         </div>
       </div>

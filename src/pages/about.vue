@@ -51,7 +51,7 @@ function onAfterEnter() {}
 </script>
 
 <template>
-  <div class="flex flex-wrap items-center justify-center">
+  <div class="flex flex-wrap items-center justify-center p-4">
     <div class="flex flex-wrap items-start justify-around px-4 lg:px-8 lg:w-5/6">
       <div class="flex flex-col p-8 rounded-xl items-center justify-between w-fit mb-8 neumorphic-shadow dark:bg-background-900">
         <div class="pb-4">
@@ -78,7 +78,7 @@ function onAfterEnter() {}
           </h3>
         </div>
         <div class="mt-4 mb-8">
-          <p class="text-base md:text-lg lg:text-xl text-justify ">
+          <p class="text-base md:text-lg lg:text-xl text-center ">
             I learned how to keep up with the latest advances in AI during Ph.D. studies. Now, I'm a co-founding member of aiXbrain GmbH to turn these technologies into real software products.
           </p>
         </div>
