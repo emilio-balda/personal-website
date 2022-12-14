@@ -1,11 +1,13 @@
 <script setup lang="ts">
+import type { CSSProperties } from 'vue'
 import { onMounted } from 'vue'
+import { NSwitch } from 'naive-ui'
 import Home from '~/pages/index.vue'
-import Services from '~/pages/services.vue'
+// import Services from '~/pages/services.vue'
 import Portfolio from '~/pages/portfolio.vue'
 import About from '~/pages/about.vue'
 import Contact from '~/pages/contact.vue'
-import { toggleDark } from '~/composables'
+import { isDark, toggleDark } from '~/composables'
 import { scrollTo } from '~/composables/dom'
 
 const navBarItems = [
@@ -32,6 +34,21 @@ const handleClickNavMenu = (section_id: string) => {
   scrollTo(section_id)
 }
 
+const railStyle = ({
+  checked,
+}: {
+  checked: boolean
+}) => {
+  const style: CSSProperties = {}
+  if (checked)
+    style.background = 'var(--paragraph)'
+
+  else
+    style.background = '#dbdbdb'
+
+  return style
+}
+
 onMounted(() => scrollTo('home'))
 
 </script>
@@ -49,27 +66,28 @@ onMounted(() => scrollTo('home'))
               Emilio Balda
             </h4>
           </div>
-          <div class="icon-btn mx-2 flex justify-center align-center" @click="toggleDark()">
-            <div
-              i="carbon-light-filled"
-              class="dark:hidden block text-md md:text-lg bg-primary-700 dark:bg-primary-500 dark:bg-gray-300"
-            />
-            <div
-              i="carbon-light"
-              class="hidden dark:block text-md md:text-lg bg-primary-500 dark:bg-gray-300"
-            />
-            <div class="text-gray-500 text-lg">
-              /
-            </div>
-            <div
-              i="carbon-asleep"
-              class="dark:hidden block text-lg md:text-xl bg-gray-300 dark:bg-primary-500"
-            />
-            <div
-              i="carbon-asleep-filled"
-              class="hidden dark:block text-lg md:text-xl bg-gray-300 dark:bg-primary-500"
-            />
-          </div>
+          <n-switch :value="isDark" :rail-style="railStyle" @click="toggleDark()">
+            <template #unchecked-icon>
+              <div
+                i="carbon-light-filled"
+                class="dark:hidden block text-md md:text-lg bg-primary-700 dark:bg-primary-500 dark:bg-gray-300"
+              />
+              <div
+                i="carbon-light"
+                class="hidden dark:block text-md md:text-lg bg-primary-500 dark:bg-gray-300"
+              />
+            </template>
+            <template #checked-icon>
+              <div
+                i="carbon-asleep"
+                class="dark:hidden block text-lg md:text-xl bg-gray-300 dark:bg-primary-500"
+              />
+              <div
+                i="carbon-asleep-filled"
+                class="hidden dark:block text-lg md:text-xl bg-gray-300 dark:bg-secondary"
+              />
+            </template>
+          </n-switch>
           <div class="hidden md:flex mr-8">
             <button v-for="section in navBarItems" :key="section.id" class="icon-btn mx-3 text-md md:text-lg" @click="scrollTo(section.id)">
               {{ section.page_name }}

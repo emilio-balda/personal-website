@@ -48,5 +48,7 @@ html.dark {
   --primary-500: #58FEB6;
   --primary-700: #24BEA2;
   --secondary: #4D8DFC;
+  --background-100: #F8F9FC;
   --background-900: #15212c;
+  --paragraph: #374151;
 }
