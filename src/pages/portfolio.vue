@@ -146,8 +146,7 @@ function enableScrolling() {
           <div>
             <div
               v-for="alias in item.tag_aliases" :key="alias"
-              class="w-fit rounded-full overflow-hidden text-xs px-2 border-2 border-white-600 inline text-white whitespace-nowrap"
-              :class="`${alias_to_tag[alias].color}`"
+              class="w-fit rounded-full overflow-hidden text-xs px-2 border-2 inline text-primary-700 border-primary-700 whitespace-nowrap"
             >
               {{ alias_to_tag[alias].title }}
             </div>
