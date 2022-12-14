@@ -78,14 +78,12 @@ onMounted(() => scrollTo('home'))
         </div>
       </div>
     </div>
-    <div class="md:hidden fixed left-0 right-0 bottom-0 z-50 flex flex-row w-full bg-background-900 items-center justify-between text-white px-2 border-t-1 border-slate-300 dark:border-slate-800">
-      <div v-for="section in navBarItems" :key="section.id" class="py-3 mx-2 flex flex-col items-center justify-center">
-        <div :class="section.icon" class="text-md" @click.prevent="handleClickNavMenu(section.id)" />
-        <div>
-          <button class="opacity-75 text-sm" @click.prevent="handleClickNavMenu(section.id)">
-            {{ section.page_name }}
-          </button>
-        </div>
+    <div class="md:hidden fixed left-0 right-0 bottom-0 z-50 flex flex-row w-full bg-background-900 items-center justify-center text-white px-2 border-t-1 border-slate-300 dark:border-slate-800">
+      <div v-for="section in navBarItems" :key="section.id" class="flex flex-col items-center justify-center px-4 py-2">
+        <div :class="section.icon" class="text-sm" @click.prevent="handleClickNavMenu(section.id)" />
+        <button class="opacity-75 text-xs" @click.prevent="handleClickNavMenu(section.id)">
+          {{ section.page_name }}
+        </button>
       </div>
     </div>
     <div>
