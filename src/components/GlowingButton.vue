@@ -9,7 +9,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <button class="bnglow neumorphic-shadow" role="button">
+  <button class="bnglow neumorphic-shadow-12" role="button">
     <span class="text bg-background-900" :class="props.class_text">{{ props.label }}</span>
   </button>
 </template>

@@ -38,7 +38,22 @@ html.dark {
   height: 2px;
 }
 
-.neumorphic-shadow {
+.neumorphic-shadow-2 {
+  box-shadow:  2px 2px 4px rgba(0, 0, 0,0.25),
+              -2px -2px 4px rgba(255, 255, 255,0.03);
+}
+
+.neumorphic-shadow-4 {
+  box-shadow:  4px 4px 8px rgba(0, 0, 0,0.25),
+              -4px -4px 8px rgba(255, 255, 255,0.03);
+}
+
+.neumorphic-shadow-8 {
+  box-shadow:  8px 8px 16px rgba(0, 0, 0,0.25),
+              -8px -8px 16px rgba(255, 255, 255,0.03);
+}
+
+.neumorphic-shadow-12 {
   box-shadow:  12px 12px 24px rgba(0, 0, 0,0.25),
               -12px -12px 24px rgba(255, 255, 255,0.03);
 }

@@ -2,6 +2,7 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
 import { ref } from 'vue'
+import { NCarousel, NCarouselItem } from 'naive-ui'
 // import FlipCard from '~/components/FlipCard.vue'
 import GlowingButton from '~/components/GlowingButton.vue'
 import DatarayContent from '~/components/content/PortfolioDataray.vue'
@@ -113,8 +114,8 @@ const handleBookCall = (item_id: string) => {
 
 const handleKnowMore = (item_id: string) => {
   isOpen.value[item_id] = true
-  scrollTo(item_id)
   window.onscroll = function() { document.querySelector(`#${item_id}`)?.scrollIntoView() }
+  scrollTo(item_id)
 }
 
 function enableScrolling() {
@@ -124,13 +125,58 @@ function enableScrolling() {
 </script>
 <template>
   <div class="relative flex flex-wrap items-stretch justify-center">
-    <div
+    <n-carousel
+      draggable slides-per-view="auto"
+      centered-slides
+      :loop="false"
+    >
+      <n-carousel-item
+        v-for="item in content" :id="getParentId(item.id)"
+        :key="item.title"
+        class="px-4 pt-4 pb-8"
+        style="width: 20rem"
+      >
+        <div
+          class="flex flex-col h-[35rem] w-full items-center justify-center text-xl rounded-lg overflow-hidden dark:bg-background-900 neumorphic-shadow-2 transition-all duration-300 hover:-translate-y-2"
+        >
+          <div
+            class="flex items-center justify-center w-full h-5/12 bg-cover bg-center"
+            :style="`background-image: url('${item.image}')`"
+          >
+            <div class="flex items-center justify-center h-fit w-full px-2 bg-black-900/50">
+              <h1 class="text-2xl text-white font-semibold">
+                {{ item.title }}
+              </h1>
+            </div>
+          </div>
+          <div class="flex flex-col items-center justify-between w-3/4 h-7/12">
+            <div>
+              <div class="flex flex-wrap items-center justify-center">
+                <div
+                  v-for="alias in item.tag_aliases" :key="alias"
+                  class="w-fit rounded-full text-xs px-2 m-1 border-2 inline text-primary-700 border-primary-700 whitespace-nowrap"
+                >
+                  {{ alias_to_tag[alias].title }}
+                </div>
+              </div>
+              <p class="text-base  leading-relaxed font-light mx-2 pt-2">
+                {{ item.description }}
+              </p>
+            </div>
+            <div class="pb-4">
+              <glowing-button label="Know More" class_text="text-lg px-4 py-2" @click="handleKnowMore(item.id)" />
+            </div>
+          </div>
+        </div>
+      </n-carousel-item>
+    </n-carousel>
+    <!-- <div
       v-for="item in content" :id="getParentId(item.id)"
       :key="item.title"
       class="px-2 w-80 mt-4"
     >
       <div
-        class="flex flex-col h-[35rem] w-full items-center justify-center text-xl rounded-lg overflow-hidden dark:bg-background-900 neumorphic-shadow transition-all duration-300 hover:-translate-y-2"
+        class="flex flex-col h-[35rem] w-full items-center justify-center text-xl rounded-lg overflow-hidden dark:bg-background-900 neumorphic-shadow-12 transition-all duration-300 hover:-translate-y-2"
       >
         <div
           class="flex items-center justify-center w-full h-5/12 bg-cover bg-center"
@@ -159,7 +205,7 @@ function enableScrolling() {
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div
       v-for="item in content" :id="item.id"
       :key="item.id"

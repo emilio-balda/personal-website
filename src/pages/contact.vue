@@ -13,7 +13,7 @@ const contactInfo = [
         Let's Connect!
       </h1>
     </div>
-    <div class="rounded-xl overflow-hidden cursor-pointer neumorphic-shadow dark:bg-background-900 mt-4">
+    <div class="rounded-xl overflow-hidden cursor-pointer neumorphic-shadow-12 dark:bg-background-900 mt-4">
       <div class="flex flex-wrap items-start justify-center p-4 md:p-8">
         <div v-for="content in contactInfo" :key="content.href" class="flex items-center justify-center">
           <div class="text-6xl mx-2 md:mx-4 transition-all duration-300 hover:-translate-y-2">
