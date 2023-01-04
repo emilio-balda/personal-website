@@ -10,6 +10,7 @@ import BoundsPaperContent from '~/components/content/PortfolioBoundsPaper.vue'
 import AdversarialPaperContent from '~/components/content/PortfolioAdversarialPaper.vue'
 import PersonalWebsiteContent from '~/components/content/PortfolioPersonalWebsite.vue'
 import AppModal from '~/components/AppModal.vue'
+import PortfolioCard from '~/components/PortfolioCard.vue'
 import { scrollTo } from '~/composables/dom'
 
 interface Tag {
@@ -129,6 +130,7 @@ function enableScrolling() {
       draggable slides-per-view="auto"
       centered-slides
       :loop="false"
+      class="md:hidden"
     >
       <n-carousel-item
         v-for="item in content" :id="getParentId(item.id)"
@@ -136,76 +138,16 @@ function enableScrolling() {
         class="px-4 pt-4 pb-8"
         style="width: 20rem"
       >
-        <div
-          class="flex flex-col h-[35rem] w-full items-center justify-center text-xl rounded-lg overflow-hidden dark:bg-background-900 neumorphic-shadow-2 transition-all duration-300 hover:-translate-y-2"
-        >
-          <div
-            class="flex items-center justify-center w-full h-5/12 bg-cover bg-center"
-            :style="`background-image: url('${item.image}')`"
-          >
-            <div class="flex items-center justify-center h-fit w-full px-2 bg-black-900/50">
-              <h1 class="text-2xl text-white font-semibold">
-                {{ item.title }}
-              </h1>
-            </div>
-          </div>
-          <div class="flex flex-col items-center justify-between w-3/4 h-7/12">
-            <div>
-              <div class="flex flex-wrap items-center justify-center">
-                <div
-                  v-for="alias in item.tag_aliases" :key="alias"
-                  class="w-fit rounded-full text-xs px-2 m-1 border-2 inline text-primary-700 border-primary-700 whitespace-nowrap"
-                >
-                  {{ alias_to_tag[alias].title }}
-                </div>
-              </div>
-              <p class="text-base  leading-relaxed font-light mx-2 pt-2">
-                {{ item.description }}
-              </p>
-            </div>
-            <div class="pb-4">
-              <glowing-button label="Know More" class_text="text-lg px-4 py-2" @click="handleKnowMore(item.id)" />
-            </div>
-          </div>
-        </div>
+        <portfolio-card :item="item" :alias-to-tag="alias_to_tag" @know-more="(itemId) => handleKnowMore(itemId)" />
       </n-carousel-item>
     </n-carousel>
-    <!-- <div
+    <div
       v-for="item in content" :id="getParentId(item.id)"
       :key="item.title"
-      class="px-2 w-80 mt-4"
+      class="hidden md:flex px-4 pt-4 pb-8"
     >
-      <div
-        class="flex flex-col h-[35rem] w-full items-center justify-center text-xl rounded-lg overflow-hidden dark:bg-background-900 neumorphic-shadow-12 transition-all duration-300 hover:-translate-y-2"
-      >
-        <div
-          class="flex items-center justify-center w-full h-5/12 bg-cover bg-center"
-          :style="`background-image: url('${item.image}')`"
-        >
-          <div class="flex items-center justify-center h-fit w-full px-2 bg-black-900/50">
-            <h1 class="text-2xl text-white font-semibold">
-              {{ item.title }}
-            </h1>
-          </div>
-        </div>
-        <div class="flex flex-col items-center justify-between w-3/4 h-7/12">
-          <div>
-            <div
-              v-for="alias in item.tag_aliases" :key="alias"
-              class="w-fit rounded-full overflow-hidden text-xs px-2 border-2 inline text-primary-700 border-primary-700 whitespace-nowrap"
-            >
-              {{ alias_to_tag[alias].title }}
-            </div>
-            <p class="text-base  leading-relaxed font-light mx-2 pt-2">
-              {{ item.description }}
-            </p>
-          </div>
-          <div class="pb-4">
-            <glowing-button label="Know More" class_text="text-lg px-4 py-2" @click="handleKnowMore(item.id)" />
-          </div>
-        </div>
-      </div>
-    </div> -->
+      <portfolio-card :item="item" :alias-to-tag="alias_to_tag" @know-more="(itemId) => handleKnowMore(itemId)" />
+    </div>
     <div
       v-for="item in content" :id="item.id"
       :key="item.id"
