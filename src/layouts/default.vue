@@ -106,9 +106,9 @@ onMounted(() => scrollTo('home'))
     </div>
     <div>
       <main class="text-center text-paragraph dark:text-gray-200">
-        <div class="flex flex-col items-center justify-center">
+        <div class="flex flex-col items-center justify-center pb-32">
           <div v-for="section in navBarItems" :ref="section.id" :key="section.id" class="w-full max-w-7xl">
-            <section :id="section.id" class="min-h-screen" :class="section.background">
+            <section :id="section.id" :class="section.background">
               <div class="flex flex-col items-center justify-center w-full pt-8 md:pt-24">
                 <h4 v-if="section.title !== null" class="text-3xl font-semibold mb-4" :class="section.title_color">
                   {{ section.title }}

@@ -19,7 +19,6 @@ declare module 'vue' {
     PortfolioAdversarialPaper: typeof import('./components/content/PortfolioAdversarialPaper.vue')['default']
     PortfolioBoundsPaper: typeof import('./components/content/PortfolioBoundsPaper.vue')['default']
     PortfolioCard: typeof import('./components/PortfolioCard.vue')['default']
-    PortfolioCards: typeof import('./components/PortfolioCards.vue')['default']
     PortfolioDataray: typeof import('./components/content/PortfolioDataray.vue')['default']
     PortfolioPersonalWebsite: typeof import('./components/content/PortfolioPersonalWebsite.vue')['default']
     ProductCard: typeof import('./components/ProductCard.vue')['default']

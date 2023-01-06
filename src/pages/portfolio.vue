@@ -131,11 +131,12 @@ function enableScrolling() {
       centered-slides
       :loop="false"
       class="md:hidden"
+      :show-dots="false"
     >
       <n-carousel-item
         v-for="item in content" :id="getParentId(item.id)"
         :key="item.title"
-        class="px-4 pt-4 pb-8"
+        class="p-4"
         style="width: 20rem"
       >
         <portfolio-card :item="item" :alias-to-tag="alias_to_tag" @know-more="(itemId) => handleKnowMore(itemId)" />

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Component } from 'vue'
+import { NCard, NCarousel, NCarouselItem, NCollapseTransition, NSpace } from 'naive-ui'
 import JobHistory from '~/components/content/AboutJobHistory.vue'
 import Education from '~/components/content/AboutEducation.vue'
 import AuthoredBooks from '~/components/content/AboutAuthoredBooks.vue'
@@ -22,12 +23,12 @@ const skills = [
   { name: 'Machine Learning', level: '90%' },
 ]
 
-interface sectionInterface { title: string; show: boolean; component: Component }
+interface sectionInterface { id: string; title: string; show: boolean; component: Component }
 const sections = ref<Array<sectionInterface>>([
-  { title: 'Job History', show: false, component: JobHistory },
-  { title: 'Education', show: false, component: Education },
-  { title: 'Authored Books', show: false, component: AuthoredBooks },
-  { title: 'Tech Stack', show: true, component: TechStack },
+  { id: 'jobs', title: 'Job History', show: false, component: JobHistory },
+  { id: 'education', title: 'Education', show: false, component: Education },
+  { id: 'books', title: 'Authored Books', show: false, component: AuthoredBooks },
+  { id: 'stack', title: 'Tech Stack', show: true, component: TechStack },
 ])
 
 const getSectionId = (section: sectionInterface) => { return section.title.replace(' ', '-').toLowerCase() }
@@ -42,12 +43,6 @@ const handleToggleSection = (section: sectionInterface) => {
       loopSection.show = false
   })
 }
-
-// function onAfterEnter(el: HTMLElement) {
-//   document.querySelector(`#${el.id}`)?.scrollIntoView({ behavior: 'smooth' })
-// }
-function onAfterEnter() {}
-
 </script>
 
 <template>
@@ -77,47 +72,53 @@ function onAfterEnter() {}
             About Me
           </h3>
         </div>
-        <div class="mt-4 mb-8">
-          <p class="text-base md:text-lg lg:text-xl text-center ">
-            I learned how to keep up with the latest advances in AI during Ph.D. studies. Now, I'm a co-founding member of aiXbrain GmbH to turn these technologies into real software products.
-          </p>
-        </div>
-        <div class="flex flex-wrap w-full items-center items-stretch justify-center pb-1">
-          <div v-for="section in sections" :key="section.title" class="mx-2 my-2">
-            <button
-              class="hover:scale-105 rounded-md px-2 py-1 text-white h-full"
-              :class="!section.show ? 'bg-gray-600' : 'bg-primary-700'" @click.prevent="handleToggleSection(section)"
-            >
-              {{ section.title }}
-            </button>
-          </div>
-        </div>
-        <perfect-scrollbar class="flex flex-col w-full items-start justify-start pt-2 max-h-128">
-          <div v-for="section in sections" :key="section.title" class="pb-4 w-full h-fit">
-            <transition @after-enter="onAfterEnter">
-              <div v-if="section.show" :id="getSectionId(section)">
+        <p class="mt-4 mb-8 text-base md:text-lg lg:text-xl text-center leading-relaxed">
+          I learned how to keep up with the latest advances in AI during Ph.D. studies. Now, I'm a co-founding member of aiXbrain GmbH to turn these technologies into real software products.
+        </p>
+        <n-card class="hidden md:flex flex-wrap w-full items-center items-stretch justify-center pb-1 neumorphic-shadow-4 bg-transparent text-app" :bordered="false">
+          <n-space justify="center">
+            <div v-for="section in sections" :key="section.title" class="mx-2 my-2">
+              <button
+                class="hover:scale-105 rounded-md px-2 py-1 text-white h-full"
+                :class="!section.show ? 'bg-gray-600' : 'bg-primary-700'"
+                @click.prevent="handleToggleSection(section)"
+              >
+                {{ section.title }}
+              </button>
+            </div>
+          </n-space>
+          <div class="flex flex-col w-full items-start justify-start pt-2">
+            <div v-for="section in sections" :key="section.title" class="w-full h-fit">
+              <n-collapse-transition :id="getSectionId(section)" :show="section.show">
                 <h3 class="font-bold text-xl pb-3">
                   {{ section.title }}
                 </h3>
                 <component :is="section.component" />
-              </div>
-            </transition>
+              </n-collapse-transition>
+            </div>
           </div>
-        </perfect-scrollbar>
+        </n-card>
       </div>
     </div>
   </div>
+  <n-carousel
+    draggable slides-per-view="auto"
+    centered-slides
+    :loop="false"
+    class="md:hidden"
+    :show-dots="false"
+  >
+    <n-carousel-item
+      v-for="section in sections" :key="section.title"
+      class="p-4"
+      style="width: 18rem"
+    >
+      <div :id="getSectionId(section)" class="flex flex-col w-full items-center justify-start p-2 neumorphic-shadow-4 bg-transparent text-app">
+        <h3 class="font-bold text-xl pb-3">
+          {{ section.title }}
+        </h3>
+        <component :is="section.component" />
+      </div>
+    </n-carousel-item>
+  </n-carousel>
 </template>
-
-<style scoped>
-/* we will explain what these classes do next! */
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
-}
-</style>
