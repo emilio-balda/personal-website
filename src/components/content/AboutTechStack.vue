@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { NCollapseItem, NSpace } from 'naive-ui'
+
 const stack = [
   {
     title: 'Frontend',
@@ -52,25 +54,18 @@ const stack = [
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center">
-    <div class="flex flex-col px-4">
-      <div v-for="stackRow in stack" :key="stackRow.title" class="flex flex-wrap flex-row border-b-2 max-w-128 items-center py-2">
-        <div class="pr-4">
-          <p class="font-bold italic text-xl">
-            {{ stackRow.title }}
+  <n-collapse-item v-for="stackRow in stack" :key="stackRow.title" :title="stackRow.title" :name="stackRow.title">
+    <n-space>
+      <div v-for="stackItem in stackRow.items" :key="stackItem.title" class="flex flex-col px-4 items-center">
+        <div class="pt-4">
+          <img :src="stackItem.image" class="h-8">
+        </div>
+        <div>
+          <p class="italic py-2">
+            {{ stackItem.title }}
           </p>
         </div>
-        <div v-for="stackItem in stackRow.items" :key="stackItem.title" class="flex flex-col px-4 items-center">
-          <div class="pt-4">
-            <img :src="stackItem.image" class="h-8">
-          </div>
-          <div>
-            <p class="italic py-2">
-              {{ stackItem.title }}
-            </p>
-          </div>
-        </div>
       </div>
-    </div>
-  </div>
+    </n-space>
+  </n-collapse-item>
 </template>

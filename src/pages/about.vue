@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Component } from 'vue'
-import { NCard, NCarousel, NCarouselItem, NCollapseTransition, NSpace } from 'naive-ui'
+import { NCard, NCollapse, NCollapseItem } from 'naive-ui'
 import JobHistory from '~/components/content/AboutJobHistory.vue'
 import Education from '~/components/content/AboutEducation.vue'
 import AuthoredBooks from '~/components/content/AboutAuthoredBooks.vue'
@@ -33,16 +33,6 @@ const sections = ref<Array<sectionInterface>>([
 
 const getSectionId = (section: sectionInterface) => { return section.title.replace(' ', '-').toLowerCase() }
 
-const handleToggleSection = (section: sectionInterface) => {
-  sections.value.forEach((loopSection: sectionInterface) => {
-    if (getSectionId(loopSection) === getSectionId(section))
-
-      loopSection.show = !loopSection.show
-
-    else
-      loopSection.show = false
-  })
-}
 </script>
 
 <template>
@@ -75,50 +65,19 @@ const handleToggleSection = (section: sectionInterface) => {
         <p class="mt-4 mb-8 text-base md:text-lg lg:text-xl text-center leading-relaxed">
           I learned how to keep up with the latest advances in AI during Ph.D. studies. Now, I'm a co-founding member of aiXbrain GmbH to turn these technologies into real software products.
         </p>
-        <n-card class="hidden md:flex flex-wrap w-full items-center items-stretch justify-center pb-1 neumorphic-shadow-4 bg-transparent text-app" :bordered="false">
-          <n-space justify="center">
-            <div v-for="section in sections" :key="section.title" class="mx-2 my-2">
-              <button
-                class="hover:scale-105 rounded-md px-2 py-1 text-white h-full"
-                :class="!section.show ? 'bg-gray-600' : 'bg-primary-700'"
-                @click.prevent="handleToggleSection(section)"
-              >
-                {{ section.title }}
-              </button>
-            </div>
-          </n-space>
-          <div class="flex flex-col w-full items-start justify-start pt-2">
-            <div v-for="section in sections" :key="section.title" class="w-full h-fit">
-              <n-collapse-transition :id="getSectionId(section)" :show="section.show">
-                <h3 class="font-bold text-xl pb-3">
-                  {{ section.title }}
-                </h3>
-                <component :is="section.component" />
-              </n-collapse-transition>
-            </div>
-          </div>
+        <n-card class="neumorphic-shadow-4 bg-transparent text-app" :bordered="false">
+          <n-collapse class="text-app">
+            <n-collapse-item
+              v-for="section in sections" :key="section.title"
+              :title="section.title"
+              :name="getSectionId(section)"
+              class="text-app"
+            >
+              <component :is="section.component" />
+            </n-collapse-item>
+          </n-collapse>
         </n-card>
       </div>
     </div>
   </div>
-  <n-carousel
-    draggable slides-per-view="auto"
-    centered-slides
-    :loop="false"
-    class="md:hidden"
-    :show-dots="false"
-  >
-    <n-carousel-item
-      v-for="section in sections" :key="section.title"
-      class="p-4"
-      style="width: 18rem"
-    >
-      <div :id="getSectionId(section)" class="flex flex-col w-full items-center justify-start p-2 neumorphic-shadow-4 bg-transparent text-app">
-        <h3 class="font-bold text-xl pb-3">
-          {{ section.title }}
-        </h3>
-        <component :is="section.component" />
-      </div>
-    </n-carousel-item>
-  </n-carousel>
 </template>
