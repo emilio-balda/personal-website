@@ -19,7 +19,7 @@ function closeModal() {
             />
           </div>
           <div class="gradient-bg-image flex-grow w-full pb-1" />
-          <perfect-scrollbar class="flex flex-col w-full h-full bg-white dark:bg-slate-700 shadow-xl items-center px-8 py-8">
+          <perfect-scrollbar class="flex flex-col w-full h-full bg-white dark:bg-slate-700 shadow-xl items-center px-4 md:px-8 py-8">
             <slot />
           </perfect-scrollbar>
           <div class="gradient-bg-image flex-grow w-full pb-1" />

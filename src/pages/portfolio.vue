@@ -159,7 +159,7 @@ function enableScrolling() {
           <app-modal @close-modal="handleCloseModal(item.id)">
             <component :is="item.content_component" />
             <div class="max-w-xl py-4">
-              <glowing-button label="Book a Free Discovery Call" class_text="text-lg px-8 py-2" @click="handleBookCall(item.id)" />
+              <glowing-button label="Book a Free Discovery Call" class_text="text-lg px-4 md:px-8 py-2" @click="handleBookCall(item.id)" />
             </div>
           </app-modal>
         </div>

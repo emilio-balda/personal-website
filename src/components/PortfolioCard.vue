@@ -30,7 +30,7 @@ function knowMore(itemId) {
 
 <template>
   <div
-    class="flex flex-col h-[35rem] w-full items-center justify-center text-xl rounded-lg overflow-hidden dark:bg-background-900 neumorphic-shadow-2 transition-all duration-300 hover:-translate-y-2 max-w-72"
+    class="flex flex-col h-[35rem] w-full items-center justify-center text-xl rounded-lg overflow-hidden dark:bg-background-900 neumorphic-shadow-2 md:transition-all md:duration-300 md:hover:-translate-y-2 max-w-72"
   >
     <div
       class="flex items-center justify-center w-full h-5/12 bg-cover bg-center"
