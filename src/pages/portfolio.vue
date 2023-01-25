@@ -2,14 +2,14 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
 import { ref } from 'vue'
-import { NCarousel, NCarouselItem } from 'naive-ui'
+import { NCarousel, NCarouselItem, NModal } from 'naive-ui'
+import { Carousel, Slide } from 'vue3-carousel'
 // import FlipCard from '~/components/FlipCard.vue'
 import GlowingButton from '~/components/GlowingButton.vue'
 import DatarayContent from '~/components/content/PortfolioDataray.vue'
 import BoundsPaperContent from '~/components/content/PortfolioBoundsPaper.vue'
 import AdversarialPaperContent from '~/components/content/PortfolioAdversarialPaper.vue'
 import PersonalWebsiteContent from '~/components/content/PortfolioPersonalWebsite.vue'
-import AppModal from '~/components/AppModal.vue'
 import PortfolioCard from '~/components/PortfolioCard.vue'
 import { scrollTo } from '~/composables/dom'
 
@@ -93,89 +93,69 @@ const content: Array<ContentItem> = [
 
 const isOpen: Ref<Record<string, boolean>> = ref({})
 
-function getParentId(item_id: string) {
-  return `parent-${item_id}`
-}
-
 onMounted(() => {
   content.forEach((item: ContentItem) => {
     isOpen.value[item.id] = false
   })
 })
 
-const handleCloseModal = (item_id: string) => {
-  isOpen.value[item_id] = false
-  enableScrolling()
-  document.querySelector(`#${getParentId(item_id)}`)?.scrollIntoView()
-}
 const handleBookCall = (item_id: string) => {
-  handleCloseModal(item_id)
+  isOpen.value[item_id] = false
   scrollTo('contact')
 }
 
 const handleKnowMore = (item_id: string) => {
   isOpen.value[item_id] = true
-  window.onscroll = function() { document.querySelector(`#${item_id}`)?.scrollIntoView() }
-  scrollTo(item_id)
-}
-
-function enableScrolling() {
-  window.onscroll = function() {}
 }
 
 </script>
 <template>
   <div class="relative flex flex-wrap items-stretch justify-center">
-    <n-carousel
-      draggable slides-per-view="auto"
-      centered-slides
-      :loop="false"
-      class="md:hidden"
-      :show-dots="false"
-    >
-      <n-carousel-item
-        v-for="item in content" :id="getParentId(item.id)"
+    <carousel :items-to-show="1.3" :wrap-around="false" class="md:hidden w-[100vw]">
+      <slide
+        v-for="item in content"
         :key="item.title"
-        class="p-2"
-        style="width: 18rem"
+        class="p-2 max-w-[90vw]"
       >
         <portfolio-card :item="item" :alias-to-tag="alias_to_tag" @know-more="(itemId) => handleKnowMore(itemId)" />
-      </n-carousel-item>
-    </n-carousel>
+      </slide>
+    </carousel>
     <div
-      v-for="item in content" :id="getParentId(item.id)"
+      v-for="item in content"
       :key="item.title"
       class="hidden md:flex px-4 pt-4 pb-8"
     >
       <portfolio-card :item="item" :alias-to-tag="alias_to_tag" @know-more="(itemId) => handleKnowMore(itemId)" />
     </div>
-    <div
+    <n-modal
       v-for="item in content" :id="item.id"
-      :key="item.id"
-      class="absolute top-0 z-50"
+      :key="item.id" v-model:show="isOpen[item.id]"
+      :auto-focus="false"
     >
-      <transition>
-        <div v-if="isOpen[item.id]">
-          <app-modal @close-modal="handleCloseModal(item.id)">
-            <component :is="item.content_component" />
-            <div class="max-w-xl py-4">
-              <glowing-button label="Book a Free Discovery Call" class_text="text-lg px-4 md:px-8 py-2" @click="handleBookCall(item.id)" />
-            </div>
-          </app-modal>
+      <div class="flex flex-col w-11/12 md:w-9/12 bg-app shadow-xl items-center rounded-lg overflow-hidden">
+        <div class="shrink-0 self-end px-4 py-4">
+          <div
+            i-carbon-circle-solid
+            class="text-lg text-red-600 focus:text-red-500 hover:text-red-500"
+            @click.prevent="isOpen[item.id]=false"
+          />
         </div>
-      </transition>
-    </div>
+        <div class="gradient-bg-image flex-grow w-full pb-1" />
+        <perfect-scrollbar class="flex flex-col w-full h-full bg-app items-center px-4 md:px-8 py-8">
+          <component :is="item.content_component" />
+          <div class="max-w-xl py-4">
+            <glowing-button label="Book a Free Discovery Call" class_text="text-lg px-4 md:px-8 py-2" @click.prevent="handleBookCall(item.id)" />
+          </div>
+        </perfect-scrollbar>
+        <div class="gradient-bg-image flex-grow w-full pb-1" />
+        <div class="shrink-0 bg-app w-full self-end px-10 py-6" />
+      </div>
+    </n-modal>
   </div>
 </template>
 
 <style scoped>
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 0.3s ease;
-}
-
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
+.gradient-bg-image {
+  background-image: linear-gradient(to right, rgba(0,0,0,0), var(--secondary), var(--primary-500), rgba(0,0,0,0));
 }
 </style>

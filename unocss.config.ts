@@ -14,6 +14,7 @@ export default defineConfig({
     ['btn', 'px-4 py-1 rounded inline-block bg-teal-600 text-white cursor-pointer hover:bg-teal-700 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'],
     ['icon-btn', 'inline-block cursor-pointer select-none transition duration-200 ease-in-out hover:opacity-100 hover:text-primary-700 hover:dark:text-primary-500 text-paragraph dark:text-background-100'],
     ['text-app', 'text-paragraph dark:text-background-100'],
+    ['bg-app', 'bg-background-100 dark:bg-background-900'],
   ],
   presets: [
     presetUno(),

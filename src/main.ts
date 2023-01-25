@@ -7,6 +7,7 @@ import '@unocss/reset/tailwind.css'
 import './styles/main.css'
 import 'uno.css'
 import 'vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.css'
+import 'vue3-carousel/dist/carousel.css'
 
 const routes = setupLayouts(generatedRoutes)
 
