@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
+import { NTag } from 'naive-ui'
 
 interface Tag {
   title: string
@@ -30,7 +31,7 @@ function knowMore(itemId) {
 
 <template>
   <div
-    class="flex flex-col h-[40rem] md:h-[35rem] items-center justify-center text-xl rounded-lg overflow-hidden dark:bg-background-900 neumorphic-shadow-2 md:transition-all md:duration-300 md:hover:-translate-y-2 max-w-72"
+    class="flex flex-col h-[25rem] md:h-[35rem] w-[15rem] md:w-72 items-center justify-center text-xl rounded-lg overflow-hidden dark:bg-background-900 neumorphic-shadow-2 md:transition-all md:duration-300 md:hover:-translate-y-2"
   >
     <div
       class="flex items-center justify-center w-full h-5/12 bg-cover bg-center"
@@ -44,13 +45,15 @@ function knowMore(itemId) {
     </div>
     <div class="flex flex-col items-center justify-between w-3/4 h-7/12">
       <div>
-        <div class="flex flex-wrap items-center justify-center">
-          <div
+        <div class="hidden md:flex md:flex-wrap md:items-center md:justify-center">
+          <n-tag
             v-for="alias in props.item.tag_aliases" :key="alias"
-            class="w-fit rounded-full text-xs px-2 m-1 border-2 inline text-primary-700 border-primary-700 whitespace-nowrap"
+            :round="true"
+            type="success"
+            :bordered="true"
           >
             {{ props.aliasToTag[alias].title }}
-          </div>
+          </n-tag>
         </div>
         <p class="text-base  leading-relaxed font-light mx-2 pt-2">
           {{ props.item.description }}

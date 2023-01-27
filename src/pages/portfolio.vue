@@ -68,7 +68,7 @@ const content: Array<ContentItem> = [
   {
     id: 'portfolio-website',
     title: 'This Website',
-    description: 'I built this website using Vue JS. You can take a look at the source code in GitHub. Links and tech stack in the detailed view.',
+    description: 'I built this website using Vue JS. Take a look at the source code and tech stack on my GitHub.',
     image: 'https://images.pexels.com/photos/3374210/pexels-photo-3374210.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     content_component: PersonalWebsiteContent,
     tag_aliases: ['frontend'],
