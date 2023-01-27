@@ -60,7 +60,7 @@ const content: Array<ContentItem> = [
   {
     id: 'portfolio-dataray',
     title: 'Dataray: A Machine Learning SaaS',
-    description: 'Dataray is a Software-as-a-Service (SaaS) product that brings artificial intelligence to industrial applications. It is compatible with many database technologies.',
+    description: 'Dataray is a No-Code web application that brings artificial intelligence to industrial businesses.',
     image: 'https://images.pexels.com/photos/2832382/pexels-photo-2832382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     content_component: DatarayContent,
     tag_aliases: ['frontend', 'backend', 'ml'],
@@ -76,7 +76,7 @@ const content: Array<ContentItem> = [
   {
     id: 'portfolio-research-theory',
     title: 'Research Paper: Theoretical Result for Neural Networks',
-    description: 'I was the first author of a paper in the field of statistical learning theory and deep neural networks.',
+    description: 'I was the first author of a paper about statistical learning theory and deep neural networks.',
     content_component: BoundsPaperContent,
     image: 'https://images.pexels.com/photos/4021521/pexels-photo-4021521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     tag_aliases: ['research', 'ml'],
@@ -84,7 +84,7 @@ const content: Array<ContentItem> = [
   {
     id: 'portfolio-research-adversarial',
     title: 'Research Paper: Adversarial Examples in Neural Networks',
-    description: 'I was the first author of a paper in the field of computer vision and deep neural networks.',
+    description: 'I was the first author of a paper about computer vision and deep neural networks.',
     image: 'https://images.pexels.com/photos/3308588/pexels-photo-3308588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     content_component: AdversarialPaperContent,
     tag_aliases: ['research', 'ml', 'vision'],
