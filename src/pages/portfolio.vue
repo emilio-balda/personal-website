@@ -92,6 +92,7 @@ const content: Array<ContentItem> = [
 ]
 
 const isOpen: Ref<Record<string, boolean>> = ref({})
+const scrollToContactIsPending: Ref<boolean> = ref(false)
 
 onMounted(() => {
   content.forEach((item: ContentItem) => {
@@ -100,12 +101,19 @@ onMounted(() => {
 })
 
 const handleBookCall = (item_id: string) => {
+  scrollToContactIsPending.value = true
   isOpen.value[item_id] = false
-  scrollTo('contact')
 }
 
 const handleKnowMore = (item_id: string) => {
   isOpen.value[item_id] = true
+}
+
+const handleModalAfterLeave = () => {
+  if (scrollToContactIsPending.value) {
+    scrollToContactIsPending.value = false
+    scrollTo('contact')
+  }
 }
 
 </script>
@@ -131,6 +139,7 @@ const handleKnowMore = (item_id: string) => {
       v-for="item in content" :id="item.id"
       :key="item.id" v-model:show="isOpen[item.id]"
       :auto-focus="false"
+      @after-leave="handleModalAfterLeave"
     >
       <div class="flex flex-col w-11/12 md:w-9/12 bg-app shadow-xl items-center rounded-lg overflow-hidden">
         <div class="shrink-0 self-end px-4 py-4">
