@@ -67,3 +67,9 @@ html.dark {
   --background-900: #15212c;
   --paragraph: #374151;
 }
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}

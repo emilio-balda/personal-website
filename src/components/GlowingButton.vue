@@ -21,17 +21,19 @@ const props = defineProps({
   border-radius: 6px;
   width: 100%;
   height: 100%;
-  transition: 300ms;
+  /* transition: 300ms; */
 }
 
 .bnglow {
-  background-image: linear-gradient(145deg, var(--primary-500), var(--secondary));
+  background-image: conic-gradient(
+    from var(--gradient-angle),
+    var(--primary-500), var(--secondary), var(--primary-500)
+  );
   border: 0;
   border-radius: 8px;
   box-sizing: border-box;
   color: #ffffff;
   display: flex;
-  line-height: 1em;
   max-width: 100%;
   padding: 3px;
   text-decoration: none;
@@ -47,48 +49,33 @@ const props = defineProps({
   z-index: 0;
 }
 
-.bnglow:hover:before {
+.bnglow:hover:before,
+.bnglow:hover:after  {
   content: "";
-  background: linear-gradient(
-    145deg,
-    var(--primary-500), var(--secondary),
-    var(--primary-500), var(--secondary),
-    var(--primary-500), var(--secondary)
-  );
   position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 400%;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--primary-500), var(--secondary), var(--primary-500)
+  );
+  top: -0.05rem;
+  left: -0.05rem;
   z-index: -1;
-  filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  animation: glowingbnglow 20s linear infinite;
-  opacity: 1;
-  transition: opacity 5s ease-in-out;
-  border-radius: 10px;
+  width: calc(100% + 0.1rem);
+  height: calc(100% + 0.1rem);
+  animation: rotation 3s linear infinite;
+  border-radius: inherit;
 }
 
-@keyframes glowingbnglow {
+/* .bnglow::after {
+  filter: blur(3rem);
+} */
+
+@keyframes rotation {
   0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
+    --gradient-angle: 0deg;
   }
   100% {
-    background-position: 0 0;
+    --gradient-angle: 360deg;
   }
-}
-.bnglow:after {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: var(--background-900);
-  left: 0;
-  top: 0;
-  border-radius: 10px;
 }
 </style>
