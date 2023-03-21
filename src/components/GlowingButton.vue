@@ -62,13 +62,13 @@ const props = defineProps({
   z-index: -1;
   width: calc(100% + 0.1rem);
   height: calc(100% + 0.1rem);
-  animation: rotation 3s linear infinite;
+  animation: rotation 2s linear infinite;
   border-radius: inherit;
 }
 
-/* .bnglow::after {
-  filter: blur(3rem);
-} */
+.bnglow::after {
+  filter: blur(0.3rem);
+}
 
 @keyframes rotation {
   0% {
