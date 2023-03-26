@@ -56,8 +56,8 @@ onMounted(() => scrollTo('home'))
 
 <template>
   <n-config-provider :theme="isDark? darkTheme: null">
-    <div class="max-w-screen overflow-hidden md:overflow-clip">
-      <div class="md:sticky md:origin-top-right md:absolute md:right-0 md:top-0 z-40 flex flex-col">
+    <div class="max-w-screen overflow-clip">
+      <div class="sticky origin-top-right absolute right-0 top-0 z-40 flex flex-col">
         <div class="bg-background-100 dark:bg-background-900 px-4 py-2 border-b-1 border-slate-300 dark:border-slate-800 flex flex-row w-full items-center justify-around">
           <div class="flex flex-row w-full items-center justify-around md:justify-between max-w-7xl">
             <div class="flex flex-row justify-center items-center cursor-pointer py-2" @click="scrollTo('home')">
