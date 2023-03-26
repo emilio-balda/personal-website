@@ -153,7 +153,9 @@ const handleModalAfterLeave = () => {
         <perfect-scrollbar class="flex flex-col w-full h-full bg-app items-center px-4 md:px-8 py-8">
           <component :is="item.content_component" />
           <div class="max-w-xl py-4">
-            <glowing-button label="Book a Free Discovery Call" class_text="text-lg px-4 md:px-8 py-2" @click.prevent="handleBookCall(item.id)" />
+            <glowing-button @click.prevent="handleBookCall(item.id)">
+              Book a Free Discovery Call
+            </glowing-button>
           </div>
         </perfect-scrollbar>
         <div class="gradient-bg-image flex-grow w-full pb-1" />

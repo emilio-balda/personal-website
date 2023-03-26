@@ -60,7 +60,9 @@ function knowMore(itemId) {
         </p>
       </div>
       <div class="pb-4">
-        <glowing-button label="Know More" class_text="text-lg px-4 py-2" @click="knowMore(props.item.id)" />
+        <glowing-button @click="knowMore(props.item.id)">
+          Know More
+        </glowing-button>
       </div>
     </div>
   </div>

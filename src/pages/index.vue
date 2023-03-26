@@ -48,7 +48,9 @@ const contactInfo = [
           I care about communication. That's why I'm interested to know all the details that make your project unique. Before starting a project, you will have a clear picture of how the end result looks like. You will get regular updates about the progress and software adhering to the best practices in the industry.
         </p>
         <div class="inline-block my-4 md:my-8 md:mx-8 font-medium">
-          <glowing-button label="Let's Start" class_text="text-lg px-4 py-2" @click="scrollTo('portfolio')" />
+          <glowing-button @click="scrollTo('portfolio')">
+            Let's Start
+          </glowing-button>
         </div>
       </div>
     </div>

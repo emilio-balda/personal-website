@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import type { CSSProperties } from 'vue'
 import { onMounted } from 'vue'
-import { NConfigProvider, NSwitch, darkTheme } from 'naive-ui'
+import { NButton, NConfigProvider, NSwitch, NText, darkTheme } from 'naive-ui'
 import Home from '~/pages/index.vue'
 // import Services from '~/pages/services.vue'
 import Portfolio from '~/pages/portfolio.vue'
 import About from '~/pages/about.vue'
 import Contact from '~/pages/contact.vue'
 import { isDark, toggleDark } from '~/composables'
-import { scrollTo } from '~/composables/dom'
+import { downloadFile, scrollTo } from '~/composables/dom'
+// import GlowingButton from '~/components/GlowingButton.vue'
 
 const navBarItems = [
   { route: '/#home', id: 'home', page_name: 'Home', component: Home, background: 'bg-body', title_color: '', title: null, icon: 'i-carbon-home' },
@@ -57,42 +58,52 @@ onMounted(() => scrollTo('home'))
   <n-config-provider :theme="isDark? darkTheme: null">
     <div class="max-w-screen overflow-hidden md:overflow-clip">
       <div class="md:sticky md:origin-top-right md:absolute md:right-0 md:top-0 z-40 flex flex-col">
-        <div class="bg-background-100 dark:bg-background-900 px-4 py-2 border-b-1 border-slate-300 dark:border-slate-800 flex flex-row w-full items-center justify-center">
-          <div class="flex flex-row w-full items-center justify-between max-w-7xl">
+        <div class="bg-background-100 dark:bg-background-900 px-4 py-2 border-b-1 border-slate-300 dark:border-slate-800 flex flex-row w-full items-center justify-center md:justify-between">
+          <div class="flex flex-row w-full items-center justify-around md:justify-between max-w-7xl">
             <div class="flex flex-row justify-center items-center cursor-pointer py-2" @click="scrollTo('home')">
-              <div>
+              <div class="hidden md:block w-[2.5em]">
                 <img src="../assets/me.png" alt="Avatar" class="w-[2.5em] rounded-full">
               </div>
-              <h4 class="ml-4 icon-btn text-md md:text-lg font-semibold">
+              <h4 class="hidden md:block mx-4 icon-btn text-md md:text-lg font-semibold whitespace-nowrap">
                 Emilio Balda
               </h4>
+              <glowing-button class="md:ml-12" size="small" @click.prevent="downloadFile({filename:'CV-Emilio-Balda.pdf', href:'/assets/Resume-Emilio-Balda.pdf'})">
+                <template #icon>
+                  <div i="carbon-download" />
+                </template>
+                <template #default>
+                  Curriculum
+                </template>
+              </glowing-button>
             </div>
-            <n-switch :value="isDark" :rail-style="railStyle" @click="toggleDark()">
-              <template #unchecked-icon>
-                <div
-                  i="carbon-light-filled"
-                  class="dark:hidden block text-md md:text-lg bg-primary-700 dark:bg-primary-500 dark:bg-gray-300"
-                />
-                <div
-                  i="carbon-light"
-                  class="hidden dark:block text-md md:text-lg bg-primary-500 dark:bg-gray-300"
-                />
-              </template>
-              <template #checked-icon>
-                <div
-                  i="carbon-asleep"
-                  class="dark:hidden block text-lg md:text-xl bg-gray-300 dark:bg-primary-500"
-                />
-                <div
-                  i="carbon-asleep-filled"
-                  class="hidden dark:block text-lg md:text-xl bg-gray-300 dark:bg-secondary"
-                />
-              </template>
-            </n-switch>
-            <div class="hidden md:flex mr-8">
-              <button v-for="section in navBarItems" :key="section.id" class="icon-btn mx-3 text-md md:text-lg" @click="scrollTo(section.id)">
-                {{ section.page_name }}
-              </button>
+            <div class="flex flex-row items-center">
+              <div class="hidden md:flex mr-8">
+                <button v-for="section in navBarItems" :key="section.id" class="icon-btn mx-3 text-md md:text-lg" @click="scrollTo(section.id)">
+                  {{ section.page_name }}
+                </button>
+              </div>
+              <n-switch :value="isDark" :rail-style="railStyle" @click="toggleDark()">
+                <template #unchecked-icon>
+                  <div
+                    i="carbon-light-filled"
+                    class="dark:hidden block text-md md:text-lg bg-primary-700 dark:bg-primary-500 dark:bg-gray-300"
+                  />
+                  <div
+                    i="carbon-light"
+                    class="hidden dark:block text-md md:text-lg bg-primary-500 dark:bg-gray-300"
+                  />
+                </template>
+                <template #checked-icon>
+                  <div
+                    i="carbon-asleep"
+                    class="dark:hidden block text-lg md:text-xl bg-gray-300 dark:bg-primary-500"
+                  />
+                  <div
+                    i="carbon-asleep-filled"
+                    class="hidden dark:block text-lg md:text-xl bg-gray-300 dark:bg-secondary"
+                  />
+                </template>
+              </n-switch>
             </div>
           </div>
         </div>

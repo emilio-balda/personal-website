@@ -1,3 +1,16 @@
 export function scrollTo(sectionId: string) {
   document.querySelector(`#${sectionId}`)?.scrollIntoView({ behavior: 'smooth' })
 }
+
+export function downloadFile({ filename, href }: { filename: string; href: string }) {
+  // credit: https://www.bitdegree.org/learn/javascript-download
+  const element = document.createElement('a')
+  element.setAttribute('href', href)
+  element.setAttribute('download', filename)
+
+  element.style.display = 'none'
+  document.body.appendChild(element)
+
+  element.click()
+  document.body.removeChild(element)
+}

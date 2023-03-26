@@ -59,7 +59,9 @@ const content: Array<ContentItem> = [
           </div>
         </div>
         <div class="pb-8 font-medium">
-          <glowing-button label="Book a Free Discovery Call" class_text="text-lg px-8 py-2" @click="scrollTo('contact')" />
+          <glowing-button @click="scrollTo('contact')">
+            Book a Free Discovery Call
+          </glowing-button>
         </div>
       </perfect-scrollbar>
     </div>

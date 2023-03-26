@@ -1,16 +1,25 @@
 <script setup lang="ts">
+import { useSlots } from 'vue'
+const slots = useSlots()
+
 const props = defineProps({
-  label: {
+  size: {
     type: String,
-    required: true,
+    default: 'medium',
   },
-  class_text: String,
 })
 </script>
 
 <template>
-  <button class="bnglow neumorphic-shadow-12" role="button">
-    <span class="text bg-background-900" :class="props.class_text">{{ props.label }}</span>
+  <button class="bnglow w-fit" role="button" :class="{'neumorphic-shadow-4': props.size === 'small', 'neumorphic-shadow-12': props.size === 'medium'}">
+    <span class="flex flex-row bg-background-900 items-center px-4 py-2">
+      <div v-if="slots.icon" class="pr-2">
+        <slot name="icon" />
+      </div>
+      <div :class="{'text-md': props.size === 'small', 'text-lg': props.size === 'medium'}">
+        <slot name="default" />
+      </div>
+    </span>
   </button>
 </template>
 
@@ -19,8 +28,6 @@ const props = defineProps({
 .bnglow:active,
 .bnglow span {
   border-radius: 6px;
-  width: 100%;
-  height: 100%;
   /* transition: 300ms; */
 }
 
