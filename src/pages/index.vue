@@ -24,7 +24,7 @@ const contactInfo = [
     <div class="flex flex-wrap md:flex-nowrap w-full items-center justify-center px-12">
       <div class="flex flex-col items-center p-4 rounded-2xl duration-500 neumorphic-shadow-12 dark:bg-background-900">
         <div class="py-4">
-          <img src="../assets/me.png" alt="Avatar" class="w-[12em] rounded-full border-2 border-slate-100">
+          <img src="/assets/me.png" alt="Avatar" class="w-[12em] rounded-full border-2 border-slate-100">
         </div>
         <div class="py-4 px-2">
           <h4 class="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap">

@@ -62,7 +62,7 @@ onMounted(() => scrollTo('home'))
           <div class="flex flex-row w-full items-center justify-around md:justify-between max-w-7xl">
             <div class="flex flex-row justify-center items-center cursor-pointer py-2" @click="scrollTo('home')">
               <div class="hidden md:block w-[2.5em]">
-                <img src="../assets/me.png" alt="Avatar" class="w-[2.5em] rounded-full">
+                <img src="/assets/me.png" alt="Avatar" class="w-[2.5em] rounded-full">
               </div>
               <h4 class="hidden md:block mx-4 icon-btn text-md md:text-lg font-semibold whitespace-nowrap">
                 Emilio Balda
