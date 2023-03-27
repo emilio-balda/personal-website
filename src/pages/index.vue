@@ -79,13 +79,13 @@ const contactInfo = [
 
 @keyframes animated-text{
   0%{width: 0%;border-right-color: var(--primary-500);}
-  100%{width: 100%;border-right-color: var(--secondary);}
+  100%{width: 100%;border-right-color: var(--secondary-500);}
 }
 
 /* cursor animations */
 
 @keyframes animated-cursor{
-  from{border-right-color: var(--secondary);}
+  from{border-right-color: var(--secondary-500);}
   to{border-right-color: transparent;}
 }
 
@@ -96,7 +96,7 @@ const contactInfo = [
   background-color: black;
 
   /* Create the gradient. */
-  background-image: linear-gradient(45deg, var(--primary-500), var(--secondary));
+  background-image: linear-gradient(45deg, var(--primary-500), var(--secondary-500));
 
   /* Set the background size and repeat properties. */
   background-size: 100%;

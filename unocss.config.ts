@@ -45,7 +45,7 @@ export default defineConfig({
         700: '#24BEA2', // class="bg-primary-700"
         900: '#00846C',
       },
-      secondary: '#4D8DFC',
+      secondary: { 500: '#4D8DFC', 900: '#003ba0' },
       background: {
         100: '#F8F9FC',
         900: '#15212c',

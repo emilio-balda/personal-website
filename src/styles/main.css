@@ -63,7 +63,8 @@ html.dark {
   --primary-500: #58FEB6;
   --primary-700: #24BEA2;
   --primary-900: #08987E;
-  --secondary: #4D8DFC;
+  --secondary-500: #4D8DFC;
+  --secondary-900: #025FFF;
   --background-100: #F8F9FC;
   --background-900: #15212c;
   --paragraph: #374151;

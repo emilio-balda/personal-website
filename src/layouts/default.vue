@@ -106,7 +106,7 @@ onMounted(() => scrollTo('home'))
                   />
                   <div
                     i="carbon-asleep-filled"
-                    class="hidden dark:block text-lg md:text-xl bg-gray-300 dark:bg-secondary"
+                    class="hidden dark:block text-lg md:text-xl bg-gray-300 dark:bg-secondary-500"
                   />
                 </template>
               </n-switch>

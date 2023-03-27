@@ -16,7 +16,7 @@ const props = defineProps({
 
 <template>
   <button class="bnglow w-fit" role="button" :class="{'neumorphic-shadow-4': props.size === 'small', 'neumorphic-shadow-12': props.size === 'medium'}">
-    <span class="flex flex-row items-center px-4 py-2" :class="{'bg-background-900': props.type==='default', 'bg-primary-900': props.type==='alert'}">
+    <span class="flex flex-row items-center px-4 py-2 bg-background-900">
       <div v-if="slots.icon" class="pr-2">
         <slot name="icon" />
       </div>
@@ -37,8 +37,8 @@ const props = defineProps({
 
 .bnglow {
   background-image: conic-gradient(
-    from var(--gradient-angle),
-    var(--primary-500), var(--secondary), var(--primary-500)
+    from 0deg,
+    var(--primary-500), var(--secondary-500), var(--primary-500)
   );
   border: 0;
   border-radius: 8px;
@@ -66,7 +66,7 @@ const props = defineProps({
   position: absolute;
   background: conic-gradient(
     from var(--gradient-angle),
-    var(--primary-500), var(--secondary), var(--primary-500)
+    var(--primary-500), var(--secondary-500), var(--primary-500)
   );
   top: -0.05rem;
   left: -0.05rem;
