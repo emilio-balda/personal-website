@@ -7,12 +7,16 @@ const props = defineProps({
     type: String,
     default: 'medium',
   },
+  type: {
+    type: String,
+    default: 'default',
+  },
 })
 </script>
 
 <template>
   <button class="bnglow w-fit" role="button" :class="{'neumorphic-shadow-4': props.size === 'small', 'neumorphic-shadow-12': props.size === 'medium'}">
-    <span class="flex flex-row bg-background-900 items-center px-4 py-2">
+    <span class="flex flex-row items-center px-4 py-2" :class="{'bg-background-900': props.type==='default', 'bg-primary-900': props.type==='alert'}">
       <div v-if="slots.icon" class="pr-2">
         <slot name="icon" />
       </div>

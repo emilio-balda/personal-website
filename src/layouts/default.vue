@@ -50,12 +50,18 @@ const railStyle = ({
   return style
 }
 
+const themeOverrides = {
+  common: {
+    successColor: '#08987E', // var(--primary-900)
+  },
+}
+
 onMounted(() => scrollTo('home'))
 
 </script>
 
 <template>
-  <n-config-provider :theme="isDark? darkTheme: null">
+  <n-config-provider :theme="isDark? darkTheme: null" :theme-overrides="themeOverrides">
     <div class="max-w-screen overflow-clip">
       <div class="sticky origin-top-right absolute right-0 top-0 z-40 flex flex-col">
         <div class="bg-background-100 dark:bg-background-900 px-4 py-2 border-b-1 border-slate-300 dark:border-slate-800 flex flex-row w-full items-center justify-around">
@@ -67,7 +73,7 @@ onMounted(() => scrollTo('home'))
               <h4 class="hidden md:block mx-4 icon-btn text-md md:text-lg font-semibold whitespace-nowrap">
                 Emilio Balda
               </h4>
-              <glowing-button class="md:ml-12" size="small" @click.prevent="downloadFile({filename:'CV-Emilio-Balda.pdf', href:'/assets/Resume-Emilio-Balda.pdf'})">
+              <glowing-button class="md:ml-12" size="small" type="alert" @click.prevent="downloadFile({filename:'CV-Emilio-Balda.pdf', href:'/assets/Resume-Emilio-Balda.pdf'})">
                 <template #icon>
                   <div i="carbon-download" />
                 </template>
