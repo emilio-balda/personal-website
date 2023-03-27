@@ -45,7 +45,7 @@ const contactInfo = [
       </div>
       <div class="px-2 py-12 md:px-12">
         <p class="text-lg md:text-xl lg:text-2xl leading-relaxed text-center">
-          I care about communication. That's why I'm interested to know all the details that make your project unique. Before starting a project, you will have a clear picture of how the end result looks like. You will get regular updates about the progress and software adhering to the best practices in the industry.
+          I help startups create successful, scalable, and maintainable SaaS products using machine learning. I specialize in delivering quality code with the industry's best practices, from concept to launch. I can optimize your team's processes to develop fast without sacrificing quality, achieving results that exceed your expectations. Let's work together to turn your vision into a reality!
         </p>
         <div class="inline-block my-4 md:my-8 md:mx-8 font-medium">
           <glowing-button @click="scrollTo('portfolio')">
