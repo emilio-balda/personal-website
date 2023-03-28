@@ -73,7 +73,7 @@ onMounted(() => scrollTo('home'))
               <h4 class="hidden md:block mx-4 icon-btn text-md md:text-lg font-semibold whitespace-nowrap">
                 Emilio Balda
               </h4>
-              <glowing-button class="md:ml-12" size="small" type="alert" @click.prevent="downloadFile({filename:'CV-Emilio-Balda.pdf', href:'/assets/Resume-Emilio-Balda.pdf'})">
+              <glowing-button class="md:ml-12" @click.prevent="downloadFile({filename:'CV-Emilio-Balda.pdf', href:'/assets/Resume-Emilio-Balda.pdf'})">
                 <template #icon>
                   <div i="carbon-download" />
                 </template>
