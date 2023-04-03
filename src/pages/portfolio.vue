@@ -119,15 +119,22 @@ const handleModalAfterLeave = () => {
 </script>
 <template>
   <div class="relative flex flex-wrap items-stretch justify-center">
-    <carousel :items-to-show="1.3" :wrap-around="false" class="md:hidden w-[100vw]">
-      <slide
+    <n-carousel
+      :space-between="0"
+      :loop="false"
+      slides-per-view="auto"
+      centered-slides
+      class="md:hidden"
+      :show-dots="false"
+    >
+      <n-carousel-item
         v-for="item in content"
         :key="item.title"
-        class="p-2 max-w-[90vw]"
+        style="width: 30%;padding-bottom: 4px;"
       >
         <portfolio-card :item="item" :alias-to-tag="alias_to_tag" @know-more="(itemId) => handleKnowMore(itemId)" />
-      </slide>
-    </carousel>
+      </n-carousel-item>
+    </n-carousel>
     <div
       v-for="item in content"
       :key="item.title"
