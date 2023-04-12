@@ -1,16 +1,15 @@
 
 <script setup lang="ts">
+import { NModal } from 'naive-ui'
 import type { Ref } from 'vue'
 import { ref } from 'vue'
-import { NCarousel, NCarouselItem, NModal } from 'naive-ui'
-import { Carousel, Slide } from 'vue3-carousel'
 // import FlipCard from '~/components/FlipCard.vue'
 import GlowingButton from '~/components/GlowingButton.vue'
-import DatarayContent from '~/components/content/PortfolioDataray.vue'
-import BoundsPaperContent from '~/components/content/PortfolioBoundsPaper.vue'
-import AdversarialPaperContent from '~/components/content/PortfolioAdversarialPaper.vue'
-import PersonalWebsiteContent from '~/components/content/PortfolioPersonalWebsite.vue'
 import PortfolioCard from '~/components/PortfolioCard.vue'
+import AdversarialPaperContent from '~/components/content/PortfolioAdversarialPaper.vue'
+import BoundsPaperContent from '~/components/content/PortfolioBoundsPaper.vue'
+import DatarayContent from '~/components/content/PortfolioDataray.vue'
+import PersonalWebsiteContent from '~/components/content/PortfolioPersonalWebsite.vue'
 import { scrollTo } from '~/composables/dom'
 
 interface Tag {
@@ -119,26 +118,10 @@ const handleModalAfterLeave = () => {
 </script>
 <template>
   <div class="relative flex flex-wrap items-stretch justify-center">
-    <n-carousel
-      :space-between="0"
-      :loop="false"
-      slides-per-view="auto"
-      centered-slides
-      class="md:hidden"
-      :show-dots="false"
-    >
-      <n-carousel-item
-        v-for="item in content"
-        :key="item.title"
-        style="width: 30%;padding-bottom: 4px;"
-      >
-        <portfolio-card :item="item" :alias-to-tag="alias_to_tag" @know-more="(itemId) => handleKnowMore(itemId)" />
-      </n-carousel-item>
-    </n-carousel>
     <div
       v-for="item in content"
       :key="item.title"
-      class="hidden md:flex px-4 pt-4 pb-8"
+      class="px-4 pt-4 pb-8"
     >
       <portfolio-card :item="item" :alias-to-tag="alias_to_tag" @know-more="(itemId) => handleKnowMore(itemId)" />
     </div>

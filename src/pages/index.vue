@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import GlowingButton from '~/components/GlowingButton.vue'
+import GlowingButton from '~/components/GlowingButton.vue';
 // import TableResponsive from '~/components/TableResponsive.vue'
 // import { useContactStore } from '~/stores/contact'
 
 // const contact = useContactStore()
-import { scrollTo } from '~/composables/dom'
+import { scrollTo } from '~/composables/dom';
 
 const contactInfo = [
   { icon: 'i-carbon-email bg-primary-700 dark:bg-primary-500', href: 'mailto:me@emilio-balda.com', text: 'me@emilio-balda.com' },
@@ -16,7 +16,7 @@ const contactInfo = [
 
 <template>
   <div class="flex flex-col w-full items-center justify-center">
-    <div class="md:block pb-8 md:pb-12 w-fit">
+    <div class="md:block px-4 pb-8 md:pb-12 w-fit">
       <h1 class="gradient-text typewriter whitespace-normal text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold pr-2">
         Your Full Stack Developer for Startups
       </h1>

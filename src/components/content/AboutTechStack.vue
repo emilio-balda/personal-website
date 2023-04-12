@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NCollapseItem, NSpace } from 'naive-ui'
+import { NCollapseItem, NSpace } from 'naive-ui';
 
 const stack = [
   {
@@ -55,13 +55,13 @@ const stack = [
 
 <template>
   <n-collapse-item v-for="stackRow in stack" :key="stackRow.title" :title="stackRow.title" :name="stackRow.title">
-    <n-space>
-      <div v-for="stackItem in stackRow.items" :key="stackItem.title" class="flex flex-col px-4 items-center">
+    <n-space align="center" justify="center">
+      <div v-for="stackItem in stackRow.items" :key="stackItem.title" class="flex flex-col px-4 items-center justify-center">
         <div class="pt-4">
-          <img :src="stackItem.image" class="h-8">
+          <img :src="stackItem.image" class="h-4 md:h-8">
         </div>
         <div>
-          <p class="italic py-2">
+          <p class="text-xs italic py-2">
             {{ stackItem.title }}
           </p>
         </div>

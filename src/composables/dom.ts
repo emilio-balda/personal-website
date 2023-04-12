@@ -1,5 +1,15 @@
 export function scrollTo(sectionId: string) {
-  document.querySelector(`#${sectionId}`)?.scrollIntoView({ behavior: 'smooth' })
+  // document.querySelector(`#${sectionId}`)?.scrollIntoView({ behavior: 'smooth' })
+
+  const element = document.getElementById(`${sectionId}`)
+  const headerOffset = 50
+  const elementPosition = element.getBoundingClientRect().top
+  const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth',
+  })
 }
 
 export function downloadFile({ filename, href }: { filename: string; href: string }) {

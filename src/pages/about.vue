@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { Component } from 'vue'
 import { NCard, NCollapse, NCollapseItem } from 'naive-ui'
-import JobHistory from '~/components/content/AboutJobHistory.vue'
-import Education from '~/components/content/AboutEducation.vue'
+import type { Component } from 'vue'
 import AuthoredBooks from '~/components/content/AboutAuthoredBooks.vue'
+import Education from '~/components/content/AboutEducation.vue'
+import JobHistory from '~/components/content/AboutJobHistory.vue'
 import TechStack from '~/components/content/AboutTechStack.vue'
 // import { useContactStore } from '~/stores/contact'
 
@@ -36,48 +36,46 @@ const getSectionId = (section: sectionInterface) => { return section.title.repla
 </script>
 
 <template>
-  <div class="flex flex-wrap items-center justify-center p-4">
-    <div class="flex flex-wrap items-start justify-around px-4 lg:px-8 lg:w-5/6">
-      <div class="flex flex-col p-8 rounded-xl items-center justify-between w-fit mb-8 neumorphic-shadow-12 dark:bg-background-900">
-        <div class="pb-4">
-          <img src="/assets/me.png" alt="Avatar" class="w-32 rounded-full border-2 border-slate-100">
-        </div>
-        <div class="flex flex-col items-start w-full">
-          <div v-for="skill in skills" :key="skill.name" class="flex flex-col items-start w-full h-fit py-1">
-            <div>
-              {{ skill.name }}
-            </div>
-            <div class="h-2 rounded-xl w-full bg-primary-700 dark:bg-primary-500" :style="{width:skill.level}" />
+  <div class="flex flex-wrap items-start justify-around px-8 lg:w-5/6">
+    <div class="order-2 md:order-1 flex flex-col p-8 rounded-xl items-center justify-between w-fit mb-8 neumorphic-shadow-12 dark:bg-background-900">
+      <div class="pb-4">
+        <img src="/assets/me.png" alt="Avatar" class="w-32 rounded-full border-2 border-slate-100">
+      </div>
+      <div class="flex flex-col items-start w-full">
+        <div v-for="skill in skills" :key="skill.name" class="flex flex-col items-start w-full h-fit py-1">
+          <div>
+            {{ skill.name }}
           </div>
-        </div>
-        <div class="pt-2 text-4xl ">
-          <a v-for="content in contactInfo" :key="content.href" class="inline-block px-1 pt-4" :href="content.href">
-            <div :class="content.icon" class="transition-all duration-300 hover:-translate-y-2" />
-          </a>
+          <div class="h-2 rounded-xl w-full bg-primary-700 dark:bg-primary-500" :style="{width:skill.level}" />
         </div>
       </div>
-      <div class="flex flex-col w-full mx-4 lg:ml-4 xl:ml-8 lg:w-5/6 xl:w-2/3 ">
-        <div>
-          <h3 class="text-3xl text-center font-semibold ">
-            About Me
-          </h3>
-        </div>
-        <p class="mt-4 mb-8 text-base md:text-lg lg:text-xl text-center leading-relaxed">
-          I learned how to keep up with the latest advances in AI during Ph.D. studies. Now, I'm a co-founding member of aiXbrain GmbH to turn these technologies into real software products.
-        </p>
-        <n-card class="neumorphic-shadow-4 bg-transparent text-app" :bordered="false">
-          <n-collapse class="text-app">
-            <n-collapse-item
-              v-for="section in sections" :key="section.title"
-              :title="section.title"
-              :name="getSectionId(section)"
-              class="text-app"
-            >
-              <component :is="section.component" />
-            </n-collapse-item>
-          </n-collapse>
-        </n-card>
+      <div class="pt-2 text-4xl ">
+        <a v-for="content in contactInfo" :key="content.href" class="inline-block px-1 pt-4" :href="content.href">
+          <div :class="content.icon" class="transition-all duration-300 hover:-translate-y-2" />
+        </a>
       </div>
     </div>
+    <div class="order-1 md:order-2 flex flex-col w-2/3 lg:ml-4 xl:ml-8">
+      <div>
+        <h3 class="text-3xl text-center font-semibold ">
+          About Me
+        </h3>
+      </div>
+      <p class="mt-4 mb-8 text-base md:text-lg lg:text-xl text-center leading-relaxed">
+        I learned how to keep up with the latest advances in AI during Ph.D. studies. Now, I'm a co-founding member of aiXbrain GmbH to turn these technologies into real software products.
+      </p>
+    </div>
+    <n-card class="order-3 md:order-3 neumorphic-shadow-4 bg-transparent text-app" :bordered="false">
+      <n-collapse class="text-app">
+        <n-collapse-item
+          v-for="section in sections" :key="section.title"
+          :title="section.title"
+          :name="getSectionId(section)"
+          class="text-app"
+        >
+          <component :is="section.component" />
+        </n-collapse-item>
+      </n-collapse>
+    </n-card>
   </div>
 </template>
