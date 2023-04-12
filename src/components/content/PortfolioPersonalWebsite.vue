@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NCollapse, NCollapseItem, NSpace } from 'naive-ui';
+import { NCollapse, NCollapseItem, NSpace } from 'naive-ui'
 
 const stack = [
   {

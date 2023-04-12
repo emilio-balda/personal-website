@@ -1,14 +1,14 @@
 <script setup lang="ts">
+import { NConfigProvider, NSwitch, darkTheme } from 'naive-ui'
 import type { CSSProperties } from 'vue'
 import { onMounted } from 'vue'
-import { NButton, NConfigProvider, NSwitch, NText, darkTheme } from 'naive-ui'
 import Home from '~/pages/index.vue'
 // import Services from '~/pages/services.vue'
-import Portfolio from '~/pages/portfolio.vue'
-import About from '~/pages/about.vue'
-import Contact from '~/pages/contact.vue'
 import { isDark, toggleDark } from '~/composables'
 import { downloadFile, scrollTo } from '~/composables/dom'
+import About from '~/pages/about.vue'
+import Contact from '~/pages/contact.vue'
+import Portfolio from '~/pages/portfolio.vue'
 // import GlowingButton from '~/components/GlowingButton.vue'
 
 const navBarItems = [
@@ -56,7 +56,7 @@ const themeOverrides = {
   },
 }
 
-onMounted(() => scrollTo('home'))
+onMounted(() => window.scrollTo(0, 0))
 
 </script>
 

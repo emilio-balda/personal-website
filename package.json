@@ -5,6 +5,7 @@
     "build": "vite-ssg build",
     "dev": "vite --port 3333 --open",
     "lint": "eslint .",
+    "lint:fix": "eslint --fix --max-warnings 0 .",
     "preview": "vite preview",
     "preview-https": "serve dist",
     "serve": "vite serve",

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import GlowingButton from '~/components/GlowingButton.vue';
+import GlowingButton from '~/components/GlowingButton.vue'
 // import TableResponsive from '~/components/TableResponsive.vue'
 // import { useContactStore } from '~/stores/contact'
 
 // const contact = useContactStore()
-import { scrollTo } from '~/composables/dom';
+import { scrollTo } from '~/composables/dom'
 
 const contactInfo = [
   { icon: 'i-carbon-email bg-primary-700 dark:bg-primary-500', href: 'mailto:me@emilio-balda.com', text: 'me@emilio-balda.com' },

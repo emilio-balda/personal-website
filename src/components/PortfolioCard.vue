@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { NTag } from 'naive-ui';
-import type { PropType } from 'vue';
+import { NTag } from 'naive-ui'
+import type { PropType } from 'vue'
 
 interface Tag {
   title: string
