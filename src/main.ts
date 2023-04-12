@@ -1,13 +1,12 @@
-import { ViteSSG } from 'vite-ssg'
-import generatedRoutes from 'virtual:generated-pages'
 import { setupLayouts } from 'virtual:generated-layouts'
+import generatedRoutes from 'virtual:generated-pages'
+import { ViteSSG } from 'vite-ssg'
 import App from './App.vue'
 
 import '@unocss/reset/tailwind.css'
-import './styles/main.css'
 import 'uno.css'
 import 'vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.css'
-import 'vue3-carousel/dist/carousel.css'
+import './styles/main.css'
 
 const routes = setupLayouts(generatedRoutes)
 
