@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import AppImage from '~/components/AppImage.vue'
+
 const books = [
   { title: 'PhD Thesis', image: 'https://drive.google.com/uc?id=1zJQDNeFlj-J1f6vpMzfJFhBqsQmKhVbX', my_role: 'Author (PhD Thesis)', url: 'https://ti.rwth-aachen.de/diss/Emilio_Rafael_Balda' },
   { title: 'Fundamentals of Data Analytics', image: 'https://images-na.ssl-images-amazon.com/images/I/41XJPE3bpLL._SX313_BO1,204,203,200_.jpg', my_role: 'Co-Author', url: 'https://www.amazon.de/dp/3030568334/ref=cm_sw_em_r_mt_dp_0X6N0V9V0YQYB4YH4RZ6' },
@@ -11,11 +13,12 @@ const books = [
     <div v-for="book in books" :key="book.title" class="flex flex-col item-center justify-center mb-8 mx-4">
       <div class="mb-1">
         <a :href="book.url">
-          <img
+          <app-image
             :src="book.image"
-            alt="image"
-            class="w-full h-72"
-          >
+            placeholder-height="18rem"
+            placeholder-width="12rem"
+            class="w-full h-[18rem]"
+          />
         </a>
       </div>
       <div>

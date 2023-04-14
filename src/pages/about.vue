@@ -39,7 +39,12 @@ const getSectionId = (section: sectionInterface) => { return section.title.repla
   <div class="flex flex-wrap items-start justify-around px-8 lg:w-5/6">
     <div class="order-2 md:order-1 flex flex-col p-8 rounded-xl items-center justify-between w-fit mb-8 neumorphic-shadow-12 dark:bg-background-900">
       <div class="pb-4">
-        <img src="/assets/me.png" alt="Avatar" class="w-32 rounded-full border-2 border-slate-100">
+        <app-image
+          src="/assets/me.png"
+          placeholder-height="8rem"
+          placeholder-width="8rem"
+          class="w-32 rounded-full border-2 border-slate-100"
+        />
       </div>
       <div class="flex flex-col items-start w-full">
         <div v-for="skill in skills" :key="skill.name" class="flex flex-col items-start w-full h-fit py-1">

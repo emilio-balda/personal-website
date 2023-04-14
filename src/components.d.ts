@@ -8,6 +8,7 @@ declare module 'vue' {
     AboutEducation: typeof import('./components/content/AboutEducation.vue')['default']
     AboutJobHistory: typeof import('./components/content/AboutJobHistory.vue')['default']
     AboutTechStack: typeof import('./components/content/AboutTechStack.vue')['default']
+    AppImage: typeof import('./components/AppImage.vue')['default']
     AppModal: typeof import('./components/AppModal.vue')['default']
     Counter: typeof import('./components/Counter.vue')['default']
     FlipCard: typeof import('./components/FlipCard.vue')['default']

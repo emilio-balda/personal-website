@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { NCollapse, NCollapseItem, NSpace } from 'naive-ui'
+import AppImage from '~/components/AppImage.vue'
 
 const stack = [
   {
@@ -49,7 +50,12 @@ const stack = [
         <n-space align="center" justify="center">
           <div v-for="stackItem in stackRow.items" :key="stackItem.title" class="flex flex-col px-4 items-center">
             <div class="pt-4">
-              <img :src="stackItem.image" class="h-4 md:h-8">
+              <app-image
+                :src="stackItem.image"
+                placeholder-height="1.5rem"
+                placeholder-width="1.5rem"
+                class="w-full h-4 md:h-8"
+              />
             </div>
             <div>
               <p class="text-xs italic py-2">

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AppImage from '~/components/AppImage.vue'
 import GlowingButton from '~/components/GlowingButton.vue'
 // import TableResponsive from '~/components/TableResponsive.vue'
 // import { useContactStore } from '~/stores/contact'
@@ -24,7 +25,12 @@ const contactInfo = [
     <div class="flex flex-wrap md:flex-nowrap w-full items-center justify-center px-12">
       <div class="flex flex-col items-center p-4 rounded-2xl duration-500 neumorphic-shadow-12 dark:bg-background-900">
         <div class="py-4">
-          <img src="/assets/me.png" alt="Avatar" class="w-[12em] rounded-full border-2 border-slate-100">
+          <app-image
+            src="/assets/me.png"
+            placeholder-height="12em"
+            placeholder-width="12em"
+            class="w-[12em] rounded-full border-2 border-slate-100 overflow-hidden"
+          />
         </div>
         <div class="py-4 px-2">
           <h4 class="text-xl md:text-2xl lg:text-3xl font-semibold whitespace-nowrap">
