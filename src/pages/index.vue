@@ -54,8 +54,8 @@ const contactInfo = [
           I help startups create successful, scalable, and maintainable SaaS products using machine learning. I specialize in delivering quality code with the industry's best practices, from concept to launch. I can optimize your team's processes to develop fast without sacrificing quality, achieving results that exceed your expectations. Let's work together to turn your vision into a reality!
         </p>
         <div class="inline-block my-4 md:my-8 md:mx-8 font-medium">
-          <glowing-button @click="scrollTo('portfolio')">
-            Let's Start
+          <glowing-button @click="scrollTo('contact')">
+            Let's Connect
           </glowing-button>
         </div>
       </div>

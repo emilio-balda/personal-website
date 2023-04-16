@@ -144,7 +144,7 @@ const handleModalAfterLeave = () => {
           <component :is="item.content_component" />
           <div class="max-w-xl py-4">
             <glowing-button @click.prevent="handleBookCall(item.id)">
-              Book a Free Discovery Call
+              Let's Connect
             </glowing-button>
           </div>
         </perfect-scrollbar>

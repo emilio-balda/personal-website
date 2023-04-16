@@ -60,7 +60,7 @@ const content: Array<ContentItem> = [
         </div>
         <div class="pb-8 font-medium">
           <glowing-button @click="scrollTo('contact')">
-            Book a Free Discovery Call
+            Let's Connect
           </glowing-button>
         </div>
       </perfect-scrollbar>

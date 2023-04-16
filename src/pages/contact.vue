@@ -7,18 +7,14 @@ const contactInfo = [
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center">
-    <div>
-      <h1 class="text-2xl pb-4 font-bold">
-        Let's Connect!
-      </h1>
-    </div>
-    <div class="rounded-xl overflow-hidden cursor-pointer neumorphic-shadow-12 dark:bg-background-900 mt-4">
-      <div class="flex flex-wrap items-start justify-center p-4 md:p-8">
-        <div v-for="content in contactInfo" :key="content.href" class="flex items-center justify-center">
-          <div class="text-6xl mx-2 md:mx-4 transition-all duration-300 hover:-translate-y-2">
-            <a :href="content.href"><div class="" :class="content.icon" /></a>
-          </div>
+  <div class="flex flex-col items-center justify-start min-h-[calc(50vh)]">
+    <h1 class="text-2xl pb-4 font-bold">
+      Let's Connect!
+    </h1>
+    <div class="rounded-xl overflow-hidden cursor-pointer neumorphic-shadow-12 dark:bg-background-900 mt-4 flex flex-wrap items-start justify-center p-4 md:p-8">
+      <div v-for="content in contactInfo" :key="content.href" class="flex items-center justify-center">
+        <div class="text-6xl mx-2 md:mx-4 transition-all duration-300 hover:-translate-y-2">
+          <a :href="content.href"><div class="" :class="content.icon" /></a>
         </div>
       </div>
     </div>
