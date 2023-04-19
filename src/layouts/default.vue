@@ -69,12 +69,12 @@ onMounted(() => window.scrollTo(0, 0))
           <div class="flex flex-row w-full items-center justify-around md:justify-between max-w-7xl">
             <div class="flex flex-row justify-center items-center cursor-pointer py-2" @click="scrollTo('home')">
               <app-image
-                src="/assets/me.png"
-                placeholder-height="2.5em"
-                placeholder-width="2.5em"
-                class="hidden md:block w-[2.5em] rounded-full overflow-hidden"
+                src="https://drive.google.com/uc?id=12GXM4ZHFSNUoeMTtu2YAUcA0wt_A59Nl"
+                placeholder-height="4em"
+                placeholder-width="4em"
+                class="hidden md:block w-[4em] rounded-full overflow-hidden"
               />
-              <h4 class="hidden md:block mx-4 icon-btn text-md md:text-lg font-semibold whitespace-nowrap">
+              <h4 class="hidden md:block mx-4 icon-btn text-xl font-semibold whitespace-nowrap">
                 Emilio Balda
               </h4>
               <glowing-button class="md:ml-12" @click.prevent="downloadFile({filename:'CV-Emilio-Balda.pdf', href:'/assets/Resume-Emilio-Balda.pdf'})">

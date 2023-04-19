@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const contactInfo = [
-  { icon: 'i-carbon-email bg-primary-700 dark:bg-primary-500', href: 'mailto:me@emilio-balda.com', text: 'me@emilio-balda.com' },
-  { icon: 'i-carbon-logo-linkedin bg-linkedin', href: 'https://www.linkedin.com/in/emiliobalda/', text: 'emiliobalda' },
-  { icon: 'i-carbon-logo-github bg-black dark:bg-white', href: 'https://github.com/emilio-balda', text: 'emilio-balda' },
+  { icon: 'i-carbon-email bg-app-paragraph', href: 'mailto:me@emilio-balda.com', text: 'me@emilio-balda.com' },
+  { icon: 'i-carbon-logo-linkedin bg-app-paragraph', href: 'https://www.linkedin.com/in/emiliobalda/', text: 'emiliobalda' },
+  { icon: 'i-carbon-logo-github bg-app-paragraph', href: 'https://github.com/emilio-balda', text: 'emilio-balda' },
 ]
 </script>
 

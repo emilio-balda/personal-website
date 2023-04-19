@@ -10,9 +10,9 @@ import TechStack from '~/components/content/AboutTechStack.vue'
 // const contact = useContactStore()
 
 const contactInfo = [
-  { icon: 'i-carbon-email bg-primary-700 dark:bg-primary-500', href: 'mailto:me@emilio-balda.com', text: 'me@emilio-balda.com' },
-  { icon: 'i-carbon-logo-linkedin bg-linkedin', href: 'https://www.linkedin.com/in/emiliobalda/', text: 'emiliobalda' },
-  { icon: 'i-carbon-logo-github bg-black dark:bg-white', href: 'https://github.com/emilio-balda', text: 'emilio-balda' },
+  { icon: 'i-carbon-email bg-app-paragraph', href: 'mailto:me@emilio-balda.com', text: 'me@emilio-balda.com' },
+  { icon: 'i-carbon-logo-linkedin bg-app-paragraph', href: 'https://www.linkedin.com/in/emiliobalda/', text: 'emiliobalda' },
+  { icon: 'i-carbon-logo-github bg-app-paragraph', href: 'https://github.com/emilio-balda', text: 'emilio-balda' },
 ]
 
 const skills = [
@@ -40,7 +40,7 @@ const getSectionId = (section: sectionInterface) => { return section.title.repla
     <div class="order-2 md:order-1 flex flex-col p-8 rounded-xl items-center justify-between w-fit mb-8 neumorphic-shadow-12 dark:bg-background-900">
       <div class="pb-4">
         <app-image
-          src="/assets/me.png"
+          src="https://drive.google.com/uc?id=12GXM4ZHFSNUoeMTtu2YAUcA0wt_A59Nl"
           placeholder-height="8rem"
           placeholder-width="8rem"
           class="w-32 rounded-full border-2 border-slate-100"
@@ -70,13 +70,13 @@ const getSectionId = (section: sectionInterface) => { return section.title.repla
         I learned how to keep up with the latest advances in AI during Ph.D. studies. Now, I'm a co-founding member of aiXbrain GmbH to turn these technologies into real software products.
       </p>
     </div>
-    <n-card class="order-3 md:order-3 neumorphic-shadow-4 bg-transparent text-app" :bordered="false">
-      <n-collapse class="text-app">
+    <n-card class="order-3 md:order-3 neumorphic-shadow-4 bg-transparent text-app-paragraph" :bordered="false">
+      <n-collapse class="text-app-paragraph">
         <n-collapse-item
           v-for="section in sections" :key="section.title"
           :title="section.title"
           :name="getSectionId(section)"
-          class="text-app"
+          class="text-app-paragraph"
         >
           <component :is="section.component" />
         </n-collapse-item>

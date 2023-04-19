@@ -13,8 +13,10 @@ export default defineConfig({
   shortcuts: [
     ['btn', 'px-4 py-1 rounded inline-block bg-teal-600 text-white cursor-pointer hover:bg-teal-700 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'],
     ['icon-btn', 'inline-block cursor-pointer select-none transition duration-200 ease-in-out hover:opacity-100 hover:text-primary-700 hover:dark:text-primary-500 text-paragraph dark:text-background-100'],
-    ['text-app', 'text-paragraph dark:text-background-100'],
-    ['bg-app', 'bg-background-100 dark:bg-background-900'],
+    ['text-app-paragraph', 'text-paragraph dark:text-background-100'],
+    ['bg-app-paragraph', 'bg-paragraph dark:bg-background-100'],
+    ['text-app-background', 'text-background-100 dark:text-background-900'],
+    ['bg-app-background', 'bg-background-100 dark:bg-background-900'],
   ],
   presets: [
     presetUno(),
@@ -45,13 +47,16 @@ export default defineConfig({
         700: '#24BEA2', // class="bg-primary-700"
         900: '#00846C',
       },
-      secondary: { 500: '#4D8DFC', 900: '#003ba0' },
-      background: {
-        100: '#F8F9FC',
-        900: '#15212c',
+      secondary: {
+        500: '#4D8DFC', // class="bg-secondary-500"
+        900: '#003ba0', // class="bg-secondary-900"
       },
-      linkedin: '#3074b2',
-      paragraph: '#374151',
+      background: {
+        100: '#F8F9FC', // class="bg-background-100"
+        900: '#15212c', // class="bg-background-900"
+      },
+      linkedin: '#3074b2', // class="bg-linkedin"
+      paragraph: '#374151', // class="bg-paragraph"
     },
   },
 })

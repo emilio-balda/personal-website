@@ -8,9 +8,9 @@ import GlowingButton from '~/components/GlowingButton.vue'
 import { scrollTo } from '~/composables/dom'
 
 const contactInfo = [
-  { icon: 'i-carbon-email bg-primary-700 dark:bg-primary-500', href: 'mailto:me@emilio-balda.com', text: 'me@emilio-balda.com' },
-  { icon: 'i-carbon-logo-linkedin bg-linkedin', href: 'https://www.linkedin.com/in/emiliobalda/', text: 'emiliobalda' },
-  { icon: 'i-carbon-logo-github bg-black dark:bg-white', href: 'https://github.com/emilio-balda', text: 'emilio-balda' },
+  { icon: 'i-carbon-email bg-app-paragraph', href: 'mailto:me@emilio-balda.com', text: 'me@emilio-balda.com' },
+  { icon: 'i-carbon-logo-linkedin bg-app-paragraph', href: 'https://www.linkedin.com/in/emiliobalda/', text: 'emiliobalda' },
+  { icon: 'i-carbon-logo-github bg-app-paragraph', href: 'https://github.com/emilio-balda', text: 'emilio-balda' },
 ]
 
 </script>
@@ -26,10 +26,10 @@ const contactInfo = [
       <div class="flex flex-col items-center p-4 rounded-2xl duration-500 neumorphic-shadow-12 dark:bg-background-900">
         <div class="py-4">
           <app-image
-            src="/assets/me.png"
+            src="https://drive.google.com/uc?id=12GXM4ZHFSNUoeMTtu2YAUcA0wt_A59Nl"
             placeholder-height="12em"
             placeholder-width="12em"
-            class="w-[12em] rounded-full border-2 border-slate-100 overflow-hidden"
+            class="w-[12em] rounded-full overflow-hidden"
           />
         </div>
         <div class="py-4 px-2">
