@@ -131,7 +131,7 @@ const handleModalAfterLeave = () => {
       :auto-focus="false"
       @after-leave="handleModalAfterLeave"
     >
-      <div class="flex flex-col w-11/12 md:w-9/12 bg-app -background shadow-xl items-center rounded-lg overflow-hidden">
+      <div class="flex flex-col w-11/12 md:w-9/12 bg-app-background shadow-xl items-center rounded-lg overflow-hidden">
         <div class="shrink-0 self-end px-4 py-4">
           <div
             i-carbon-circle-solid
@@ -140,7 +140,7 @@ const handleModalAfterLeave = () => {
           />
         </div>
         <div class="gradient-bg-image flex-grow w-full pb-1" />
-        <perfect-scrollbar class="flex flex-col w-full h-full bg-app -background items-center px-4 md:px-8 py-8">
+        <perfect-scrollbar class="flex flex-col w-full h-full bg-app-background items-center px-4 md:px-8 py-8">
           <component :is="item.content_component" />
           <div class="max-w-xl py-4">
             <glowing-button @click.prevent="handleBookCall(item.id)">
@@ -149,7 +149,7 @@ const handleModalAfterLeave = () => {
           </div>
         </perfect-scrollbar>
         <div class="gradient-bg-image flex-grow w-full pb-1" />
-        <div class="shrink-0 bg-app -background w-full self-end px-10 py-6" />
+        <div class="shrink-0 bg-app-background w-full self-end px-10 py-6" />
       </div>
     </n-modal>
   </div>
