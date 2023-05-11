@@ -9,7 +9,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <n-image :src="props.src">
+  <n-image :src="props.src" preview-disabled>
     <template #placeholder>
       <n-skeleton :width="placeholderWidth? placeholderWidth : '100%'" :height="placeholderHeight? placeholderHeight : '100%'" />
     </template>
