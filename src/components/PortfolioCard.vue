@@ -24,7 +24,10 @@ const props = defineProps({
 
 const emits = defineEmits(['know-more'])
 
-function knowMore(itemId) {
+function knowMore(itemId: string | undefined) {
+  if (!itemId)
+    return
+
   emits('know-more', itemId)
 }
 </script>
@@ -35,19 +38,19 @@ function knowMore(itemId) {
   >
     <div
       class="flex items-center justify-center w-full h-5/12 bg-cover bg-center"
-      :style="`background-image: url('${props.item.image}')`"
+      :style="`background-image: url('${props.item?.image}')`"
     >
       <div class="flex items-center justify-center h-fit w-full px-2 bg-black-900/50">
         <h1 class="text-2xl text-white font-semibold">
-          {{ props.item.title }}
+          {{ props.item?.title }}
         </h1>
       </div>
     </div>
     <div class="flex flex-col items-center justify-between w-3/4 h-7/12">
       <div>
-        <div class="hidden md:flex md:flex-wrap md:items-center md:justify-center">
+        <div v-if="props.aliasToTag" class="hidden md:flex md:flex-wrap md:items-center md:justify-center">
           <n-tag
-            v-for="alias in props.item.tag_aliases" :key="alias"
+            v-for="alias in props.item?.tag_aliases" :key="alias"
             :round="true"
             type="success"
             :bordered="true"
@@ -56,11 +59,11 @@ function knowMore(itemId) {
           </n-tag>
         </div>
         <p class="text-base  leading-relaxed font-light mx-2 pt-2">
-          {{ props.item.description }}
+          {{ props.item?.description }}
         </p>
       </div>
       <div class="pb-4">
-        <glowing-button @click="knowMore(props.item.id)">
+        <glowing-button @click="knowMore(props.item?.id)">
           Know More
         </glowing-button>
       </div>

@@ -43,7 +43,7 @@ const getSectionId = (section: sectionInterface) => { return section.title.repla
           src="https://drive.google.com/uc?id=12GXM4ZHFSNUoeMTtu2YAUcA0wt_A59Nl"
           placeholder-height="8rem"
           placeholder-width="8rem"
-          class="w-32 rounded-full"
+          class="w-32 rounded-full overflow-hidden"
         />
       </div>
       <div class="flex flex-col items-start w-full">

@@ -2,6 +2,7 @@ export function scrollTo(sectionId: string) {
   // document.querySelector(`#${sectionId}`)?.scrollIntoView({ behavior: 'smooth' })
 
   const element = document.getElementById(`${sectionId}`)
+  if (!element) return
   const headerOffset = 50
   const elementPosition = element.getBoundingClientRect().top
   const offsetPosition = elementPosition + window.pageYOffset - headerOffset
