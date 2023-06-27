@@ -16,12 +16,15 @@ const props = defineProps({
 </script>
 
 <template>
-  <button class="bnglow w-fit" role="button" :class="{'neumorphic-shadow-4': props.size === 'small', 'neumorphic-shadow-8': props.size === 'medium'}">
-    <span class="flex flex-row items-center px-4 py-2 bg-background-900 font-bold">
+  <button
+    class="bnglow w-fit" role="button"
+    :class="{ 'neumorphic-shadow-4': props.size === 'small', 'neumorphic-shadow-8': props.size === 'medium' }"
+  >
+    <span class="flex flex-row items-center px-4 py-2 bg-background-900">
       <div v-if="slots.icon" class="pr-2">
         <slot name="icon" />
       </div>
-      <div :class="{'text-md': props.size === 'small', 'text-lg': props.size === 'medium'}">
+      <div :class="{ 'text-md': props.size === 'small', 'text-lg': props.size === 'medium' }">
         <slot name="default" />
       </div>
     </span>
@@ -37,17 +40,15 @@ const props = defineProps({
 }
 
 .bnglow {
-  background-image: conic-gradient(
-    from 0deg,
-    var(--primary-500), var(--secondary-500), var(--primary-500)
-  );
+  background-image: conic-gradient(from 0deg,
+      var(--primary-500), var(--secondary-500), var(--primary-500));
   border: 0;
   border-radius: 8px;
   box-sizing: border-box;
   color: #ffffff;
   display: flex;
   max-width: 100%;
-  padding: 3px;
+  padding: 2px;
   text-decoration: none;
   user-select: none;
   -webkit-user-select: none;
@@ -62,18 +63,16 @@ const props = defineProps({
 }
 
 .bnglow:hover:before,
-.bnglow:hover:after  {
+.bnglow:hover:after {
   content: "";
   position: absolute;
-  background: conic-gradient(
-    from var(--gradient-angle),
-    var(--primary-500), var(--secondary-500), var(--primary-500)
-  );
-  top: -0.05rem;
-  left: -0.05rem;
+  background: conic-gradient(from var(--gradient-angle),
+      var(--primary-500), var(--secondary-500), var(--primary-500));
+  top: -0.0125rem;
+  left: -0.0125rem;
   z-index: -1;
-  width: calc(100% + 0.1rem);
-  height: calc(100% + 0.1rem);
+  width: calc(100% + 0.025rem);
+  height: calc(100% + 0.025rem);
   animation: rotation 2s linear infinite;
   border-radius: inherit;
 }
@@ -86,6 +85,7 @@ const props = defineProps({
   0% {
     --gradient-angle: 0deg;
   }
+
   100% {
     --gradient-angle: 360deg;
   }
