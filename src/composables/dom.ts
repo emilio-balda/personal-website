@@ -18,6 +18,7 @@ export function downloadFile({ filename, href }: { filename: string; href: strin
   const element = document.createElement('a')
   element.setAttribute('href', href)
   element.setAttribute('download', filename)
+  element.setAttribute('target', '_blank')
 
   element.style.display = 'none'
   document.body.appendChild(element)

@@ -78,8 +78,8 @@ onMounted(() => window.scrollTo(0, 0))
                 Emilio Balda
               </h4>
               <glowing-button
-                class="md:ml-12" href="https://drive.google.com/uc?id=1AFqS99db8Elw7b3hin9RcXHVt2zNU5pF"
-                download
+                class="md:ml-12"
+                @click.prevent="downloadFile({ filename: 'CV-Emilio-Balda.pdf', href: 'https://drive.google.com/uc?id=1AFqS99db8Elw7b3hin9RcXHVt2zNU5pF' })"
               >
                 <template #icon>
                   <div i="carbon-download" />
