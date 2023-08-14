@@ -62,22 +62,25 @@ onMounted(() => window.scrollTo(0, 0))
 </script>
 
 <template>
-  <n-config-provider :theme="isDark? darkTheme: null" :theme-overrides="themeOverrides">
+  <n-config-provider :theme="isDark ? darkTheme : null" :theme-overrides="themeOverrides">
     <div class="max-w-screen overflow-clip">
       <div class="sticky origin-top-right absolute right-0 top-0 z-40 flex flex-col">
-        <div class="bg-background-100 dark:bg-background-900 px-4 py-2 border-b-1 border-slate-300 dark:border-slate-800 flex flex-row w-full items-center justify-around">
+        <div
+          class="bg-background-100 dark:bg-background-900 px-4 py-2 border-b-1 border-slate-300 dark:border-slate-800 flex flex-row w-full items-center justify-around"
+        >
           <div class="flex flex-row w-full items-center justify-around md:justify-between max-w-7xl">
             <div class="flex flex-row justify-center items-center cursor-pointer py-2" @click="scrollTo('home')">
               <app-image
-                src="https://drive.google.com/uc?id=12GXM4ZHFSNUoeMTtu2YAUcA0wt_A59Nl"
-                placeholder-height="4em"
-                placeholder-width="4em"
-                class="hidden md:block w-[4em] rounded-full overflow-hidden"
+                src="https://drive.google.com/uc?id=12GXM4ZHFSNUoeMTtu2YAUcA0wt_A59Nl" placeholder-height="4em"
+                placeholder-width="4em" class="hidden md:block w-[4em] rounded-full overflow-hidden"
               />
               <h4 class="hidden md:block mx-4 icon-btn text-xl font-semibold whitespace-nowrap">
                 Emilio Balda
               </h4>
-              <glowing-button class="md:ml-12" @click.prevent="downloadFile({filename:'CV-Emilio-Balda.pdf', href:'/assets/Resume-Emilio-Balda.pdf'})">
+              <glowing-button
+                class="md:ml-12" href="https://drive.google.com/uc?id=1AFqS99db8Elw7b3hin9RcXHVt2zNU5pF"
+                download
+              >
                 <template #icon>
                   <div i="carbon-download" />
                 </template>
@@ -88,7 +91,10 @@ onMounted(() => window.scrollTo(0, 0))
             </div>
             <div class="flex flex-row items-center">
               <div class="hidden md:flex mr-8">
-                <button v-for="section in navBarItems" :key="section.id" class="icon-btn mx-3 text-md md:text-lg" @click="scrollTo(section.id)">
+                <button
+                  v-for="section in navBarItems" :key="section.id" class="icon-btn mx-3 text-md md:text-lg"
+                  @click="scrollTo(section.id)"
+                >
                   {{ section.page_name }}
                 </button>
               </div>
@@ -98,16 +104,10 @@ onMounted(() => window.scrollTo(0, 0))
                     i="carbon-light-filled"
                     class="dark:hidden block text-md md:text-lg bg-primary-700 dark:bg-primary-500 dark:bg-gray-300"
                   />
-                  <div
-                    i="carbon-light"
-                    class="hidden dark:block text-md md:text-lg bg-primary-500 dark:bg-gray-300"
-                  />
+                  <div i="carbon-light" class="hidden dark:block text-md md:text-lg bg-primary-500 dark:bg-gray-300" />
                 </template>
                 <template #checked-icon>
-                  <div
-                    i="carbon-asleep"
-                    class="dark:hidden block text-lg md:text-xl bg-gray-300 dark:bg-primary-500"
-                  />
+                  <div i="carbon-asleep" class="dark:hidden block text-lg md:text-xl bg-gray-300 dark:bg-primary-500" />
                   <div
                     i="carbon-asleep-filled"
                     class="hidden dark:block text-lg md:text-xl bg-gray-300 dark:bg-secondary-500"
@@ -118,7 +118,9 @@ onMounted(() => window.scrollTo(0, 0))
           </div>
         </div>
       </div>
-      <div class="md:hidden fixed left-0 right-0 bottom-0 z-50 flex flex-row w-full bg-background-100 dark:bg-background-900 items-center justify-center text-parragraph dark:text-white px-2 border-t-1 border-slate-300 dark:border-slate-800">
+      <div
+        class="md:hidden fixed left-0 right-0 bottom-0 z-50 flex flex-row w-full bg-background-100 dark:bg-background-900 items-center justify-center text-parragraph dark:text-white px-2 border-t-1 border-slate-300 dark:border-slate-800"
+      >
         <div v-for="section in navBarItems" :key="section.id" class="flex flex-col items-center justify-center px-4 py-2">
           <div :class="section.icon" class="text-sm" @click.prevent="handleClickNavMenu(section.id)" />
           <button class="opacity-75 text-xs" @click.prevent="handleClickNavMenu(section.id)">
