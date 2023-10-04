@@ -18,11 +18,15 @@ const stack = [
       { image: 'https://seeklogo.com/images/P/python-logo-A32636CAA3-seeklogo.com.png', title: 'Python' },
       { image: 'https://seeklogo.com/images/T/tensorflow-logo-02FCED4F98-seeklogo.com.png', title: 'TensorFlow' },
       { image: 'https://seeklogo.com/images/F/fastapi-logo-541BAA112F-seeklogo.com.png', title: 'FastAPI' },
+      { image: 'https://www.mlflow.org/docs/latest/_static/MLflow-logo-final-black.png', title: 'mlflow' },
+      { image: 'https://www.sqlalchemy.org/img/sqla_logo.png', title: 'SQL Alchemy' },
+      { image: 'https://raw.githubusercontent.com/spotify/luigi/master/doc/luigi.png', title: 'Luigi' },
     ],
   },
   {
     title: 'Infrastructure',
     items: [
+      { image: 'https://seeklogo.com/images/H/helm-logo-9208DB3EE5-seeklogo.com.png', title: 'Helm' },
       { image: 'https://seeklogo.com/images/G/google-cloud-logo-ADE788217F-seeklogo.com.png', title: 'GCloud' },
       { image: 'https://seeklogo.com/images/T/terraform-logo-99AE26A4C1-seeklogo.com.png', title: 'Terraform' },
     ],
@@ -30,14 +34,15 @@ const stack = [
   {
     title: 'DevOps',
     items: [
-      { image: 'https://seeklogo.com/images/H/helm-logo-9208DB3EE5-seeklogo.com.png', title: 'Helm' },
+      { image: 'https://seeklogo.com/images/G/git-logo-A1D01DDA30-seeklogo.com.png', title: 'Git' },
+      { image: 'https://uploads-ssl.webflow.com/6108e07db6795265f203a636/616ff7e3860e7cbd14b26b55_DVC.png', title: 'DVC' },
       { image: 'https://seeklogo.com/images/G/gitlab-logo-757620E430-seeklogo.com.png', title: 'GitLab CI' },
-      { image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/ESLint_logo.svg/192px-ESLint_logo.svg.png', title: 'ESLint' },
-      { image: 'https://seeklogo.com/images/J/jest-logo-F9901EBBF7-seeklogo.com.png', title: 'Jest' },
-      { image: 'https://github.com/cypress-io/cypress/raw/develop/assets/cypress-logo-light.png', title: 'Cypress' },
       { image: 'https://docs.pytest.org/en/7.1.x/_static/pytest_logo_curves.svg', title: 'PyTest' },
-      { image: 'https://black.readthedocs.io/en/stable/_static/logo2-readme.png', title: 'Black' },
       { image: 'https://python-poetry.org/images/logo-origami.svg', title: 'PyPoetry' },
+      // { image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/ESLint_logo.svg/192px-ESLint_logo.svg.png', title: 'ESLint' },
+      // { image: 'https://seeklogo.com/images/J/jest-logo-F9901EBBF7-seeklogo.com.png', title: 'Jest' },
+      // { image: 'https://github.com/cypress-io/cypress/raw/develop/assets/cypress-logo-light.png', title: 'Cypress' },
+      // { image: 'https://black.readthedocs.io/en/stable/_static/logo2-readme.png', title: 'Black' },
     ],
   },
 ]
@@ -49,7 +54,8 @@ const stack = [
       Overview
     </h1>
     <p>
-      Together with a team of 3 developers, we built a data science SaaS product called Dataray. This product is designed to monitor and operate factories with multiple industrial machines.
+      Together with a team of 3 developers, we built a data science SaaS product called Dataray. This product is designed
+      to monitor and operate factories with multiple industrial machines.
     </p>
     <!-- It currently serves 10+ customers around germany. -->
     <h1 class="font-bold text-2xl py-4">
@@ -71,9 +77,7 @@ const stack = [
           <div v-for="stackItem in stackRow.items" :key="stackItem.title" class="flex flex-col px-4 items-center">
             <div class="pt-4">
               <app-image
-                :src="stackItem.image"
-                placeholder-height="1.5rem"
-                placeholder-width="1.5rem"
+                :src="stackItem.image" placeholder-height="1.5rem" placeholder-width="1.5rem"
                 class="w-full h-4 md:h-8"
               />
             </div>

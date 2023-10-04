@@ -18,18 +18,18 @@ const contactInfo = [
 <template>
   <div class="flex flex-col w-full items-center justify-center">
     <div class="md:block px-4 pb-8 md:pb-12 w-fit">
-      <h1 class="gradient-text typewriter whitespace-normal text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold pr-2">
-        Your Full Stack Developer for Startups
+      <h1
+        class="gradient-text typewriter whitespace-normal text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold pr-2 lg:py-2"
+      >
+        Full Stack Development with Machine Learning
       </h1>
     </div>
     <div class="flex flex-wrap md:flex-nowrap w-full items-center justify-center px-12">
       <div class="flex flex-col items-center p-4 rounded-2xl duration-500 neumorphic-shadow-12 dark:bg-background-900">
         <div class="py-4">
           <app-image
-            src="https://drive.google.com/uc?id=12GXM4ZHFSNUoeMTtu2YAUcA0wt_A59Nl"
-            placeholder-height="12em"
-            placeholder-width="12em"
-            class="w-[12em] rounded-full overflow-hidden"
+            src="https://drive.google.com/uc?id=12GXM4ZHFSNUoeMTtu2YAUcA0wt_A59Nl" placeholder-height="12em"
+            placeholder-width="12em" class="w-[12em] rounded-full overflow-hidden"
           />
         </div>
         <div class="py-4 px-2">
@@ -51,7 +51,11 @@ const contactInfo = [
       </div>
       <div class="px-2 py-12 md:px-12">
         <p class="text-lg md:text-xl lg:text-2xl leading-relaxed text-center">
-          I help startups create successful, scalable, and maintainable SaaS products using machine learning. I specialize in delivering quality code with the industry's best practices, from concept to launch. I can optimize your team's processes to develop fast without sacrificing quality, achieving results that exceed your expectations. Let's work together to turn your vision into a reality!
+          I help organizations create successful, scalable, and maintainable SaaS products using machine learning. I
+          specialize
+          in delivering quality code with the industry's best practices, from concept to launch. I can optimize your
+          team's processes to develop fast without sacrificing quality, achieving results that exceed your expectations.
+          Let's work together to turn your vision into a reality!
         </p>
         <div class="inline-block my-4 md:my-8 md:mx-8 font-medium">
           <glowing-button @click="scrollTo('contact')">
@@ -70,11 +74,13 @@ const contactInfo = [
 }
 
 @media only screen and (min-width: 768px) {
+
   /* Animation */
   .typewriter {
-    animation: animated-text 4s steps(32,end) 1s 1 normal both,
-              animated-cursor 1s steps(28,end) 5s infinite;
+    animation: animated-text 4s steps(32, end) 1s 1 normal both,
+      animated-cursor 1s steps(28, end) 5s infinite;
   }
+
   .typewriter {
     white-space: nowrap;
     border-right: solid 4px var(--primary-500);
@@ -83,16 +89,28 @@ const contactInfo = [
 
 /* text animation */
 
-@keyframes animated-text{
-  0%{width: 0%;border-right-color: var(--primary-500);}
-  100%{width: 100%;border-right-color: var(--secondary-500);}
+@keyframes animated-text {
+  0% {
+    width: 0%;
+    border-right-color: var(--primary-500);
+  }
+
+  100% {
+    width: 100%;
+    border-right-color: var(--secondary-500);
+  }
 }
 
 /* cursor animations */
 
-@keyframes animated-cursor{
-  from{border-right-color: var(--secondary-500);}
-  to{border-right-color: transparent;}
+@keyframes animated-cursor {
+  from {
+    border-right-color: var(--secondary-500);
+  }
+
+  to {
+    border-right-color: transparent;
+  }
 }
 
 /* Tutorial on https://fossheim.io/writing/posts/css-text-gradient. */
@@ -115,5 +133,4 @@ const contactInfo = [
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
 }
-
 </style>
