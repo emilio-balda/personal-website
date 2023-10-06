@@ -1,8 +1,8 @@
-
 <script setup lang="ts">
 import { NModal } from 'naive-ui'
 import type { Ref } from 'vue'
 import { ref } from 'vue'
+
 // import FlipCard from '~/components/FlipCard.vue'
 import GlowingButton from '~/components/GlowingButton.vue'
 import PortfolioCard from '~/components/PortfolioCard.vue'
@@ -99,59 +99,59 @@ onMounted(() => {
   })
 })
 
-const handleBookCall = (item_id: string) => {
+function handleBookCall(item_id: string) {
   scrollToContactIsPending.value = true
   isOpen.value[item_id] = false
 }
 
-const handleKnowMore = (item_id: string) => {
+function handleKnowMore(item_id: string) {
   isOpen.value[item_id] = true
 }
 
-const handleModalAfterLeave = () => {
+function handleModalAfterLeave() {
   if (scrollToContactIsPending.value) {
     scrollToContactIsPending.value = false
     scrollTo('contact')
   }
 }
-
 </script>
+
 <template>
   <div class="relative flex flex-wrap items-stretch justify-center">
     <div
       v-for="item in content"
       :key="item.title"
-      class="px-4 pt-4 pb-8"
+      class="px-4 pb-8 pt-4"
     >
-      <portfolio-card :item="item" :alias-to-tag="alias_to_tag" @know-more="(itemId) => handleKnowMore(itemId)" />
+      <PortfolioCard :item="item" :alias-to-tag="alias_to_tag" @know-more="(itemId) => handleKnowMore(itemId)" />
     </div>
-    <n-modal
+    <NModal
       v-for="item in content" :id="item.id"
       :key="item.id" v-model:show="isOpen[item.id]"
       :auto-focus="false"
       @after-leave="handleModalAfterLeave"
     >
-      <div class="flex flex-col w-11/12 md:w-9/12 bg-app-background shadow-xl items-center rounded-lg overflow-hidden">
+      <div class="w-11/12 flex flex-col items-center overflow-hidden rounded-lg shadow-xl md:w-9/12 bg-app-background">
         <div class="shrink-0 self-end px-4 py-4">
           <div
             i-carbon-circle-solid
             class="text-lg text-red-600 focus:text-red-500 hover:text-red-500"
-            @click.prevent="isOpen[item.id]=false"
+            @click.prevent="isOpen[item.id] = false"
           />
         </div>
-        <div class="gradient-bg-image flex-grow w-full pb-1" />
-        <perfect-scrollbar class="flex flex-col w-full h-full bg-app-background items-center px-4 md:px-8 py-8">
+        <div class="gradient-bg-image w-full flex-grow pb-1" />
+        <perfect-scrollbar class="h-full w-full flex flex-col items-center px-4 py-8 bg-app-background md:px-8">
           <component :is="item.content_component" />
           <div class="max-w-xl py-4">
-            <glowing-button @click.prevent="handleBookCall(item.id)">
+            <GlowingButton @click.prevent="handleBookCall(item.id)">
               Let's Connect
-            </glowing-button>
+            </GlowingButton>
           </div>
         </perfect-scrollbar>
-        <div class="gradient-bg-image flex-grow w-full pb-1" />
-        <div class="shrink-0 bg-app-background w-full self-end px-10 py-6" />
+        <div class="gradient-bg-image w-full flex-grow pb-1" />
+        <div class="w-full shrink-0 self-end px-10 py-6 bg-app-background" />
       </div>
-    </n-modal>
+    </NModal>
   </div>
 </template>
 

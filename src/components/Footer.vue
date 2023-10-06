@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { toggleDark } from '~/composables'
+
 const { t } = useI18n()
 
 // const { t, availableLocales, locale } = useI18n()
@@ -12,22 +13,22 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <nav text-xl mt-6>
+  <nav mt-6 text-xl>
     <!-- <router-link class="icon-btn mx-2" to="/" :title="t('button.home')">
       <div i-carbon-campsite />
     </router-link> -->
 
-    <button class="icon-btn mx-2 !outline-none inline-flex" :title="t('button.toggle_dark')" @click="toggleDark()">
+    <button class="mx-2 inline-flex !outline-none icon-btn" :title="t('button.toggle_dark')" @click="toggleDark()">
       <div
         i="carbon-sun"
-        class="text-xl bg-primary-500 dark:bg-gray-300"
+        class="bg-primary-500 text-xl dark:bg-gray-300"
       />
       <p class="text-gray-500">
         /
       </p>
       <div
         i="carbon-moon"
-        class="text-xl bg-gray-300 dark:bg-primary-500"
+        class="bg-gray-300 text-xl dark:bg-primary-500"
       />
     </button>
 

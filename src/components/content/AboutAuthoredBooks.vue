@@ -10,19 +10,19 @@ const books = [
 
 <template>
   <div class="flex flex-wrap items-center justify-center">
-    <div v-for="book in books" :key="book.title" class="flex flex-col item-center justify-center mb-8 mx-4">
+    <div v-for="book in books" :key="book.title" class="item-center mx-4 mb-8 flex flex-col justify-center">
       <div class="mb-1">
         <a :href="book.url">
-          <app-image
+          <AppImage
             :src="book.image"
             placeholder-height="18rem"
             placeholder-width="12rem"
-            class="w-full h-[18rem]"
+            class="h-[18rem] w-full"
           />
         </a>
       </div>
       <div>
-        <p class="italic pt-2">
+        <p class="pt-2 italic">
           {{ book.my_role }}
         </p>
       </div>

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useSlots } from 'vue'
-const slots = useSlots()
 
 const props = defineProps({
   size: {
@@ -13,6 +12,8 @@ const props = defineProps({
     default: 'default',
   },
 })
+
+const slots = useSlots()
 </script>
 
 <template>
@@ -20,7 +21,7 @@ const props = defineProps({
     class="bnglow w-fit" role="button"
     :class="{ 'neumorphic-shadow-4': props.size === 'small', 'neumorphic-shadow-8': props.size === 'medium' }"
   >
-    <span class="flex flex-row items-center px-4 py-2 bg-background-900">
+    <span class="flex flex-row items-center bg-background-900 px-4 py-2">
       <div v-if="slots.icon" class="pr-2">
         <slot name="icon" />
       </div>

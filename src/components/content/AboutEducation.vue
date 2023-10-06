@@ -8,7 +8,7 @@ const degrees: Array<{ title: string; institution: string; started_at: string; e
 
 <template>
   <div class="flex flex-col">
-    <div v-for="degree in degrees" :key="degree.institution" class="text-left py-2">
+    <div v-for="degree in degrees" :key="degree.institution" class="py-2 text-left">
       <p class="font-bold">
         {{ degree.title }}
       </p>

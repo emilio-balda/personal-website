@@ -22,43 +22,38 @@ const props = defineProps({
   aliasToTag: Object as PropType<Record<string, Tag>>,
 })
 
-const emits = defineEmits(['know-more'])
+const emits = defineEmits(['knowMore'])
 
 function knowMore(itemId: string | undefined) {
   if (!itemId)
     return
 
-  emits('know-more', itemId)
+  emits('knowMore', itemId)
 }
 </script>
 
 <template>
   <div
-    class="flex flex-col h-[25rem] md:h-[35rem] w-[15rem] md:w-72 items-center justify-center text-xl rounded-lg overflow-hidden dark:bg-background-900 neumorphic-shadow-2 md:transition-all md:duration-300 md:hover:-translate-y-2"
+    class="neumorphic-shadow-2 h-[25rem] w-[15rem] flex flex-col items-center justify-center overflow-hidden rounded-lg text-xl md:h-[35rem] md:w-72 dark:bg-background-900 md:transition-all md:duration-300 md:hover:-translate-y-2"
   >
     <div
-      class="flex items-center justify-center w-full h-5/12 bg-cover bg-center"
+      class="h-5/12 w-full flex items-center justify-center bg-cover bg-center"
       :style="`background-image: url('${props.item?.image}')`"
     >
-      <div class="flex items-center justify-center h-fit w-full px-2 bg-black-900/50">
-        <h1 class="text-2xl text-white font-semibold">
+      <div class="bg-black-900/50 h-fit w-full flex items-center justify-center px-2">
+        <h1 class="text-2xl font-semibold text-white">
           {{ props.item?.title }}
         </h1>
       </div>
     </div>
-    <div class="flex flex-col items-center justify-between w-3/4 h-7/12">
+    <div class="h-7/12 w-3/4 flex flex-col items-center justify-between">
       <div>
         <div v-if="props.aliasToTag" class="hidden md:flex md:flex-wrap md:items-center md:justify-center">
-          <n-tag
-            v-for="alias in props.item?.tag_aliases" :key="alias"
-            :round="true"
-            type="success"
-            :bordered="true"
-          >
+          <NTag v-for="alias in props.item?.tag_aliases" :key="alias" :round="true" type="success" :bordered="true">
             {{ props.aliasToTag[alias].title }}
-          </n-tag>
+          </NTag>
         </div>
-        <p class="text-base  leading-relaxed font-light mx-2 pt-2">
+        <p class="mx-2 pt-2 text-base font-light leading-relaxed">
           {{ props.item?.description }}
         </p>
       </div>

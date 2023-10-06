@@ -9,7 +9,7 @@ const jobs = [
 
 <template>
   <div class="flex flex-col">
-    <div v-for="job in jobs" :key="job.company" class="text-left py-2">
+    <div v-for="job in jobs" :key="job.company" class="py-2 text-left">
       <p class="font-bold">
         {{ job.title }}
       </p>

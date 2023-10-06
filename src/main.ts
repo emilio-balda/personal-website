@@ -5,7 +5,6 @@ import App from './App.vue'
 
 import '@unocss/reset/tailwind.css'
 import 'uno.css'
-import 'vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.css'
 import './styles/main.css'
 
 const routes = setupLayouts(generatedRoutes)

@@ -29,27 +29,16 @@ const content: Array<ContentItem> = [
 <template>
   <div class="flex flex-wrap items-center justify-center">
     <div class="flex flex-wrap items-stretch justify-center lg:w-5/6">
-      <perfect-scrollbar v-for="item in content" :key="item.title" class="flex flex-col justify-between  items-center w-[19em] md:w-90 mt-4 mb-2 rounded-lg overflow-hidden mx-4 neumorphic-shadow-12 dark:bg-background-900 transition-all duration-300 hover:-translate-y-2">
-        <div class="rounded-lg overflow-hidden mb-10">
+      <perfect-scrollbar v-for="item in content" :key="item.title" class="neumorphic-shadow-12 mx-4 mb-2 mt-4 w-[19em] flex flex-col items-center justify-between overflow-hidden rounded-lg transition-all duration-300 md:w-90 dark:bg-background-900 hover:-translate-y-2">
+        <div class="mb-10 overflow-hidden rounded-lg">
           <img
             :src="item.image"
             alt="image"
-            class="w-full h-72"
+            class="h-72 w-full"
           >
-          <div class="pt-4 px-8 sm:px-9 md:px-7 xl:px-9 text-center">
+          <div class="px-8 pt-4 text-center md:px-7 sm:px-9 xl:px-9">
             <h3
-              class="
-                        font-semibold
-                        text-xl
-                        sm:text-[22px]
-                        md:text-xl
-                        lg:text-[22px]
-                        xl:text-xl
-                        2xl:text-[22px]
-                        mb-4
-                        block
-                        hover:text-primary
-                      "
+              class="hover:text-primary mb-4 block text-xl font-semibold 2xl:text-[22px] lg:text-[22px] md:text-xl sm:text-[22px] xl:text-xl"
             >
               {{ item.title }}
             </h3>
@@ -59,9 +48,9 @@ const content: Array<ContentItem> = [
           </div>
         </div>
         <div class="pb-8 font-medium">
-          <glowing-button @click="scrollTo('contact')">
+          <GlowingButton @click="scrollTo('contact')">
             Let's Connect
-          </glowing-button>
+          </GlowingButton>
         </div>
       </perfect-scrollbar>
     </div>

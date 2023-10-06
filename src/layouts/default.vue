@@ -3,6 +3,7 @@ import { NConfigProvider, NSwitch, darkTheme } from 'naive-ui'
 import type { CSSProperties } from 'vue'
 import { onMounted } from 'vue'
 import Home from '~/pages/index.vue'
+
 // import Services from '~/pages/services.vue'
 import AppImage from '~/components/AppImage.vue'
 import { isDark, toggleDark } from '~/composables'
@@ -10,6 +11,7 @@ import { downloadFile, scrollTo } from '~/composables/dom'
 import About from '~/pages/about.vue'
 import Contact from '~/pages/contact.vue'
 import Portfolio from '~/pages/portfolio.vue'
+
 // import GlowingButton from '~/components/GlowingButton.vue'
 
 const navBarItems = [
@@ -31,16 +33,16 @@ for (let i = 0; i < numNavBarItems; i++) {
 }
 
 const showNavMenu = ref<boolean>(false)
-const handleClickNavMenu = (section_id: string) => {
+function handleClickNavMenu(section_id: string) {
   showNavMenu.value = false
   scrollTo(section_id)
 }
 
-const railStyle = ({
+function railStyle({
   checked,
 }: {
   checked: boolean
-}) => {
+}) {
   const style: CSSProperties = {}
   if (checked)
     style.background = 'var(--paragraph)'
@@ -58,23 +60,22 @@ const themeOverrides = {
 }
 
 onMounted(() => window.scrollTo(0, 0))
-
 </script>
 
 <template>
-  <n-config-provider :theme="isDark ? darkTheme : null" :theme-overrides="themeOverrides">
+  <NConfigProvider :theme="isDark ? darkTheme : null" :theme-overrides="themeOverrides">
     <div class="max-w-screen overflow-clip">
-      <div class="sticky origin-top-right absolute right-0 top-0 z-40 flex flex-col">
+      <div class="absolute sticky right-0 top-0 z-40 flex flex-col origin-top-right">
         <div
-          class="bg-background-100 dark:bg-background-900 px-4 py-2 border-b-1 border-slate-300 dark:border-slate-800 flex flex-row w-full items-center justify-around"
+          class="w-full flex flex-row items-center justify-around border-b-1 border-slate-300 bg-background-100 px-4 py-2 dark:border-slate-800 dark:bg-background-900"
         >
-          <div class="flex flex-row w-full items-center justify-around md:justify-between max-w-7xl">
-            <div class="flex flex-row justify-center items-center cursor-pointer py-2" @click="scrollTo('home')">
-              <app-image
+          <div class="max-w-7xl w-full flex flex-row items-center justify-around md:justify-between">
+            <div class="flex flex-row cursor-pointer items-center justify-center py-2" @click="scrollTo('home')">
+              <AppImage
                 src="https://drive.google.com/uc?id=12GXM4ZHFSNUoeMTtu2YAUcA0wt_A59Nl" placeholder-height="4em"
-                placeholder-width="4em" class="hidden md:block w-[4em] rounded-full overflow-hidden"
+                placeholder-width="4em" class="hidden w-[4em] overflow-hidden rounded-full md:block"
               />
-              <h4 class="hidden md:block mx-4 icon-btn text-xl font-semibold whitespace-nowrap">
+              <h4 class="mx-4 hidden whitespace-nowrap text-xl font-semibold md:block icon-btn">
                 Emilio Balda
               </h4>
               <glowing-button
@@ -90,40 +91,40 @@ onMounted(() => window.scrollTo(0, 0))
               </glowing-button>
             </div>
             <div class="flex flex-row items-center">
-              <div class="hidden md:flex mr-8">
+              <div class="mr-8 hidden md:flex">
                 <button
-                  v-for="section in navBarItems" :key="section.id" class="icon-btn mx-3 text-md md:text-lg"
+                  v-for="section in navBarItems" :key="section.id" class="text-md mx-3 md:text-lg icon-btn"
                   @click="scrollTo(section.id)"
                 >
                   {{ section.page_name }}
                 </button>
               </div>
-              <n-switch :value="isDark" :rail-style="railStyle" @click="toggleDark()">
+              <NSwitch :value="isDark" :rail-style="railStyle" @click="toggleDark()">
                 <template #unchecked-icon>
                   <div
                     i="carbon-light-filled"
-                    class="dark:hidden block text-md md:text-lg bg-primary-700 dark:bg-primary-500 dark:bg-gray-300"
+                    class="text-md block bg-primary-700 dark:hidden dark:bg-gray-300 dark:bg-primary-500 md:text-lg"
                   />
-                  <div i="carbon-light" class="hidden dark:block text-md md:text-lg bg-primary-500 dark:bg-gray-300" />
+                  <div i="carbon-light" class="text-md hidden bg-primary-500 dark:block dark:bg-gray-300 md:text-lg" />
                 </template>
                 <template #checked-icon>
-                  <div i="carbon-asleep" class="dark:hidden block text-lg md:text-xl bg-gray-300 dark:bg-primary-500" />
+                  <div i="carbon-asleep" class="block bg-gray-300 text-lg dark:hidden dark:bg-primary-500 md:text-xl" />
                   <div
                     i="carbon-asleep-filled"
-                    class="hidden dark:block text-lg md:text-xl bg-gray-300 dark:bg-secondary-500"
+                    class="hidden bg-gray-300 text-lg dark:block dark:bg-secondary-500 md:text-xl"
                   />
                 </template>
-              </n-switch>
+              </NSwitch>
             </div>
           </div>
         </div>
       </div>
       <div
-        class="md:hidden fixed left-0 right-0 bottom-0 z-50 flex flex-row w-full bg-background-100 dark:bg-background-900 items-center justify-center text-parragraph dark:text-white px-2 border-t-1 border-slate-300 dark:border-slate-800"
+        class="text-parragraph fixed bottom-0 left-0 right-0 z-50 w-full flex flex-row items-center justify-center border-t-1 border-slate-300 bg-background-100 px-2 md:hidden dark:border-slate-800 dark:bg-background-900 dark:text-white"
       >
         <div v-for="section in navBarItems" :key="section.id" class="flex flex-col items-center justify-center px-4 py-2">
           <div :class="section.icon" class="text-sm" @click.prevent="handleClickNavMenu(section.id)" />
-          <button class="opacity-75 text-xs" @click.prevent="handleClickNavMenu(section.id)">
+          <button class="text-xs opacity-75" @click.prevent="handleClickNavMenu(section.id)">
             {{ section.page_name }}
           </button>
         </div>
@@ -131,10 +132,10 @@ onMounted(() => window.scrollTo(0, 0))
       <div>
         <main class="text-center text-paragraph dark:text-gray-200">
           <div class="flex flex-col items-center justify-center pb-32">
-            <div v-for="section in navBarItems" :ref="section.id" :key="section.id" class="w-full max-w-7xl">
+            <div v-for="section in navBarItems" :ref="section.id" :key="section.id" class="max-w-7xl w-full">
               <section :id="section.id" :class="section.background">
-                <div class="flex flex-col items-center justify-center w-full pt-8 md:pt-24">
-                  <h4 v-if="section.title !== null" class="text-3xl font-semibold mb-4" :class="section.title_color">
+                <div class="w-full flex flex-col items-center justify-center pt-8 md:pt-24">
+                  <h4 v-if="section.title !== null" class="mb-4 text-3xl font-semibold" :class="section.title_color">
                     {{ section.title }}
                   </h4>
                   <component :is="section.component" />
@@ -145,5 +146,5 @@ onMounted(() => window.scrollTo(0, 0))
         </main>
       </div>
     </div>
-  </n-config-provider>
+  </NConfigProvider>
 </template>

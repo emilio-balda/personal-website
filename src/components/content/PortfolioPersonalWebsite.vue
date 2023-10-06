@@ -26,45 +26,45 @@ const stack = [
 
 <template>
   <div class="py-2">
-    <h1 class="font-bold text-2xl py-4">
+    <h1 class="py-4 text-2xl font-bold">
       Overview
     </h1>
     <p>
       This website is built using the Vitesse template from Anthony Fu. I open sourced the code in <glowing-hyper-link href="https://github.com/emilio-balda/personal-website" text="this repository" />.
     </p>
-    <h1 class="font-bold text-2xl py-4">
+    <h1 class="py-4 text-2xl font-bold">
       Features
     </h1>
 
-    <ul class="text-left list-disc list-outside pl-8">
+    <ul class="list-disc list-outside pl-8 text-left">
       <li>Responsive design for mobile, tablet and desktop</li>
       <li>Light/Dark Mode</li>
       <li>Tested with unit and end-to-end tests</li>
       <li>Managed with Continuous Integration and Deployment (CI/CD)</li>
     </ul>
-    <h1 class="font-bold text-2xl py-4">
+    <h1 class="py-4 text-2xl font-bold">
       Tech Stack
     </h1>
-    <n-collapse>
-      <n-collapse-item v-for="stackRow in stack" :key="stackRow.title" :title="stackRow.title" :name="stackRow.title">
-        <n-space align="center" justify="center">
-          <div v-for="stackItem in stackRow.items" :key="stackItem.title" class="flex flex-col px-4 items-center">
+    <NCollapse>
+      <NCollapseItem v-for="stackRow in stack" :key="stackRow.title" :title="stackRow.title" :name="stackRow.title">
+        <NSpace align="center" justify="center">
+          <div v-for="stackItem in stackRow.items" :key="stackItem.title" class="flex flex-col items-center px-4">
             <div class="pt-4">
-              <app-image
+              <AppImage
                 :src="stackItem.image"
                 placeholder-height="1.5rem"
                 placeholder-width="1.5rem"
-                class="w-full h-4 md:h-8"
+                class="h-4 w-full md:h-8"
               />
             </div>
             <div>
-              <p class="text-xs italic py-2">
+              <p class="py-2 text-xs italic">
                 {{ stackItem.title }}
               </p>
             </div>
           </div>
-        </n-space>
-      </n-collapse-item>
-    </n-collapse>
+        </NSpace>
+      </NCollapseItem>
+    </NCollapse>
   </div>
 </template>

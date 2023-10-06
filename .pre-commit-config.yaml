@@ -4,16 +4,16 @@ repos:
     rev: v2.20.4
     hooks:
       - id: commitizen
-        stages: 
-        - commit-msg
+        stages:
+          - commit-msg
   - repo: local
     hooks:
-    - id: lint-fix
-      name : lint-fix
-      entry: pnpm run lint:fix
-      language: system
-      pass_filenames: False
-      always_run: true
-      verbose: True
-      stages: 
-      - commit
+      - id: lint-fix
+        name: lint-fix
+        entry: pnpm run lint:fix
+        language: system
+        pass_filenames: False
+        always_run: true
+        verbose: True
+        stages:
+          - commit

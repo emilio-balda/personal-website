@@ -5,7 +5,7 @@ const user = useUserStore()
 const name = ref(user.savedName)
 
 const router = useRouter()
-const go = () => {
+function go() {
   if (name.value)
     router.push(`/hi/${encodeURIComponent(name.value)}`)
 }
@@ -48,7 +48,7 @@ const { t } = useI18n()
 
     <div>
       <button
-        btn m-3 text-sm
+        m-3 text-sm btn
         :disabled="!name"
         @click="go"
       >
