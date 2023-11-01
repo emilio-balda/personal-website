@@ -17,11 +17,11 @@ const contactInfo = [
 ]
 
 const skills = [
-  { name: 'Python', level: '80%' },
+  { name: 'Python', level: '100%' },
+  { name: 'Backend Development', level: '100%' },
+  { name: 'Machine Learning', level: '100%' },
   { name: 'Javascript', level: '30%' },
   { name: 'Frontend Development', level: '30%' },
-  { name: 'Backend Development', level: '70%' },
-  { name: 'Machine Learning', level: '90%' },
 ]
 
 interface sectionInterface { id: string; title: string; show: boolean; component: Component }

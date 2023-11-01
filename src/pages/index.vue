@@ -21,7 +21,7 @@ const contactInfo = [
       <h1
         class="gradient-text typewriter whitespace-normal pr-2 text-3xl font-bold lg:py-2 lg:text-5xl md:text-4xl xl:text-6xl"
       >
-        Full Stack Development with Machine Learning
+        AI Backend Development
       </h1>
     </div>
     <div class="w-full flex flex-wrap items-center justify-center px-12 md:flex-nowrap">
@@ -37,7 +37,7 @@ const contactInfo = [
             Emilio Balda
           </h4>
           <p class="whitespace-nowrap text-lg lg:text-2xl md:text-xl">
-            Full Stack Developer
+            AI Backend Developer
           </p>
           <p class="whitespace-nowrap text-lg lg:text-2xl md:text-xl">
             PhD in Machine Learning
@@ -52,10 +52,9 @@ const contactInfo = [
       <div class="px-2 py-12 md:px-12">
         <p class="text-center text-lg leading-relaxed lg:text-2xl md:text-xl">
           I help organizations create successful, scalable, and maintainable SaaS products using machine learning. I
-          specialize
-          in delivering quality code with the industry's best practices, from concept to launch. I can optimize your
-          team's processes to develop fast without sacrificing quality, achieving results that exceed your expectations.
-          Let's work together to turn your vision into a reality!
+          specialize in delivering quality code with the industry's best practices, from concept to launch. I can optimize
+          your team's processes to develop fast without sacrificing quality, achieving results that exceed your
+          expectations. Let's work together to turn your vision into a reality!
         </p>
         <div class="my-4 inline-block font-medium md:mx-8 md:my-8">
           <GlowingButton @click="scrollTo('contact')">
@@ -77,8 +76,8 @@ const contactInfo = [
 
   /* Animation */
   .typewriter {
-    animation: animated-text 4s steps(32, end) 1s 1 normal both,
-      animated-cursor 1s steps(28, end) 5s infinite;
+    animation: animated-text 2.5s steps(20, end) 1s 1 normal both,
+      animated-cursor 1s steps(28, end) 2.5s infinite;
   }
 
   .typewriter {
