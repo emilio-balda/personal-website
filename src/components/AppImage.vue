@@ -11,7 +11,10 @@ const props = defineProps({
 <template>
   <NImage :src="props.src" preview-disabled>
     <template #placeholder>
-      <NSkeleton :width="placeholderWidth ? placeholderWidth : '100%'" :height="placeholderHeight ? placeholderHeight : '100%'" />
+      <NSkeleton
+        :width="placeholderWidth ? placeholderWidth : '100%'"
+        :height="placeholderHeight ? placeholderHeight : '100%'"
+      />
     </template>
   </NImage>
 </template>

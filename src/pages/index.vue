@@ -28,8 +28,8 @@ const contactInfo = [
       <div class="neumorphic-shadow-12 flex flex-col items-center rounded-2xl p-4 duration-500 dark:bg-background-900">
         <div class="py-4">
           <AppImage
-            src="https://drive.google.com/uc?id=12GXM4ZHFSNUoeMTtu2YAUcA0wt_A59Nl" placeholder-height="12em"
-            placeholder-width="12em" class="w-[12em] overflow-hidden rounded-full"
+            src="/assets/informal-color.png" placeholder-height="12em" placeholder-width="12em"
+            class="w-[12em] overflow-hidden rounded-full"
           />
         </div>
         <div class="px-2 py-4">

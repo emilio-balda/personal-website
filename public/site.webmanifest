@@ -4,13 +4,13 @@
     "icons": [
         {
             // android-chrome-192x192.png
-            "src": "https://drive.google.com/uc?id=1GvpLuTLtlPDOEVEFMpBX0eYtf7eUY75_",
+            "src": "/assets/favicon_io/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
             // android-chrome-512x512.png
-            "src": "https://drive.google.com/uc?id=1iCxkn06RZlbSQEg78JReNripEkzsAwLh",
+            "src": "/assets/favicon_io/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }

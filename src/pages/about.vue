@@ -44,8 +44,8 @@ function getSectionId(section: sectionInterface) {
     >
       <div class="pb-4">
         <app-image
-          src="https://drive.google.com/uc?id=12GXM4ZHFSNUoeMTtu2YAUcA0wt_A59Nl" placeholder-height="8rem"
-          placeholder-width="8rem" class="w-32 overflow-hidden rounded-full"
+          src="/assets/informal-color.png" placeholder-height="8rem" placeholder-width="8rem"
+          class="w-32 overflow-hidden rounded-full"
         />
       </div>
       <div class="w-full flex flex-col items-start">
