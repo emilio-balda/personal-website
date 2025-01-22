@@ -13,8 +13,6 @@ const props = defineProps({
 
 <template>
   <div id="nav" class="flex flex-wrap items-center justify-center md:flex-nowrap">
-    <div class="text-2xl">
-      <NavigationLink v-for="item in props.navBarItems" :key="item.route" :to="item.route" :page-name="item.page_name" />
-    </div>
+    <NavigationLink v-for="item in props.navBarItems" :key="item.route" :to="item.route" :page-name="item.page_name" />
   </div>
 </template>

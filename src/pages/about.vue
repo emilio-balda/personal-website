@@ -5,24 +5,21 @@ import AuthoredBooks from '~/components/content/AboutAuthoredBooks.vue'
 import Education from '~/components/content/AboutEducation.vue'
 import JobHistory from '~/components/content/AboutJobHistory.vue'
 import TechStack from '~/components/content/AboutTechStack.vue'
+import { composeEmail } from '~/composables/dom'
 
-// import { useContactStore } from '~/stores/contact'
+// const contactInfo = [
+//   { icon: 'i-carbon-email bg-app-paragraph', href: 'mailto:me@emilio-balda.com', text: 'me@emilio-balda.com' },
+//   { icon: 'i-carbon-logo-linkedin bg-app-paragraph', href: 'https://www.linkedin.com/in/emiliobalda/', text: 'emiliobalda' },
+//   { icon: 'i-carbon-logo-github bg-app-paragraph', href: 'https://github.com/emilio-balda', text: 'emilio-balda' },
+// ]
 
-// const contact = useContactStore()
-
-const contactInfo = [
-  { icon: 'i-carbon-email bg-app-paragraph', href: 'mailto:me@emilio-balda.com', text: 'me@emilio-balda.com' },
-  { icon: 'i-carbon-logo-linkedin bg-app-paragraph', href: 'https://www.linkedin.com/in/emiliobalda/', text: 'emiliobalda' },
-  { icon: 'i-carbon-logo-github bg-app-paragraph', href: 'https://github.com/emilio-balda', text: 'emilio-balda' },
-]
-
-const skills = [
-  { name: 'Python', level: '100%' },
-  { name: 'Backend Development', level: '100%' },
-  { name: 'Machine Learning', level: '100%' },
-  { name: 'Javascript', level: '30%' },
-  { name: 'Frontend Development', level: '30%' },
-]
+// const skills = [
+//   { name: 'Python', level: '100%' },
+//   { name: 'Backend Development', level: '100%' },
+//   { name: 'Machine Learning', level: '100%' },
+//   { name: 'Javascript', level: '30%' },
+//   { name: 'Frontend Development', level: '30%' },
+// ]
 
 interface sectionInterface { id: string; title: string; show: boolean; component: Component }
 const sections = ref<Array<sectionInterface>>([
@@ -38,8 +35,8 @@ function getSectionId(section: sectionInterface) {
 </script>
 
 <template>
-  <div class="flex flex-wrap items-start justify-around px-8 lg:w-5/6">
-    <div
+  <div class="flex flex-col md:flex-row items-start justify-start px-8 gap-12 w-full">
+    <!-- <div
       class="neumorphic-shadow-12 order-2 mb-8 w-fit flex flex-col items-center justify-between rounded-xl p-8 md:order-1 dark:bg-background-900"
     >
       <div class="pb-4">
@@ -61,27 +58,44 @@ function getSectionId(section: sectionInterface) {
           <div :class="content.icon" class="transition-all duration-300 hover:-translate-y-2" />
         </a>
       </div>
-    </div>
-    <div class="order-1 w-2/3 flex flex-col md:order-2 lg:ml-4 xl:ml-8">
-      <div>
-        <h3 class="text-center text-3xl font-semibold">
-          About Me
-        </h3>
-      </div>
-      <p class="mb-8 mt-4 text-center text-base leading-relaxed lg:text-xl md:text-lg">
-        I learned how to keep up with the latest advances in AI during Ph.D. studies. Now, I'm a co-founding member of
-        aiXbrain GmbH to turn these technologies into real software products.
-      </p>
-    </div>
-    <NCard class="neumorphic-shadow-4 order-3 bg-transparent md:order-3 text-app-paragraph" :bordered="false">
+    </div> -->
+    <NCard class="order-2 md:order-1 neumorphic-shadow-4 bg-transparent text-app-paragraph w-full md:w-1/2" :bordered="false">
       <NCollapse class="text-app-paragraph">
         <NCollapseItem
-          v-for="section in sections" :key="section.title" :title="section.title"
+          v-for="section in sections" :key="section.title"
           :name="getSectionId(section)" class="text-app-paragraph"
         >
-          <component :is="section.component" />
+          <template #header>
+            <h3 class="text-left text-app-paragraph text-xl">
+              {{ section.title }}
+            </h3>
+          </template>
+          <template #default>
+            <component :is="section.component" />
+          </template>
         </NCollapseItem>
       </NCollapse>
     </NCard>
+    <div class="order-1 md:order-2 relative w-full md:w-1/2">
+      <div class="flex flex-col md:absolute md:top-0 md:left-0">
+        <div>
+          <h2 class="text-left text-3xl font-semibold">
+            About Me
+          </h2>
+        </div>
+        <p class="mb-8 mt-4 text-left leading-relaxed text-lg">
+          I learned how to keep up with the latest advances in AI during Ph.D. studies. Now, I'm a co-founding member of
+          aiXbrain GmbH to turn these technologies into real software products.
+        </p>
+        <glowing-button @click="composeEmail({ to: 'me@emilio-balda.com' })">
+            <template #icon>
+              <div class="i-carbon-email" />
+            </template>
+            <template #default>
+              Get in Touch
+            </template>
+        </glowing-button>
+      </div>
+    </div>
   </div>
 </template>

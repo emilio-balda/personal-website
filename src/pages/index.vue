@@ -1,12 +1,6 @@
 <script setup lang="ts">
 import AppImage from '~/components/AppImage.vue'
-import GlowingButton from '~/components/GlowingButton.vue'
-
-// import TableResponsive from '~/components/TableResponsive.vue'
-// import { useContactStore } from '~/stores/contact'
-
-// const contact = useContactStore()
-import { scrollTo } from '~/composables/dom'
+import { composeEmail } from '~/composables/dom'
 
 const contactInfo = [
   { icon: 'i-carbon-email bg-app-paragraph', href: 'mailto:me@emilio-balda.com', text: 'me@emilio-balda.com' },
@@ -19,12 +13,12 @@ const contactInfo = [
   <div class="w-full flex flex-col items-center justify-center">
     <div class="w-fit px-4 pb-8 md:block md:pb-12">
       <h1
-        class="gradient-text typewriter whitespace-normal pr-2 text-3xl font-bold lg:py-2 lg:text-5xl md:text-4xl xl:text-6xl"
+        class="gradient-text typewriter whitespace-normal pr-2 font-bold lg:py-2 text-7xl"
       >
-        AI Backend Development
+        Full Stack Developer
       </h1>
     </div>
-    <div class="w-full flex flex-wrap items-center justify-center px-12 md:flex-nowrap">
+    <div class="w-full flex flex-wrap items-start justify-center px-12 md:flex-nowrap">
       <div class="neumorphic-shadow-12 flex flex-col items-center rounded-2xl p-4 duration-500 dark:bg-background-900">
         <div class="py-4">
           <AppImage
@@ -33,33 +27,37 @@ const contactInfo = [
           />
         </div>
         <div class="px-2 py-4">
-          <h4 class="whitespace-nowrap text-xl font-semibold lg:text-3xl md:text-2xl">
+          <h2 class="whitespace-nowrap text-lg uppercase">
             Emilio Balda
-          </h4>
-          <p class="whitespace-nowrap text-lg lg:text-2xl md:text-xl">
-            AI Backend Developer
-          </p>
-          <p class="whitespace-nowrap text-lg lg:text-2xl md:text-xl">
+          </h2>
+          <h3 class="whitespace-nowrap text-xl">
+            Full Stack Developer
+          </h3>
+          <h3 class="whitespace-nowrap font-semibold text-xl">
             PhD in Machine Learning
-          </p>
-          <p class="whitespace-nowrap text-4xl">
+          </h3>
+          <p class="whitespace-nowrap text-3xl">
             <a v-for="content in contactInfo" :key="content.href" class="inline-block px-1 pt-4" :href="content.href">
               <div :class="content.icon" class="transition-all duration-300 hover:-translate-y-2" />
             </a>
           </p>
         </div>
       </div>
-      <div class="px-2 py-12 md:px-12">
-        <p class="text-center text-lg leading-relaxed lg:text-2xl md:text-xl">
-          I help organizations create successful, scalable, and maintainable SaaS products using machine learning. I
-          specialize in delivering quality code with the industry's best practices, from concept to launch. I can optimize
-          your team's processes to develop fast without sacrificing quality, achieving results that exceed your
-          expectations. Let's work together to turn your vision into a reality!
+      <div class="flex flex-col items-start justify-start px-2 md:px-12 py-4">
+        <p class="text-start text-lg leading-relaxed max-w-xl">
+          I specialize in building robust, scalable SaaS products that harness the power of machine learning. 
+          From concept to launch, I combine clean, maintainable code with proven best practices so your team can move quickly without cutting corners. 
+          Ready to bring your vision to life? Let's create something remarkable together.
         </p>
-        <div class="my-4 inline-block font-medium md:mx-8 md:my-8">
-          <GlowingButton @click="scrollTo('contact')">
-            Let's Connect
-          </GlowingButton>
+        <div class="my-4 inline-block font-medium md:my-8">
+          <glowing-button @click="composeEmail({ to: 'me@emilio-balda.com' })">
+            <template #icon>
+              <div class="i-carbon-email" />
+            </template>
+            <template #default>
+              Get in Touch
+            </template>
+          </glowing-button>
         </div>
       </div>
     </div>

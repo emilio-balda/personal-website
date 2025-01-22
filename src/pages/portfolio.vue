@@ -3,14 +3,12 @@ import { NModal } from 'naive-ui'
 import type { Ref } from 'vue'
 import { ref } from 'vue'
 
-// import FlipCard from '~/components/FlipCard.vue'
-import GlowingButton from '~/components/GlowingButton.vue'
 import PortfolioCard from '~/components/PortfolioCard.vue'
 import AdversarialPaperContent from '~/components/content/PortfolioAdversarialPaper.vue'
 import BoundsPaperContent from '~/components/content/PortfolioBoundsPaper.vue'
 import DatarayContent from '~/components/content/PortfolioDataray.vue'
 import PersonalWebsiteContent from '~/components/content/PortfolioPersonalWebsite.vue'
-import { scrollTo } from '~/composables/dom'
+import { composeEmail } from '~/composables/dom'
 
 interface Tag {
   title: string
@@ -20,27 +18,22 @@ interface Tag {
 
 const alias_to_tag: Record<string, Tag> = {
   ml: {
-    title: 'machine learning',
+    title: '< machine-learning />',
     color: 'bg-green-500',
     is_selected: false,
   },
   frontend: {
-    title: 'frontend',
+    title: '< frontend />',
     color: 'bg-pink-700',
     is_selected: false,
   },
   backend: {
-    title: 'backend',
+    title: '< backend />',
     color: 'bg-blue-500',
     is_selected: false,
   },
-  vision: {
-    title: 'computer vision',
-    color: 'bg-orange-500',
-    is_selected: false,
-  },
   research: {
-    title: 'research',
+    title: '< research />',
     color: 'bg-gray-500',
     is_selected: false,
   },
@@ -86,12 +79,12 @@ const content: Array<ContentItem> = [
     description: 'I was the first author of a paper about computer vision and deep neural networks.',
     image: 'https://images.pexels.com/photos/3308588/pexels-photo-3308588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     content_component: AdversarialPaperContent,
-    tag_aliases: ['research', 'ml', 'vision'],
+    tag_aliases: ['research', 'ml'],
   },
 ]
 
 const isOpen: Ref<Record<string, boolean>> = ref({})
-const scrollToContactIsPending: Ref<boolean> = ref(false)
+const callToActionIsPending: Ref<boolean> = ref(false)
 
 onMounted(() => {
   content.forEach((item: ContentItem) => {
@@ -100,7 +93,7 @@ onMounted(() => {
 })
 
 function handleBookCall(item_id: string) {
-  scrollToContactIsPending.value = true
+  callToActionIsPending.value = true
   isOpen.value[item_id] = false
 }
 
@@ -109,9 +102,9 @@ function handleKnowMore(item_id: string) {
 }
 
 function handleModalAfterLeave() {
-  if (scrollToContactIsPending.value) {
-    scrollToContactIsPending.value = false
-    scrollTo('contact')
+  if (callToActionIsPending.value) {
+    callToActionIsPending.value = false
+    composeEmail({ to: 'me@emilio-balda.com' })
   }
 }
 </script>
@@ -131,7 +124,7 @@ function handleModalAfterLeave() {
       :auto-focus="false"
       @after-leave="handleModalAfterLeave"
     >
-      <div class="w-11/12 flex flex-col items-center overflow-hidden rounded-lg shadow-xl md:w-9/12 bg-app-background">
+      <div class="max-w-3xl w-11/12 flex flex-col items-center overflow-hidden rounded-lg shadow-xl md:w-9/12 bg-app-background">
         <div class="shrink-0 self-end px-4 py-4">
           <div
             i-carbon-circle-solid
@@ -143,9 +136,14 @@ function handleModalAfterLeave() {
         <perfect-scrollbar class="h-full w-full flex flex-col items-center px-4 py-8 bg-app-background md:px-8">
           <component :is="item.content_component" />
           <div class="max-w-xl py-4">
-            <GlowingButton @click.prevent="handleBookCall(item.id)">
-              Let's Connect
-            </GlowingButton>
+            <glowing-button @click.prevent="handleBookCall(item.id)">
+              <template #icon>
+                <div class="i-carbon-email" />
+              </template>
+              <template #default>
+                Get in Touch
+              </template>
+            </glowing-button>
           </div>
         </perfect-scrollbar>
         <div class="gradient-bg-image w-full flex-grow pb-1" />

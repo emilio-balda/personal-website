@@ -3,23 +3,19 @@ import { NConfigProvider, NSwitch, darkTheme } from 'naive-ui'
 import type { CSSProperties } from 'vue'
 import { onMounted } from 'vue'
 import Home from '~/pages/index.vue'
-
-// import Services from '~/pages/services.vue'
 import AppImage from '~/components/AppImage.vue'
 import { isDark, toggleDark } from '~/composables'
 import { downloadFile, scrollTo } from '~/composables/dom'
 import About from '~/pages/about.vue'
-import Contact from '~/pages/contact.vue'
 import Portfolio from '~/pages/portfolio.vue'
 
-// import GlowingButton from '~/components/GlowingButton.vue'
 
 const navBarItems = [
   { route: '/#home', id: 'home', page_name: 'Home', component: Home, background: 'bg-body', title_color: '', title: null, icon: 'i-carbon-home' },
   // { route: '/#services', id: 'services', page_name: 'Services', component: Services, background: 'bg-body', title_color: '', title: 'Services', icon: 'i-carbon-collaborate' },
   { route: '/#portfolio', id: 'portfolio', page_name: 'Portfolio', component: Portfolio, background: 'bg-body', title_color: '', title: 'Portfolio', icon: 'i-carbon-portfolio' },
   { route: '/#about', id: 'about', page_name: 'About', component: About, background: 'bg-body', title_color: 'text-black', title: null, icon: 'i-carbon-education' },
-  { route: '/#contact', id: 'contact', page_name: 'Contact', component: Contact, background: 'bg-body', title_color: '', title: null, icon: 'i-carbon-email' },
+  // { route: '/#contact', id: 'contact', page_name: 'Contact', component: Contact, background: 'bg-body', title_color: '', title: null, icon: 'i-carbon-email' },
 ]
 
 const itemToNextRoutes: Record<string, { left_route: string; right_route: string }> = {}
@@ -72,10 +68,10 @@ onMounted(() => window.scrollTo(0, 0))
           <div class="max-w-7xl w-full flex flex-row items-center justify-around md:justify-between">
             <div class="flex flex-row cursor-pointer items-center justify-center py-2" @click="scrollTo('home')">
               <AppImage
-                src="/assets/informal-color.png" placeholder-height="4em" placeholder-width="4em"
-                class="hidden w-[4em] overflow-hidden rounded-full md:block"
+                src="/assets/informal-color.png" placeholder-height="2em" placeholder-width="2em"
+                class="hidden w-[2em] overflow-hidden rounded-full md:block"
               />
-              <h4 class="mx-4 hidden whitespace-nowrap text-xl font-semibold md:block icon-btn">
+              <h4 class="mx-4 hidden whitespace-nowrap text-lg font-semibold md:block icon-btn uppercase">
                 Emilio Balda
               </h4>
               <glowing-button
@@ -93,7 +89,7 @@ onMounted(() => window.scrollTo(0, 0))
             <div class="flex flex-row items-center">
               <div class="mr-8 hidden md:flex">
                 <button
-                  v-for="section in navBarItems" :key="section.id" class="text-md mx-3 md:text-lg icon-btn"
+                  v-for="section in navBarItems" :key="section.id" class="text-base mx-3 icon-btn"
                   @click="scrollTo(section.id)"
                 >
                   {{ section.page_name }}
@@ -135,9 +131,9 @@ onMounted(() => window.scrollTo(0, 0))
             <div v-for="section in navBarItems" :ref="section.id" :key="section.id" class="max-w-7xl w-full">
               <section :id="section.id" :class="section.background">
                 <div class="w-full flex flex-col items-center justify-center pt-8 md:pt-24">
-                  <h4 v-if="section.title !== null" class="mb-4 text-3xl font-semibold" :class="section.title_color">
+                  <h2 v-if="section.title !== null" class="mb-4 text-3xl font-semibold" :class="section.title_color">
                     {{ section.title }}
-                  </h4>
+                  </h2>
                   <component :is="section.component" />
                 </div>
               </section>

@@ -19,13 +19,13 @@ const slots = useSlots()
 <template>
   <button
     class="bnglow w-fit" role="button"
-    :class="{ 'neumorphic-shadow-4': props.size === 'small', 'neumorphic-shadow-8': props.size === 'medium' }"
+    :class="{ 'neumorphic-shadow-4': props.size === 'small', 'neumorphic-shadow-8': props.size === 'medium', 'text-app-paragraph': props.type === 'ghost', 'text-white': props.type === 'default' }"
   >
-    <span class="flex flex-row items-center bg-background-900 px-4 py-2">
-      <div v-if="slots.icon" class="pr-2">
+    <span class="flex flex-row items-center justify-center px-6 py-4" :class="{ 'bg-background-100 dark:bg-background-900': props.type === 'ghost', 'bg-background-900': props.type === 'default' }">
+      <div v-if="slots.icon" class="pr-4 text-xl">
         <slot name="icon" />
       </div>
-      <div :class="{ 'text-md': props.size === 'small', 'text-lg': props.size === 'medium' }">
+      <div class="text-lg font-bold uppercase">
         <slot name="default" />
       </div>
     </span>
@@ -46,7 +46,6 @@ const slots = useSlots()
   border: 0;
   border-radius: 8px;
   box-sizing: border-box;
-  color: #ffffff;
   display: flex;
   max-width: 100%;
   padding: 2px;

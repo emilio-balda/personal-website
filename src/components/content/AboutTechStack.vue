@@ -58,24 +58,31 @@ const stack = [
 </script>
 
 <template>
-  <NCollapseItem v-for="stackRow in stack" :key="stackRow.title" :title="stackRow.title" :name="stackRow.title">
-    <NSpace align="center" justify="center">
-      <div
-        v-for="stackItem in stackRow.items" :key="stackItem.title"
-        class="flex flex-col items-center justify-center px-4"
-      >
-        <div class="pt-4">
-          <AppImage
-            :src="stackItem.image" placeholder-height="1.5rem" placeholder-width="1.5rem"
-            class="h-4 w-full md:h-8"
-          />
+  <NCollapseItem v-for="stackRow in stack" :key="stackRow.title" :name="stackRow.title">
+    <template #header>
+      <h4 class="text-left text-app-paragraph text-lg">
+        {{ stackRow.title }}
+      </h4>
+    </template>
+    <template #default>
+      <NSpace align="center" justify="center">
+        <div
+          v-for="stackItem in stackRow.items" :key="stackItem.title"
+          class="flex flex-col items-center justify-center px-4"
+        >
+          <div class="pt-4">
+            <AppImage
+              :src="stackItem.image" placeholder-height="1.5rem" placeholder-width="1.5rem"
+              class="h-4 w-full md:h-8"
+            />
+          </div>
+          <div>
+            <p class="py-2 text-xs italic">
+              {{ stackItem.title }}
+            </p>
+          </div>
         </div>
-        <div>
-          <p class="py-2 text-xs italic">
-            {{ stackItem.title }}
-          </p>
-        </div>
-      </div>
-    </NSpace>
+      </NSpace>
+    </template>
   </NCollapseItem>
 </template>

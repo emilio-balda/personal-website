@@ -27,3 +27,15 @@ export function downloadFile({ filename, href }: { filename: string; href: strin
   element.click()
   document.body.removeChild(element)
 }
+
+export function composeEmail({ to, subject, body }: { to?: string; subject?: string; body?: string }) {
+  const params = new URLSearchParams()
+  if (subject)
+    params.append('subject', subject)
+  if (body)
+    params.append('body', body)
+
+  const mailtoUrl = `mailto:${to || ''}${params.toString() ? `?${params.toString()}` : ''}`
+  window.location.href = mailtoUrl
+}
+

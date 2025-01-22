@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import GlowingButton from '~/components/GlowingButton.vue'
-import { scrollTo } from '~/composables/dom'
+import { composeEmail } from '~/composables/dom'
 
 interface ContentItem {
   title: string
@@ -48,9 +47,14 @@ const content: Array<ContentItem> = [
           </div>
         </div>
         <div class="pb-8 font-medium">
-          <GlowingButton @click="scrollTo('contact')">
-            Let's Connect
-          </GlowingButton>
+          <glowing-button @click="composeEmail({ to: 'me@emilio-balda.com' })">
+            <template #icon>
+              <div class="i-carbon-email" />
+            </template>
+            <template #default>
+              Get in Touch
+            </template>
+          </glowing-button>
         </div>
       </perfect-scrollbar>
     </div>

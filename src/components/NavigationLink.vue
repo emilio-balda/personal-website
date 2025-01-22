@@ -13,7 +13,7 @@ const currentPage = computed(() => route.path)
 </script>
 
 <template>
-  <router-link :to="to" class="router-link place-self-center px-2 text-base lg:px-4 lg:text-2xl md:text-xl dark:text-white" :class="{ 'router-link-selected': currentPage === props.to }">
+  <router-link :to="to" class="router-link place-self-center px-2 text-sm dark:text-white" :class="{ 'router-link-selected': currentPage === props.to }">
     {{ props.pageName }}
   </router-link>
 </template>
