@@ -7,6 +7,22 @@ const contactInfo = [
   { icon: 'i-carbon-logo-linkedin bg-app-paragraph', href: 'https://www.linkedin.com/in/emiliobalda/', text: 'emiliobalda' },
   { icon: 'i-carbon-logo-github bg-app-paragraph', href: 'https://github.com/emilio-balda', text: 'emilio-balda' },
 ]
+
+const partners = [
+  {
+    name: 'Anima',
+    logo: '/assets/anima-logo.svg',
+    description: 'Improving their core product\'s AI capabilities to turn designs into code.',
+    href: 'https://animaapp.com',
+  },
+  {
+    name: 'Joana Gomez',
+    logo: '/assets/joana-gomez-logo.svg',
+    description: 'Turning custom designs to fully functional, responsive websites in a matter of days through Anima\'s Figma plugin.',
+    href: 'https://joana-gomez.com',
+  },
+]
+
 </script>
 
 <template>
@@ -50,34 +66,36 @@ const contactInfo = [
         <p class="text-start text-lg leading-relaxed max-w-xl pt-3">
           Currently, I'm <span class="font-bold">fully booked</span> working with:
         </p>
-        <table class="max-w-xl border-separate border-spacing-y-3">
-          <tr>
+
+        <!-- Partners (tablet and desktop) -->
+        <table class="hidden lg:table max-w-xl border-separate border-spacing-y-3">
+          <tr v-for="partner in partners" :key="partner.name">
             <td class="w-[180px] align-top">
-              <a href="https://animaapp.com" target="_blank" class="flex items-center gap-3 mb-2 cursor-pointer">
-                <img src="/assets/anima-logo.svg" alt="Anima Logo" class="w-6 h-6" />
-                <h4 class="text-lg font-bold whitespace-nowrap">Anima</h4>
+              <a :href="partner.href" target="_blank" class="flex items-center gap-3 mb-2 cursor-pointer">
+                <img :src="partner.logo" :alt="partner.name" class="w-6 h-6" />
+                <h4 class="text-lg font-bold whitespace-nowrap">{{ partner.name }}</h4>
               </a>
             </td>
             <td class="align-top">
               <p class="text-lg text-app-paragraph text-left">
-                Improving their core product's AI capabilities to turn designs into code.
-              </p>
-            </td>
-          </tr>
-          <tr>
-            <td class="w-[180px] align-top">
-              <a href="https://joana-gomez.com" target="_blank" class="flex items-center gap-3 mb-2 cursor-pointer">
-                <img src="/assets/joana-gomez-logo.svg" alt="Joana Gomez Logo" class="w-6 h-6" />
-                <h4 class="text-lg font-bold whitespace-nowrap">Joana Gomez</h4>
-              </a>
-            </td>
-            <td class="align-top">
-              <p class="text-lg text-app-paragraph text-left">
-                Turning custom designs to fully functional, responsive websites in a matter of days through Anima's Figma plugin.
+                {{ partner.description }}
               </p>
             </td>
           </tr>
         </table>
+
+        <!-- Partners (mobile) -->
+        <div class="block lg:hidden max-w-xl pt-4">
+          <div v-for="partner in partners" :key="partner.name" class="mb-4">
+            <a :href="partner.href" target="_blank" class="flex items-center gap-3 mb-2 cursor-pointer">
+              <img :src="partner.logo" :alt="partner.name" class="w-6 h-6" />
+              <h4 class="text-lg font-bold whitespace-nowrap">{{ partner.name }}</h4>
+            </a>
+            <p class="text-lg text-app-paragraph text-left">
+              {{ partner.description }}
+            </p>
+          </div>
+        </div>
         
         <div class="my-3 inline-block font-medium self-center sm:self-start">
           <glowing-button @click="composeEmail({ to: 'me@emilio-balda.com' })">
