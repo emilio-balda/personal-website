@@ -45,11 +45,41 @@ const contactInfo = [
       </div>
       <div class="flex flex-col items-start justify-start px-2 md:px-12 py-4">
         <p class="text-start text-lg leading-relaxed max-w-xl">
-          I specialize in building robust, scalable SaaS products that harness the power of machine learning. 
-          From concept to launch, I combine clean, maintainable code with proven best practices so your team can move quickly without cutting corners. 
-          Ready to bring your vision to life? Let's create something remarkable together.
+          I specialize in bringing AI-related ideas to production. From rough sketches and proof of concepts, all the way to integration into existing products. 
         </p>
-        <div class="my-4 inline-block font-medium md:my-8">
+        <p class="text-start text-lg leading-relaxed max-w-xl pt-3">
+          Currently, I'm <span class="font-bold">fully booked</span> working with:
+        </p>
+        <table class="max-w-xl border-separate border-spacing-y-3">
+          <tr>
+            <td class="w-[180px] align-top">
+              <a href="https://animaapp.com" target="_blank" class="flex items-center gap-3 mb-2 cursor-pointer">
+                <img src="/assets/anima-logo.svg" alt="Anima Logo" class="w-6 h-6" />
+                <h4 class="text-lg font-bold whitespace-nowrap">Anima</h4>
+              </a>
+            </td>
+            <td class="align-top">
+              <p class="text-lg text-app-paragraph text-left">
+                Improving their core product's AI capabilities to turn designs into code.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td class="w-[180px] align-top">
+              <a href="https://joana-gomez.com" target="_blank" class="flex items-center gap-3 mb-2 cursor-pointer">
+                <img src="/assets/joana-gomez-logo.svg" alt="Joana Gomez Logo" class="w-6 h-6" />
+                <h4 class="text-lg font-bold whitespace-nowrap">Joana Gomez</h4>
+              </a>
+            </td>
+            <td class="align-top">
+              <p class="text-lg text-app-paragraph text-left">
+                Turning custom designs to fully functional, responsive websites in a matter of days through Anima's Figma plugin.
+              </p>
+            </td>
+          </tr>
+        </table>
+        
+        <div class="my-3 inline-block font-medium self-center sm:self-start">
           <glowing-button @click="composeEmail({ to: 'me@emilio-balda.com' })">
             <template #icon>
               <div class="i-carbon-email" />
