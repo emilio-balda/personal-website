@@ -26,27 +26,28 @@ const partners = [
 </script>
 
 <template>
-  <div class="w-full flex flex-col items-center justify-center">
-    <div class="w-fit px-4 pb-8 md:block md:pb-12">
-      <h1
-        class="gradient-text typewriter whitespace-normal pr-2 font-bold lg:py-2 text-7xl"
-      >
+  <main class="w-full flex flex-col items-center justify-center">
+    <section id="hero" aria-label="Hero section" class="w-fit px-4 pb-8 md:block md:pb-12">
+      <h1 class="gradient-text typewriter whitespace-normal pr-2 font-bold lg:py-2 text-7xl" itemprop="name">
         Full Stack Developer
       </h1>
-    </div>
-    <div class="w-full flex flex-wrap items-start justify-center px-12 md:flex-nowrap">
+    </section>
+    <section id="profile" aria-label="Profile section" class="w-full flex flex-wrap items-start justify-center px-12 md:flex-nowrap">
       <div class="neumorphic-shadow-12 flex flex-col items-center rounded-2xl p-4 duration-500 dark:bg-background-900">
         <div class="py-4">
           <AppImage
-            src="/assets/informal-color.png" placeholder-height="12em" placeholder-width="12em"
+            src="/assets/informal-color.png" 
+            alt="Emilio Balda - Full Stack Developer and Machine Learning Expert"
+            placeholder-height="12em" 
+            placeholder-width="12em"
             class="w-[12em] overflow-hidden rounded-full"
           />
         </div>
         <div class="px-2 py-4">
-          <h2 class="whitespace-nowrap text-lg uppercase">
+          <h2 class="whitespace-nowrap text-lg uppercase" itemprop="name">
             Emilio Balda
           </h2>
-          <h3 class="whitespace-nowrap text-xl">
+          <h3 class="whitespace-nowrap text-xl" itemprop="jobTitle">
             Full Stack Developer
           </h3>
           <h3 class="whitespace-nowrap font-semibold text-xl">
@@ -108,8 +109,8 @@ const partners = [
           </glowing-button>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 </template>
 
 <style scoped>
