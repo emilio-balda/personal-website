@@ -41,7 +41,7 @@ function getSectionId(section: sectionInterface) {
     >
       <div class="pb-4">
         <app-image
-          src="/assets/informal-color.png" placeholder-height="8rem" placeholder-width="8rem"
+          src="/assets/informal-color.webp" placeholder-height="8rem" placeholder-width="8rem"
           class="w-32 overflow-hidden rounded-full"
         />
       </div>

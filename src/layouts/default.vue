@@ -68,7 +68,7 @@ onMounted(() => window.scrollTo(0, 0))
           <div class="max-w-7xl w-full flex flex-row items-center justify-around md:justify-between">
             <div class="flex flex-row cursor-pointer items-center justify-center py-2" @click="scrollTo('home')">
               <AppImage
-                src="/assets/informal-color.png" placeholder-height="2em" placeholder-width="2em"
+                src="/assets/informal-color.webp" placeholder-height="2em" placeholder-width="2em"
                 class="hidden w-[2em] overflow-hidden rounded-full md:block"
               />
               <h4 class="mx-4 hidden whitespace-nowrap text-lg font-semibold md:block icon-btn uppercase">

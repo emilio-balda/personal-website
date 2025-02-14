@@ -12,13 +12,13 @@ useHead({
     { property: 'og:title', content: 'Emilio Balda - Full Stack Developer & Machine Learning Expert' },
     { property: 'og:description', content: 'Freelance web development and machine learning solutions by Emilio Balda. Expertise in full-stack development, AI integration, and modern web technologies.' },
     { property: 'og:type', content: 'website' },
-    { property: 'og:image', content: '/assets/informal-color.png' },
+    { property: 'og:image', content: '/assets/informal-color.webp' },
     
     // Twitter Card
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:title', content: 'Emilio Balda - Full Stack Developer & ML Expert' },
     { name: 'twitter:description', content: 'Freelance web development and machine learning solutions by Emilio Balda.' },
-    { name: 'twitter:image', content: '/assets/informal-color.png' },
+    { name: 'twitter:image', content: '/assets/informal-color.webp' },
     
     // Additional SEO
     { name: 'robots', content: 'index, follow' },

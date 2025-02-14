@@ -36,7 +36,7 @@ const partners = [
       <div class="neumorphic-shadow-12 flex flex-col items-center rounded-2xl p-4 duration-500 dark:bg-background-900">
         <div class="py-4">
           <AppImage
-            src="/assets/informal-color.png" 
+            src="/assets/informal-color.webp" 
             alt="Emilio Balda - Full Stack Developer and Machine Learning Expert"
             placeholder-height="12em" 
             placeholder-width="12em"
