@@ -1,33 +1,24 @@
 <script setup lang="ts">
-// https://github.com/vueuse/head
-// you can use this to manipulate the document head in any components,
-// they will be rendered correctly in the html results with vite-ssg
 useHead({
-  title: 'Emilio Balda - Full Stack Developer & Machine Learning Expert',
+  title: 'Emilio Balda — AI Software Engineer | Agentic Systems & Production LLMs',
   meta: [
-    { name: 'description', content: 'Emilio Balda is a freelance Full Stack Developer and Machine Learning expert, specializing in web development and AI solutions. Based in Cyprus, offering professional development services worldwide.' },
-    { name: 'keywords', content: 'Emilio Balda, Machine Learning, Web Development, Freelance, Full Stack Developer, AI Expert, Software Engineer' },
-    
-    // Open Graph / Social Media
-    { property: 'og:title', content: 'Emilio Balda - Full Stack Developer & Machine Learning Expert' },
-    { property: 'og:description', content: 'Freelance web development and machine learning solutions by Emilio Balda. Expertise in full-stack development, AI integration, and modern web technologies.' },
+    { name: 'description', content: 'AI Software Engineer who builds agentic systems and production LLM features for SaaS products. Experience with LangGraph, LangChain, LangSmith, Vercel AI SDK, OpenRouter, React, TypeScript, Python, and FastAPI.' },
+    { name: 'keywords', content: 'AI Software Engineer, Agentic AI, Agentic Systems, LLM Orchestration, Production LLMs, LangGraph, LangChain, LangSmith, Vercel AI SDK, OpenRouter, React, TypeScript, Python, FastAPI' },
+    { property: 'og:title', content: 'Emilio Balda — AI Software Engineer for Agentic Systems and Production LLMs' },
+    { property: 'og:description', content: 'I build reliable agentic workflows and production LLM software for SaaS teams, from model integration and streaming to observability and token optimization.' },
     { property: 'og:type', content: 'website' },
     { property: 'og:image', content: '/assets/informal-color.webp' },
-    
-    // Twitter Card
     { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:title', content: 'Emilio Balda - Full Stack Developer & ML Expert' },
-    { name: 'twitter:description', content: 'Freelance web development and machine learning solutions by Emilio Balda.' },
+    { name: 'twitter:title', content: 'Emilio Balda — AI Software Engineer' },
+    { name: 'twitter:description', content: 'Agentic systems and production LLM software for SaaS products.' },
     { name: 'twitter:image', content: '/assets/informal-color.webp' },
-    
-    // Additional SEO
     { name: 'robots', content: 'index, follow' },
     { name: 'author', content: 'Emilio Balda' },
-    { name: 'language', content: 'English' }
+    { name: 'language', content: 'English' },
   ],
   link: [
-    { rel: 'canonical', href: 'https://emilio-balda.com' }
-  ]
+    { rel: 'canonical', href: 'https://emilio-balda.com' },
+  ],
 })
 </script>
 

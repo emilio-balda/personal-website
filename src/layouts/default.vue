@@ -1,57 +1,57 @@
 <script setup lang="ts">
 import { NConfigProvider, NSwitch, darkTheme } from 'naive-ui'
 import type { CSSProperties } from 'vue'
-import { onMounted } from 'vue'
-import Home from '~/pages/index.vue'
+import { onMounted, ref } from 'vue'
 import AppImage from '~/components/AppImage.vue'
 import { isDark, toggleDark } from '~/composables'
-import { downloadFile, scrollTo } from '~/composables/dom'
+import { composeEmail, downloadFile, scrollTo } from '~/composables/dom'
 import About from '~/pages/about.vue'
+import Approach from '~/pages/approach.vue'
+import Contact from '~/pages/contact.vue'
+import Home from '~/pages/index.vue'
 import Portfolio from '~/pages/portfolio.vue'
+import Services from '~/pages/services.vue'
 
-
-const navBarItems = [
-  { route: '/#home', id: 'home', page_name: 'Home', component: Home, background: 'bg-body', title_color: '', title: null, icon: 'i-carbon-home' },
-  // { route: '/#services', id: 'services', page_name: 'Services', component: Services, background: 'bg-body', title_color: '', title: 'Services', icon: 'i-carbon-collaborate' },
-  { route: '/#portfolio', id: 'portfolio', page_name: 'Portfolio', component: Portfolio, background: 'bg-body', title_color: '', title: 'Portfolio', icon: 'i-carbon-portfolio' },
-  { route: '/#about', id: 'about', page_name: 'About', component: About, background: 'bg-body', title_color: 'text-black', title: null, icon: 'i-carbon-education' },
-  // { route: '/#contact', id: 'contact', page_name: 'Contact', component: Contact, background: 'bg-body', title_color: '', title: null, icon: 'i-carbon-email' },
+const sections = [
+  { id: 'home', label: 'Home', component: Home },
+  { id: 'services', label: 'Services', component: Services },
+  { id: 'work', label: 'Work', component: Portfolio },
+  { id: 'approach', label: 'Approach', component: Approach },
+  { id: 'about', label: 'About', component: About },
+  { id: 'contact', label: 'Contact', component: Contact },
 ]
 
-const itemToNextRoutes: Record<string, { left_route: string; right_route: string }> = {}
+const navigation = sections.filter(section => !['home', 'contact'].includes(section.id))
+const showNavMenu = ref(false)
 
-const numNavBarItems = navBarItems.length
-for (let i = 0; i < numNavBarItems; i++) {
-  itemToNextRoutes[navBarItems[i].route] = {
-    left_route: navBarItems[((i - 1) % numNavBarItems + numNavBarItems) % numNavBarItems].route,
-    right_route: navBarItems[((i + 1) % numNavBarItems + numNavBarItems) % numNavBarItems].route,
-  }
-}
-
-const showNavMenu = ref<boolean>(false)
-function handleClickNavMenu(section_id: string) {
+function goToSection(sectionId: string) {
   showNavMenu.value = false
-  scrollTo(section_id)
+  scrollTo(sectionId)
 }
 
-function railStyle({
-  checked,
-}: {
-  checked: boolean
-}) {
+function discussProject() {
+  composeEmail({
+    to: 'me@emilio-balda.com',
+    subject: 'AI software project inquiry',
+  })
+}
+
+function downloadCv() {
+  downloadFile({
+    filename: 'CV-Emilio-Balda.pdf',
+    href: 'https://drive.google.com/uc?id=1AFqS99db8Elw7b3hin9RcXHVt2zNU5pF',
+  })
+}
+
+function railStyle({ checked }: { checked: boolean }) {
   const style: CSSProperties = {}
-  if (checked)
-    style.background = 'var(--paragraph)'
-
-  else
-    style.background = '#dbdbdb'
-
+  style.background = checked ? 'var(--paragraph)' : '#d9e1e6'
   return style
 }
 
 const themeOverrides = {
   common: {
-    successColor: '#08987E', // var(--primary-900)
+    successColor: '#08987E',
   },
 }
 
@@ -60,87 +60,112 @@ onMounted(() => window.scrollTo(0, 0))
 
 <template>
   <NConfigProvider :theme="isDark ? darkTheme : null" :theme-overrides="themeOverrides">
-    <div class="max-w-screen overflow-clip">
-      <div class="absolute sticky right-0 top-0 z-40 flex flex-col origin-top-right">
-        <div
-          class="w-full flex flex-row items-center justify-around border-b-1 border-slate-300 bg-background-100 px-4 py-2 dark:border-slate-800 dark:bg-background-900"
-        >
-          <div class="max-w-7xl w-full flex flex-row items-center justify-around md:justify-between">
-            <div class="flex flex-row cursor-pointer items-center justify-center py-2" @click="scrollTo('home')">
-              <AppImage
-                src="/assets/informal-color.webp" placeholder-height="2em" placeholder-width="2em"
-                class="hidden w-[2em] overflow-hidden rounded-full md:block"
-              />
-              <h4 class="mx-4 hidden whitespace-nowrap text-lg font-semibold md:block icon-btn uppercase">
-                Emilio Balda
-              </h4>
-              <glowing-button
-                class="md:ml-12"
-                @click.prevent="downloadFile({ filename: 'CV-Emilio-Balda.pdf', href: 'https://drive.google.com/uc?id=1AFqS99db8Elw7b3hin9RcXHVt2zNU5pF' })"
-              >
-                <template #icon>
-                  <div i="carbon-download" />
-                </template>
-                <template #default>
-                  Curriculum
-                </template>
-              </glowing-button>
-            </div>
-            <div class="flex flex-row items-center">
-              <div class="mr-8 hidden md:flex">
-                <button
-                  v-for="section in navBarItems" :key="section.id" class="text-base mx-3 icon-btn"
-                  @click="scrollTo(section.id)"
-                >
-                  {{ section.page_name }}
-                </button>
-              </div>
-              <NSwitch :value="isDark" :rail-style="railStyle" @click="toggleDark()">
-                <template #unchecked-icon>
-                  <div
-                    i="carbon-light-filled"
-                    class="text-md block bg-primary-700 dark:hidden dark:bg-gray-300 dark:bg-primary-500 md:text-lg"
-                  />
-                  <div i="carbon-light" class="text-md hidden bg-primary-500 dark:block dark:bg-gray-300 md:text-lg" />
-                </template>
-                <template #checked-icon>
-                  <div i="carbon-asleep" class="block bg-gray-300 text-lg dark:hidden dark:bg-primary-500 md:text-xl" />
-                  <div
-                    i="carbon-asleep-filled"
-                    class="hidden bg-gray-300 text-lg dark:block dark:bg-secondary-500 md:text-xl"
-                  />
-                </template>
-              </NSwitch>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="text-parragraph fixed bottom-0 left-0 right-0 z-50 w-full flex flex-row items-center justify-center border-t-1 border-slate-300 bg-background-100 px-2 md:hidden dark:border-slate-800 dark:bg-background-900 dark:text-white"
-      >
-        <div v-for="section in navBarItems" :key="section.id" class="flex flex-col items-center justify-center px-4 py-2">
-          <div :class="section.icon" class="text-sm" @click.prevent="handleClickNavMenu(section.id)" />
-          <button class="text-xs opacity-75" @click.prevent="handleClickNavMenu(section.id)">
-            {{ section.page_name }}
+    <div class="min-h-screen overflow-x-hidden text-app-paragraph">
+      <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-background-100/92 backdrop-blur-xl dark:border-slate-800/80 dark:bg-background-900/92">
+        <div class="mx-auto max-w-7xl flex items-center justify-between gap-4 px-4 py-3 md:px-8">
+          <button class="min-w-0 flex items-center gap-3 text-left" title="Go to home" @click="goToSection('home')">
+            <AppImage
+              src="/assets/informal-color.webp"
+              alt="Emilio Balda"
+              placeholder-height="2.5rem"
+              placeholder-width="2.5rem"
+              class="h-10 w-10 shrink-0 overflow-hidden rounded-full ring-2 ring-primary-500/60"
+            />
+            <span class="min-w-0">
+              <span class="block truncate text-sm font-bold tracking-[0.14em] uppercase">Emilio Balda</span>
+              <span class="hidden truncate text-xs text-slate-500 sm:block dark:text-slate-400">AI Software Engineer</span>
+            </span>
           </button>
-        </div>
-      </div>
-      <div>
-        <main class="text-center text-paragraph dark:text-gray-200">
-          <div class="flex flex-col items-center justify-center pb-32">
-            <div v-for="section in navBarItems" :ref="section.id" :key="section.id" class="max-w-7xl w-full">
-              <section :id="section.id" :class="section.background">
-                <div class="w-full flex flex-col items-center justify-center pt-8 md:pt-24">
-                  <h2 v-if="section.title !== null" class="mb-4 text-3xl font-semibold" :class="section.title_color">
-                    {{ section.title }}
-                  </h2>
-                  <component :is="section.component" />
-                </div>
-              </section>
-            </div>
+
+          <nav class="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
+            <button
+              v-for="section in navigation"
+              :key="section.id"
+              class="text-sm font-semibold text-slate-600 transition-colors dark:text-slate-300 hover:text-primary-900 dark:hover:text-primary-500"
+              @click="goToSection(section.id)"
+            >
+              {{ section.label }}
+            </button>
+          </nav>
+
+          <div class="flex shrink-0 items-center gap-2 sm:gap-3">
+            <button class="hidden items-center gap-2 px-2 py-2 text-sm font-semibold md:flex hover:text-primary-900 dark:hover:text-primary-500" @click="downloadCv">
+              <span class="i-carbon-download" aria-hidden="true" />
+              CV
+            </button>
+            <button class="hidden rounded-lg bg-background-900 px-4 py-2 text-sm font-bold text-white shadow-md sm:block" @click="discussProject">
+              Discuss a project
+            </button>
+            <NSwitch :value="isDark" :rail-style="railStyle" aria-label="Toggle dark mode" @click="toggleDark()">
+              <template #unchecked-icon>
+                <span class="i-carbon-light-filled bg-primary-700" aria-hidden="true" />
+              </template>
+              <template #checked-icon>
+                <span class="i-carbon-asleep-filled bg-secondary-500" aria-hidden="true" />
+              </template>
+            </NSwitch>
+            <button
+              class="h-10 w-10 flex items-center justify-center border border-slate-200 rounded-lg lg:hidden dark:border-slate-700"
+              :aria-expanded="showNavMenu"
+              aria-label="Toggle navigation menu"
+              @click="showNavMenu = !showNavMenu"
+            >
+              <span :class="showNavMenu ? 'i-carbon-close' : 'i-carbon-menu'" aria-hidden="true" />
+            </button>
           </div>
-        </main>
-      </div>
+        </div>
+
+        <nav v-if="showNavMenu" class="border-t border-slate-200 px-4 py-4 lg:hidden dark:border-slate-800" aria-label="Mobile navigation">
+          <div class="grid grid-cols-2 mx-auto max-w-7xl gap-2">
+            <button
+              v-for="section in navigation"
+              :key="section.id"
+              class="rounded-lg px-4 py-3 text-left text-sm font-semibold hover:bg-primary-500/10"
+              @click="goToSection(section.id)"
+            >
+              {{ section.label }}
+            </button>
+            <button class="rounded-lg px-4 py-3 text-left text-sm font-semibold hover:bg-primary-500/10" @click="downloadCv">
+              Download CV
+            </button>
+            <button class="rounded-lg bg-background-900 px-4 py-3 text-left text-sm font-bold text-white" @click="discussProject">
+              Discuss a project
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section
+          v-for="section in sections"
+          :id="section.id"
+          :key="section.id"
+          class="scroll-mt-24"
+        >
+          <component :is="section.component" />
+        </section>
+      </main>
+
+      <footer class="border-t border-slate-200 dark:border-slate-800">
+        <div class="mx-auto max-w-7xl flex flex-col gap-6 px-6 py-10 md:flex-row md:items-center md:justify-between md:px-10">
+          <div>
+            <p class="font-bold tracking-[0.14em] uppercase">
+              Emilio Balda
+            </p>
+            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">
+              AI Software Engineer · Agentic Systems &amp; Production LLMs
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-5 text-sm font-semibold">
+            <a href="mailto:me@emilio-balda.com" class="hover:text-primary-900 dark:hover:text-primary-500">Email</a>
+            <a href="https://www.linkedin.com/in/emiliobalda/" target="_blank" rel="noopener" class="hover:text-primary-900 dark:hover:text-primary-500">LinkedIn</a>
+            <a href="https://github.com/emilio-balda" target="_blank" rel="noopener" class="hover:text-primary-900 dark:hover:text-primary-500">GitHub</a>
+            <button class="hover:text-primary-900 dark:hover:text-primary-500" @click="downloadCv">
+              Download CV
+            </button>
+          </div>
+        </div>
+      </footer>
     </div>
   </NConfigProvider>
 </template>

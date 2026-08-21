@@ -88,9 +88,11 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'safari-pinned-tab.svg'],
       manifest: {
-        name: 'Vitesse',
-        short_name: 'Vitesse',
-        theme_color: '#ffffff',
+        name: 'Emilio Balda — AI Software Engineer',
+        short_name: 'Emilio Balda',
+        theme_color: '#F8F9FC',
+        background_color: '#F8F9FC',
+        description: 'AI Software Engineer for agentic systems and production LLM software.',
         icons: [
           {
             src: '/pwa-192x192.png',
