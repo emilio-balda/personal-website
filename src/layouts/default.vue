@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { NConfigProvider, NSwitch, darkTheme } from 'naive-ui'
 import type { CSSProperties } from 'vue'
-import { onMounted, ref } from 'vue'
+import { nextTick, onMounted, ref } from 'vue'
 import AppImage from '~/components/AppImage.vue'
 import { isDark, toggleDark } from '~/composables'
 import { composeEmail, downloadFile, scrollTo } from '~/composables/dom'
@@ -24,8 +24,9 @@ const sections = [
 const navigation = sections.filter(section => !['home', 'contact'].includes(section.id))
 const showNavMenu = ref(false)
 
-function goToSection(sectionId: string) {
+async function goToSection(sectionId: string) {
   showNavMenu.value = false
+  await nextTick()
   scrollTo(sectionId)
 }
 

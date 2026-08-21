@@ -1,6 +1,6 @@
 # Landing Page Content and Structure Map — V2 Proposal
 
-> Status: Content proposal for review. This is not an implementation plan.
+> Status: Approved content proposal used for the current implementation. The source files own the current structure and behavior.
 >
 > Primary position: **AI Software Engineer — Agentic Systems & Production LLMs**
 >

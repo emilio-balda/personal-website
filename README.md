@@ -1,10 +1,8 @@
-# Personal Website
+# Emilio Balda — AI Software Engineer
 
-Powered by the Vitesse Template
+Personal website for Emilio Balda, an AI Software Engineer who builds agentic systems and production LLM software for SaaS teams.
 
-<p align='center'>
-  <img src='https://user-images.githubusercontent.com/11247099/154486817-f86b8f20-5463-4122-b6e9-930622e757f2.png' alt='Vitesse - Opinionated Vite Starter Template' width='600'/>
-</p>
+Powered by the Vitesse template.
 
 ## Vitesse Features
 
@@ -47,7 +45,7 @@ Powered by the Vitesse Template
 ## Contact
 
 **Emilio Balda**
-<p>Fullstack Developer</p>
+<p>AI Software Engineer · Agentic Systems &amp; Production LLMs</p>
 <p>PhD in Machine Learning</p>
 <p>email: <a href="mailto:me@emilio-balda.com">me@emilio-balda.com</a></p>
 <p>linkedin: <a  href="https://www.linkedin.com/in/emiliobalda/">emiliobalda</a></p>
