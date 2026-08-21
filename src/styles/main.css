@@ -1,21 +1,18 @@
 @import './markdown.css';
 @import './fonts.css';
 
-
 html,
 body,
 #app {
-  height: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
   font-family: "Thicccboi", sans-serif;
 }
 
-p {
-  font-family: "Thicccboi", sans-serif;
-}
-
 html {
+  min-width: 320px;
+  scroll-behavior: smooth;
   background: #F8F9FC;
 }
 
@@ -23,39 +20,151 @@ html.dark {
   background: #15212c;
 }
 
+body {
+  color: var(--paragraph);
+  background: var(--background-100);
+}
+
+html.dark body {
+  color: var(--background-100);
+  background: var(--background-900);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgba(77, 141, 252, 0.55);
+  outline-offset: 3px;
+}
+
+::selection {
+  color: var(--background-900);
+  background: var(--primary-500);
+}
+
 #nprogress {
   pointer-events: none;
 }
 
 #nprogress .bar {
-  background: #0d9488;
-  opacity: 0.75;
   position: fixed;
   z-index: 1031;
   top: 0;
   left: 0;
   width: 100%;
   height: 2px;
+  background: #0d9488;
+  opacity: 0.75;
+}
+
+.section-eyebrow {
+  margin: 0;
+  color: var(--primary-900);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+html.dark .section-eyebrow {
+  color: var(--primary-500);
+}
+
+.section-title {
+  max-width: 58rem;
+  margin: 1rem 0 0;
+  font-size: clamp(2.35rem, 5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.section-copy {
+  max-width: 46rem;
+  margin: 1.5rem 0 0;
+  color: #526170;
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+html.dark .section-copy {
+  color: #cbd5e1;
+}
+
+.primary-cta,
+.secondary-cta {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border-radius: 0.75rem;
+  padding: 0.9rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.primary-cta {
+  color: white;
+  background: linear-gradient(110deg, var(--primary-900), var(--secondary-900));
+  box-shadow: 0 10px 24px rgba(2, 95, 255, 0.18);
+}
+
+.secondary-cta {
+  border: 1px solid #d5dde4;
+  color: var(--paragraph);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+html.dark .secondary-cta {
+  border-color: #475569;
+  color: var(--background-100);
+  background: rgba(21, 33, 44, 0.7);
+}
+
+.primary-cta:hover,
+.secondary-cta:hover {
+  transform: translateY(-2px);
+}
+
+.tech-chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(77, 141, 252, 0.18);
+  border-radius: 0.55rem;
+  padding: 0.38rem 0.62rem;
+  color: #275aa8;
+  background: rgba(77, 141, 252, 0.09);
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+html.dark .tech-chip {
+  border-color: rgba(88, 254, 182, 0.18);
+  color: var(--primary-500);
+  background: rgba(88, 254, 182, 0.07);
 }
 
 .neumorphic-shadow-2 {
-  box-shadow:  2px 2px 4px rgba(0, 0, 0,0.25),
-              -2px -2px 4px rgba(255, 255, 255,0.03);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25), -2px -2px 4px rgba(255, 255, 255, 0.03);
 }
 
 .neumorphic-shadow-4 {
-  box-shadow:  4px 4px 8px rgba(0, 0, 0,0.25),
-              -4px -4px 8px rgba(255, 255, 255,0.03);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25), -4px -4px 8px rgba(255, 255, 255, 0.03);
 }
 
 .neumorphic-shadow-8 {
-  box-shadow:  8px 8px 16px rgba(0, 0, 0,0.25),
-              -8px -8px 16px rgba(255, 255, 255,0.03);
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.25), -8px -8px 16px rgba(255, 255, 255, 0.03);
 }
 
 .neumorphic-shadow-12 {
-  box-shadow:  12px 12px 24px rgba(0, 0, 0,0.25),
-              -12px -12px 24px rgba(255, 255, 255,0.03);
+  box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.25), -12px -12px 24px rgba(255, 255, 255, 0.03);
 }
 
 :root {
