@@ -150,6 +150,11 @@ export default defineConfig({
     include: ['test/**/*.test.ts'],
     environment: 'jsdom',
     deps: {
+      optimizer: {
+        web: {
+          exclude: ['vue'],
+        },
+      },
       inline: ['@vue', '@vueuse', 'vue-demi'],
     },
   },
