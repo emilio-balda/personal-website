@@ -93,8 +93,9 @@ onMounted(() => window.scrollTo(0, 0))
               <span class="i-carbon-download" aria-hidden="true" />
               CV
             </button>
-            <button class="hidden rounded-lg bg-background-900 px-4 py-2 text-sm font-bold text-white shadow-md sm:block" @click="discussProject">
-              Discuss a project
+            <button class="rounded-lg bg-background-900 px-3 py-2 text-sm font-bold text-white shadow-md sm:px-4" @click="discussProject">
+              <span class="sm:hidden">Contact</span>
+              <span class="hidden sm:inline">Discuss a project</span>
             </button>
             <NSwitch :value="isDark" :rail-style="railStyle" aria-label="Toggle dark mode" @click="toggleDark()">
               <template #unchecked-icon>
