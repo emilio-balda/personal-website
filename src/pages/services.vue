@@ -1,82 +1,62 @@
 <script setup lang="ts">
-const services = [
+import { composeEmail } from '~/composables/dom'
+
+interface ContentItem {
+  title: string
+  description: string
+  image: string
+}
+const content: Array<ContentItem> = [
   {
-    number: '01',
-    icon: 'i-carbon-flow',
-    title: 'Agentic AI Systems',
-    problem: 'You need an AI workflow that can coordinate multiple steps, tools, and user requests without becoming fragile.',
-    deliverables: ['Stateful agentic workflows', 'Tool and action orchestration', 'Multi-step request handling', 'Benchmarking and monitoring agents'],
-    result: 'Agentic software that follows clear workflows, handles new requests, and stays easier to test and improve.',
-    tools: ['LangGraph', 'LangChain', 'Hermes', 'Python', 'TypeScript'],
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1115&q=80',
+    title: 'Tap into your Backend with an Interactive Frontend',
+    description: 'Lets add a professionally looking dashboard to interact with your existing backend services. The dashboard will be tailored to your needs, responsive, interactive and accessible through any browser.',
   },
   {
-    number: '02',
-    icon: 'i-carbon-application-web',
-    title: 'LLM Integration for Existing Software',
-    problem: 'You have a real product and need to add LLM capabilities without rebuilding the whole application.',
-    deliverables: ['React and TypeScript integration', 'Streaming responses', 'OpenRouter model access', 'Backend APIs for AI features'],
-    result: 'AI capabilities that feel like part of the product instead of a separate demo.',
-    tools: ['React', 'TypeScript', 'Vercel AI SDK', 'OpenRouter', 'FastAPI'],
+    image: 'https://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80',
+    title: 'Boost your Existing App with Artificial Intelligence',
+    description: 'Want to include artificial intelligence into the mix? Lets get in contact to get that feature into production, all the way from setting up database connections to showing the results in a modern Javascript frontend.',
   },
   {
-    number: '03',
-    icon: 'i-carbon-analytics',
-    title: 'Production Reliability and Observability',
-    problem: 'Your prototype works, but token use, debugging, model changes, and production behavior are hard to control.',
-    deliverables: ['Prompt caching', 'Prompt and agent tracing', 'Workflow monitoring', 'Model and provider flexibility'],
-    result: 'LLM software that is easier to observe, operate, and improve after release.',
-    tools: ['LangSmith', 'OpenRouter', 'LangChain', 'Docker', 'Kubernetes', 'GCP'],
+    image: 'https://images.unsplash.com/photo-1586449480537-3a22cf98b04c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+    title: 'Understand Complex Data with Interactive Visualizations',
+    description: 'Is your data too complex to visualize in standard static charts? Lets design interactive visualizations that instantly highlight relevant information, filter out clutter, and group together when needed.',
   },
 ]
 </script>
 
 <template>
-  <div class="mx-auto max-w-7xl px-6 py-18 md:px-10 md:py-26">
-    <div class="max-w-3xl text-left">
-      <p class="section-eyebrow">
-        How I can help
-      </p>
-      <h2 class="section-title">
-        From an LLM idea to software your users can rely on.
-      </h2>
-      <p class="section-copy">
-        I work with teams that already have a product and need senior engineering support to add or improve AI capabilities.
-      </p>
-    </div>
-
-    <div class="grid mt-12 gap-6 lg:grid-cols-3">
-      <article v-for="service in services" :key="service.title" class="group flex flex-col border border-slate-200 rounded-3xl bg-white p-7 text-left shadow-sm transition duration-300 dark:border-slate-700 dark:bg-background-900 hover:shadow-xl hover:-translate-y-1">
-        <div class="flex items-start justify-between">
-          <span :class="service.icon" class="bg-primary-700 text-3xl dark:bg-primary-500" aria-hidden="true" />
-          <span class="text-sm font-bold font-mono text-slate-400">{{ service.number }}</span>
+  <div class="flex flex-wrap items-center justify-center">
+    <div class="flex flex-wrap items-stretch justify-center lg:w-5/6">
+      <perfect-scrollbar v-for="item in content" :key="item.title" class="neumorphic-shadow-12 mx-4 mb-2 mt-4 w-[19em] flex flex-col items-center justify-between overflow-hidden rounded-lg transition-all duration-300 md:w-90 dark:bg-background-900 hover:-translate-y-2">
+        <div class="mb-10 overflow-hidden rounded-lg">
+          <img
+            :src="item.image"
+            alt="image"
+            class="h-72 w-full"
+          >
+          <div class="px-8 pt-4 text-center md:px-7 sm:px-9 xl:px-9">
+            <h3
+              class="hover:text-primary mb-4 block text-xl font-semibold 2xl:text-[22px] lg:text-[22px] md:text-xl sm:text-[22px] xl:text-xl"
+            >
+              {{ item.title }}
+            </h3>
+            <p class="text-base leading-relaxed">
+              {{ item.description }}
+            </p>
+          </div>
         </div>
-        <h3 class="mt-7 text-2xl font-bold tracking-tight">
-          {{ service.title }}
-        </h3>
-        <p class="mt-4 leading-relaxed text-slate-600 dark:text-slate-300">
-          {{ service.problem }}
-        </p>
-
-        <ul class="mt-6 space-y-3">
-          <li v-for="deliverable in service.deliverables" :key="deliverable" class="flex items-start gap-3">
-            <span class="i-carbon-checkmark-filled mt-1 shrink-0 bg-primary-700 dark:bg-primary-500" aria-hidden="true" />
-            <span>{{ deliverable }}</span>
-          </li>
-        </ul>
-
-        <div class="mt-7 border-t border-slate-200 pt-6 dark:border-slate-700">
-          <p class="text-xs font-bold tracking-[0.14em] uppercase text-slate-400">
-            Result
-          </p>
-          <p class="mt-2 font-semibold leading-relaxed">
-            {{ service.result }}
-          </p>
+        <div class="pb-8 font-medium">
+          <glowing-button @click="composeEmail({ to: 'me@emilio-balda.com' })">
+            <template #icon>
+              <div class="i-carbon-email" />
+            </template>
+            <template #default>
+              Get in Touch
+            </template>
+          </glowing-button>
         </div>
-
-        <div class="mt-auto flex flex-wrap gap-2 pt-7">
-          <span v-for="tool in service.tools" :key="tool" class="tech-chip">{{ tool }}</span>
-        </div>
-      </article>
+      </perfect-scrollbar>
     </div>
   </div>
 </template>

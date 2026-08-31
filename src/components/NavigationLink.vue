@@ -2,10 +2,10 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 
-const props = defineProps<{
-  pageName: string
-  to: string
-}>()
+const props = defineProps({
+  pageName: String,
+  to: String,
+})
 
 const route = useRoute()
 

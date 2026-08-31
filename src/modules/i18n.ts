@@ -1,17 +1,13 @@
 import { createI18n } from 'vue-i18n'
 import type { UserModule } from '~/types'
 
-interface LocaleMessages {
-  [key: string]: string | LocaleMessages
-}
-
 // Import i18n resources
 // https://vitejs.dev/guide/features.html#glob-import
 //
 // Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite
 const messages = Object.fromEntries(
   Object.entries(
-    import.meta.globEager<{ default: LocaleMessages }>('../../locales/*.y(a)?ml'),
+    import.meta.globEager('../../locales/*.y(a)?ml'),
   )
     .map(([key, value]) => {
       const yaml = key.endsWith('.yaml')

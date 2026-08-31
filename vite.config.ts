@@ -88,24 +88,22 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'safari-pinned-tab.svg'],
       manifest: {
-        name: 'Emilio Balda — AI Software Engineer',
-        short_name: 'Emilio Balda',
-        theme_color: '#F8F9FC',
-        background_color: '#F8F9FC',
-        description: 'AI Software Engineer for agentic systems and production LLM software.',
+        name: 'Vitesse',
+        short_name: 'Vitesse',
+        theme_color: '#ffffff',
         icons: [
           {
-            src: '/assets/favicon_io/android-chrome-192x192.png',
+            src: '/pwa-192x192.png',
             sizes: '192x192',
             type: 'image/png',
           },
           {
-            src: '/assets/favicon_io/android-chrome-512x512.png',
+            src: '/pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
           },
           {
-            src: '/assets/favicon_io/android-chrome-512x512.png',
+            src: '/pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any maskable',
@@ -150,11 +148,6 @@ export default defineConfig({
     include: ['test/**/*.test.ts'],
     environment: 'jsdom',
     deps: {
-      optimizer: {
-        web: {
-          exclude: ['vue'],
-        },
-      },
       inline: ['@vue', '@vueuse', 'vue-demi'],
     },
   },

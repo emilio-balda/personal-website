@@ -38,3 +38,4 @@ export function composeEmail({ to, subject, body }: { to?: string; subject?: str
   const mailtoUrl = `mailto:${to || ''}${params.toString() ? `?${params.toString()}` : ''}`
   window.location.href = mailtoUrl
 }
+
